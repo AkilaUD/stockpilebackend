@@ -139,14 +139,11 @@ try
     }).AddMvc();
 
     // ---- OpenAPI (task 1.31, api.md §4, T4.6/H7) --------------------------
-    // The versioned document is generated FROM CODE in Development/QA only
-    // (fail-closed OpenApi:Enabled default + startup refusal of Production;
-    // OpenApiConfiguration). The versioning-aware ApiExplorer replaces the
-    // default one and collates endpoints into per-version documents, so the
-    // document reflects exactly the API versions that exist — a versioned
-    // minimal endpoint never vanishes from the spec. Admin-only operations
-    // are excluded from the public document when those controllers land
-    // (api.md §61, §4).
+    // The versioned document is generated FROM CODE when OpenApi:Enabled is
+    // true. The versioning-aware ApiExplorer replaces the default one and
+    // collates endpoints into per-version documents, so the document reflects
+    // exactly the API versions that exist — a versioned minimal endpoint
+    // never vanishes from the spec.
     bool openApiEnabled = OpenApiConfiguration.IsEnabled(
         builder.Configuration, builder.Environment.EnvironmentName);
 

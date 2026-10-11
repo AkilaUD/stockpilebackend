@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hRSnK/2EVow=",
+  "dgSpecHash": "fsFOcSmcIWw=",
   "success": true,
   "projectFilePath": "D:\\Projects\\home dev\\open\\backend\\tests\\Stockpile.IntegrationTests\\Stockpile.IntegrationTests.csproj",
   "expectedPackageFiles": [
@@ -90,6 +90,7 @@
     "C:\\Users\\Akila_PC\\.nuget\\packages\\opentelemetry.instrumentation.http\\1.19.0\\opentelemetry.instrumentation.http.1.19.0.nupkg.sha512",
     "C:\\Users\\Akila_PC\\.nuget\\packages\\opentelemetry.instrumentation.runtime\\1.19.0\\opentelemetry.instrumentation.runtime.1.19.0.nupkg.sha512",
     "C:\\Users\\Akila_PC\\.nuget\\packages\\opentelemetry.instrumentation.sqlclient\\1.19.0\\opentelemetry.instrumentation.sqlclient.1.19.0.nupkg.sha512",
+    "C:\\Users\\Akila_PC\\.nuget\\packages\\scalar.aspnetcore\\2.17.14\\scalar.aspnetcore.2.17.14.nupkg.sha512",
     "C:\\Users\\Akila_PC\\.nuget\\packages\\serilog\\4.3.0\\serilog.4.3.0.nupkg.sha512",
     "C:\\Users\\Akila_PC\\.nuget\\packages\\serilog.aspnetcore\\10.0.0\\serilog.aspnetcore.10.0.0.nupkg.sha512",
     "C:\\Users\\Akila_PC\\.nuget\\packages\\serilog.extensions.hosting\\10.0.0\\serilog.extensions.hosting.10.0.0.nupkg.sha512",

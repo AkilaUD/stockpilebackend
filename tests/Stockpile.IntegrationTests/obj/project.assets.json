@@ -1853,6 +1853,22 @@
           }
         }
       },
+      "Scalar.AspNetCore/2.17.14": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Serilog/4.3.0": {
         "type": "package",
         "compile": {
@@ -2280,6 +2296,7 @@
           "OpenTelemetry.Instrumentation.Http": "1.19.0",
           "OpenTelemetry.Instrumentation.Runtime": "1.19.0",
           "OpenTelemetry.Instrumentation.SqlClient": "1.19.0",
+          "Scalar.AspNetCore": "2.17.14",
           "Serilog.AspNetCore": "10.0.0",
           "Stockpile.Application": "1.0.0",
           "Stockpile.Contracts": "1.0.0",
@@ -4767,6 +4784,25 @@
         "opentelemetry.instrumentation.sqlclient.nuspec"
       ]
     },
+    "Scalar.AspNetCore/2.17.14": {
+      "sha512": "wkZQbMQPSgU1w9BciBCe2Gh7l8hI9mSe+B1FRGC6zbPE2cD7YH3BDxwKWGzlJwuXAxgbfzK4UzQTnTDIgP6XFw==",
+      "type": "package",
+      "path": "scalar.aspnetcore/2.17.14",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/Scalar.AspNetCore.dll",
+        "lib/net10.0/Scalar.AspNetCore.xml",
+        "lib/net8.0/Scalar.AspNetCore.dll",
+        "lib/net8.0/Scalar.AspNetCore.xml",
+        "lib/net9.0/Scalar.AspNetCore.dll",
+        "lib/net9.0/Scalar.AspNetCore.xml",
+        "scalar.aspnetcore.2.17.14.nupkg.sha512",
+        "scalar.aspnetcore.nuspec"
+      ]
+    },
     "Serilog/4.3.0": {
       "sha512": "+cDryFR0GRhsGOnZSKwaDzRRl4MupvJ42FhCE4zhQRVanX0Jpg6WuCBk59OVhVDPmab1bB+nRykAnykYELA9qQ==",
       "type": "package",
@@ -5444,6 +5480,7 @@
         }
       },
       "warningProperties": {
+        "allWarningsAsErrors": true,
         "warnAsError": [
           "NU1605"
         ]

@@ -5,10 +5,8 @@ namespace Stockpile.IntegrationTests.Versioning;
 
 /// <summary>
 /// Task 1.31 — the OpenAPI gate (security-test-matrix H7, threat-model T4.6):
-/// the versioned document is served only where configuration opts in, defaults
-/// to disabled (fail-closed for every environment, including Production), and
-/// Production REFUSES to boot on an explicit true — "OpenAPI exposed in
-/// production" can never be a silently forgotten setting.
+/// the versioned document follows the explicit configuration value in every
+/// environment.
 /// </summary>
 public sealed class OpenApiConfigurationTests
 {
@@ -26,6 +24,8 @@ public sealed class OpenApiConfigurationTests
     [InlineData("Qa", true)]
     [InlineData("Staging", true)]
     [InlineData("Staging", false)]
+    [InlineData("Production", true)]
+    [InlineData("Production", false)]
     public void Enabled_follows_the_configuration_opt_in(string environment, bool configured)
     {
         bool enabled = OpenApiConfiguration.IsEnabled(Config(OpenApiConfiguration.EnabledKey, configured.ToString()), environment);
@@ -33,25 +33,9 @@ public sealed class OpenApiConfigurationTests
     }
 
     [Fact]
-    public void Missing_key_is_disabled_in_every_environment()
+    public void Missing_key_is_disabled()
     {
         Assert.False(OpenApiConfiguration.IsEnabled(Config(OpenApiConfiguration.EnabledKey, null), "Development"));
-        Assert.False(OpenApiConfiguration.IsEnabled(Config(OpenApiConfiguration.EnabledKey, null), "Production"));
-    }
-
-    [Fact]
-    public void Production_with_explicit_true_refuses_to_boot()
-    {
-        var exception = Assert.Throws<InvalidOperationException>(() =>
-            OpenApiConfiguration.IsEnabled(Config(OpenApiConfiguration.EnabledKey, "true"), "Production"));
-
-        Assert.Contains("must not be true in Production", exception.Message);
-    }
-
-    [Fact]
-    public void Production_without_the_flag_stays_disabled()
-    {
-        Assert.False(OpenApiConfiguration.IsEnabled(Config(OpenApiConfiguration.EnabledKey, "false"), "Production"));
         Assert.False(OpenApiConfiguration.IsEnabled(Config(OpenApiConfiguration.EnabledKey, null), "Production"));
     }
 }
