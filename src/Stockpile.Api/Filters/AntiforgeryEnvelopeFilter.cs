@@ -14,7 +14,7 @@ using Stockpile.Contracts.Errors;
 
 namespace Stockpile.Api.Filters;
 
-/// <summary>
+/// <summary> //
 /// Task 1.35 — antiforgery enforcement for the whole API (security-test-matrix
 /// C1–C5). Every unsafe verb (anything but GET/HEAD/OPTIONS/TRACE) must carry
 /// a valid double-submit token; a missing, tampered, foreign, or Origin-mismatched
