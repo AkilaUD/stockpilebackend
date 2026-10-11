@@ -513,3 +513,4 @@ D:\Projects\home dev\open\backend\src\Stockpile.Api\bin\Debug\net10.0\tr\Microso
 D:\Projects\home dev\open\backend\src\Stockpile.Api\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 D:\Projects\home dev\open\backend\src\Stockpile.Api\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 D:\Projects\home dev\open\backend\src\Stockpile.Api\obj\Debug\net10.0\Stockpile.Api.sourcelink.json
+D:\Projects\home dev\open\backend\src\Stockpile.Api\bin\Debug\net10.0\Scalar.AspNetCore.dll

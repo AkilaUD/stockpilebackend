@@ -51,6 +51,7 @@
           "OpenTelemetry.Instrumentation.Http": "1.19.0",
           "OpenTelemetry.Instrumentation.Runtime": "1.19.0",
           "OpenTelemetry.Instrumentation.SqlClient": "1.19.0",
+          "Scalar.AspNetCore": "2.17.14",
           "Serilog.AspNetCore": "10.0.0",
           "Stockpile.Application": "1.0.0",
           "Stockpile.Contracts": "1.0.0",
@@ -1422,6 +1423,17 @@
         },
         "compile": {
           "lib/net10.0/OpenTelemetry.Instrumentation.SqlClient.dll": {}
+        }
+      },
+      "Scalar.AspNetCore/2.17.14": {
+        "runtime": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "assemblyVersion": "2.17.14.0",
+            "fileVersion": "2.17.14.0"
+          }
+        },
+        "compile": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {}
         }
       },
       "Serilog/4.3.0": {
@@ -4006,6 +4018,13 @@
       "sha512": "sha512-JYdCD0Hkn0+hbSNTjDWENIlsR0CquiH2g6g2jme8Pv1GdDKjJ4/hQnOPJ3vX6XNV/RLf5T1551FeX4DncbdmXw==",
       "path": "opentelemetry.instrumentation.sqlclient/1.19.0",
       "hashPath": "opentelemetry.instrumentation.sqlclient.1.19.0.nupkg.sha512"
+    },
+    "Scalar.AspNetCore/2.17.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wkZQbMQPSgU1w9BciBCe2Gh7l8hI9mSe+B1FRGC6zbPE2cD7YH3BDxwKWGzlJwuXAxgbfzK4UzQTnTDIgP6XFw==",
+      "path": "scalar.aspnetcore/2.17.14",
+      "hashPath": "scalar.aspnetcore.2.17.14.nupkg.sha512"
     },
     "Serilog/4.3.0": {
       "type": "package",
