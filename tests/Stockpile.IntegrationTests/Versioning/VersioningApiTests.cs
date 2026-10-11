@@ -67,4 +67,15 @@ public sealed class VersioningApiTests
             root.GetProperty("paths").EnumerateObject(),
             path => path.Name.StartsWith("/api/", StringComparison.Ordinal));
     }
+
+    [Fact]
+    public async Task Scalar_ui_is_served_for_the_versioned_openapi_document()
+    {
+        using var client = _factory.CreateClient();
+
+        using var response = await client.GetAsync("/scalar/v1");
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.Equal("text/html", response.Content.Headers.ContentType?.MediaType);
+    }
 }

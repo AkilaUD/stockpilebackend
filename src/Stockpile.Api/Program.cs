@@ -12,6 +12,7 @@ using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
+using Scalar.AspNetCore;
 using Serilog;
 using Serilog.Formatting.Json;
 using Stockpile.Api.Configuration;
@@ -464,6 +465,7 @@ try
         // Explicitly anonymous under the deny-by-default fallback (T6.1): the
         // document is a dev/CI artifact, never gated on a caller's ticket.
         app.MapOpenApi().AllowAnonymous().WithDocumentPerVersion();
+        app.MapScalarApiReference().AllowAnonymous();
     }
 
     // ----1.18 Correlation id ---------------------------------------------
