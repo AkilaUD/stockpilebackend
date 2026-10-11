@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Stockpile.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9851924304043ad2465d266e3f2cb90bbc6449c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b18ca78b7de5aa39fe179b19c8ca0cdd7a03adb")]
 [assembly: System.Reflection.AssemblyProductAttribute("Stockpile.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Stockpile.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
