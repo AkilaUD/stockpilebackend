@@ -19,23 +19,18 @@ public sealed class OpenApiConfigurationTests
     }
 
     [Theory]
-    [InlineData("Development", true)]
-    [InlineData("Development", false)]
-    [InlineData("Qa", true)]
-    [InlineData("Staging", true)]
-    [InlineData("Staging", false)]
-    [InlineData("Production", true)]
-    [InlineData("Production", false)]
-    public void Enabled_follows_the_configuration_opt_in(string environment, bool configured)
+    [InlineData(true)]
+    [InlineData(false)]
+    public void Enabled_follows_the_configuration_opt_in(bool configured)
     {
-        bool enabled = OpenApiConfiguration.IsEnabled(Config(OpenApiConfiguration.EnabledKey, configured.ToString()), environment);
+        bool enabled = OpenApiConfiguration.IsEnabled(
+            Config(OpenApiConfiguration.EnabledKey, configured.ToString()));
         Assert.Equal(configured, enabled);
     }
 
     [Fact]
     public void Missing_key_is_disabled()
     {
-        Assert.False(OpenApiConfiguration.IsEnabled(Config(OpenApiConfiguration.EnabledKey, null), "Development"));
-        Assert.False(OpenApiConfiguration.IsEnabled(Config(OpenApiConfiguration.EnabledKey, null), "Production"));
+        Assert.False(OpenApiConfiguration.IsEnabled(Config(OpenApiConfiguration.EnabledKey, null)));
     }
 }

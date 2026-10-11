@@ -17,6 +17,6 @@ public static class OpenApiConfiguration
     /// <summary>
     /// Whether the OpenAPI document is mapped for this host, as configured.
     /// </summary>
-    public static bool IsEnabled(IConfiguration configuration, string environmentName) =>
+    public static bool IsEnabled(IConfiguration configuration) =>
         configuration.GetValue<bool>(EnabledKey);
 }

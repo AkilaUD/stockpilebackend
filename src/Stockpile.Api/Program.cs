@@ -144,8 +144,7 @@ try
     // collates endpoints into per-version documents, so the document reflects
     // exactly the API versions that exist — a versioned minimal endpoint
     // never vanishes from the spec.
-    bool openApiEnabled = OpenApiConfiguration.IsEnabled(
-        builder.Configuration, builder.Environment.EnvironmentName);
+    bool openApiEnabled = OpenApiConfiguration.IsEnabled(builder.Configuration);
 
     if (openApiEnabled)
     {
@@ -456,7 +455,7 @@ try
     // in every environment, idempotent (implementation-plan 1.15/1.16).
     await DbSeeder.SeedAsync(app.Services);
 
-    if (OpenApiConfiguration.IsEnabled(builder.Configuration, app.Environment.EnvironmentName))
+    if (OpenApiConfiguration.IsEnabled(builder.Configuration))
     {
         // One document per API version: /openapi/v1.json, /openapi/v2.json…
         // Explicitly anonymous under the deny-by-default fallback (T6.1): the
