@@ -512,3 +512,4 @@ D:\Projects\home dev\open\backend\src\Stockpile.Api\obj\Release\net10.0\refint\S
 D:\Projects\home dev\open\backend\src\Stockpile.Api\obj\Release\net10.0\Stockpile.Api.pdb
 D:\Projects\home dev\open\backend\src\Stockpile.Api\obj\Release\net10.0\Stockpile.Api.genruntimeconfig.cache
 D:\Projects\home dev\open\backend\src\Stockpile.Api\obj\Release\net10.0\ref\Stockpile.Api.dll
+D:\Projects\home dev\open\backend\src\Stockpile.Api\obj\Release\net10.0\Stockpile.Api.sourcelink.json

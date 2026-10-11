@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Stockpile.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e306e2fb2e173f7c1c95a265fe83dae57757290f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+291263261e0f5e8bb0040839cd79191ac20c6d64")]
 [assembly: System.Reflection.AssemblyProductAttribute("Stockpile.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Stockpile.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
