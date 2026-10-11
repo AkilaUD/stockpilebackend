@@ -1,0 +1,17 @@
+D:\Projects\home dev\open\backend\src\Stockpile.Application\bin\Release\net10.0\Stockpile.Application.deps.json
+D:\Projects\home dev\open\backend\src\Stockpile.Application\bin\Release\net10.0\Stockpile.Application.dll
+D:\Projects\home dev\open\backend\src\Stockpile.Application\bin\Release\net10.0\Stockpile.Application.pdb
+D:\Projects\home dev\open\backend\src\Stockpile.Application\bin\Release\net10.0\Stockpile.Contracts.dll
+D:\Projects\home dev\open\backend\src\Stockpile.Application\bin\Release\net10.0\Stockpile.Domain.dll
+D:\Projects\home dev\open\backend\src\Stockpile.Application\bin\Release\net10.0\Stockpile.Contracts.pdb
+D:\Projects\home dev\open\backend\src\Stockpile.Application\bin\Release\net10.0\Stockpile.Domain.pdb
+D:\Projects\home dev\open\backend\src\Stockpile.Application\obj\Release\net10.0\Stockpile.Application.csproj.AssemblyReference.cache
+D:\Projects\home dev\open\backend\src\Stockpile.Application\obj\Release\net10.0\Stockpile.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\home dev\open\backend\src\Stockpile.Application\obj\Release\net10.0\Stockpile.Application.AssemblyInfoInputs.cache
+D:\Projects\home dev\open\backend\src\Stockpile.Application\obj\Release\net10.0\Stockpile.Application.AssemblyInfo.cs
+D:\Projects\home dev\open\backend\src\Stockpile.Application\obj\Release\net10.0\Stockpile.Application.csproj.CoreCompileInputs.cache
+D:\Projects\home dev\open\backend\src\Stockpile.Application\obj\Release\net10.0\Stockpil.0C765E02.Up2Date
+D:\Projects\home dev\open\backend\src\Stockpile.Application\obj\Release\net10.0\Stockpile.Application.dll
+D:\Projects\home dev\open\backend\src\Stockpile.Application\obj\Release\net10.0\refint\Stockpile.Application.dll
+D:\Projects\home dev\open\backend\src\Stockpile.Application\obj\Release\net10.0\Stockpile.Application.pdb
+D:\Projects\home dev\open\backend\src\Stockpile.Application\obj\Release\net10.0\ref\Stockpile.Application.dll

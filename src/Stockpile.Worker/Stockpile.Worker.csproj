@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-Stockpile.Worker-4f0c3734-2146-4ae5-8a5f-7d79445f98d9</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.12" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.12" />
+    <PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Stockpile.Application\Stockpile.Application.csproj" />
+    <ProjectReference Include="..\Stockpile.Contracts\Stockpile.Contracts.csproj" />
+    <ProjectReference Include="..\Stockpile.Infrastructure\Stockpile.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

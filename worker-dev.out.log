@@ -1,0 +1,4 @@
+19:19:24.883 INF Application started. Press Ctrl+C to shut down. {"SourceContext": "Microsoft.Hosting.Lifetime", "service": "stockpile-worker"}
+19:19:24.885 INF Outbox dispatcher started {"EventId": {"Id": 1000, "Name": "Starting"}, "SourceContext": "Stockpile.Worker.OutboxDispatcher", "service": "stockpile-worker"}
+19:19:24.910 INF Hosting environment: Development {"SourceContext": "Microsoft.Hosting.Lifetime", "service": "stockpile-worker"}
+19:19:24.911 INF Content root path: D:\Projects\home dev\open\backend\src\Stockpile.Worker {"SourceContext": "Microsoft.Hosting.Lifetime", "service": "stockpile-worker"}

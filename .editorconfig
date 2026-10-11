@@ -1,0 +1,54 @@
+# EditorConfig — https://editorconfig.org
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+indent_brace_style = allman
+
+[*.{json,yml,yaml,md,ts,tsx,js,jsx,css,scss,html}]
+indent_size = 2
+
+[*.{cs,csproj,props,targets,config}]
+indent_size = 4
+
+# Domain rules live in Stockpile.Domain. Naming keeps intent explicit.
+[*.cs]
+dotnet_diagnostic.CA1002.severity = none
+dotnet_diagnostic.CA1305.severity = none
+dotnet_diagnostic.CA1307.severity = none
+
+# EF Core migrations are machine-generated and regenerated wholesale by
+# `dotnet ef migrations add`; editing them by hand would be reverted anyway.
+# Rules that fight the generator are disabled for this folder only.
+[**/Migrations/*.cs]
+dotnet_diagnostic.CA1861.severity = none
+
+# Tests follow the xUnit naming convention (Method_condition_expected), which
+# CA1707 rejects. CA1711 rejects the "Collection" suffix that xUnit's
+# ICollectionFixture definition idiom requires (ApiCollection). Scoped to
+# tests only — production code stays PascalCase.
+[tests/**/*.cs]
+dotnet_diagnostic.CA1707.severity = none
+dotnet_diagnostic.CA1711.severity = none
+
+# Solution-level pragmas
+dotnet_style_qualification_for_field = false:suggestion
+dotnet_style_qualification_for_property = false:suggestion
+dotnet_style_qualification_for_method = false:suggestion
+csharp_style_var_for_built_in_types = true:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+csharp_style_var_elsewhere = true:suggestion
+csharp_prefer_braces = true:suggestion
+csharp_using_directive_placement = outside_namespace:suggestion
+csharp_style_namespace_declarations = file_scoped:suggestion
+
+# No magic bools pretending to be business rules
+csharp_style_expression_bodied_methods = false:suggestion
+
+# Enforce readable file organisation
+dotnet_style_file_header = false:suggestion

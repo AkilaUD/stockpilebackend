@@ -1,0 +1,11 @@
+D:\Projects\home dev\open\backend\src\Stockpile.Domain\bin\Debug\net10.0\Stockpile.Domain.deps.json
+D:\Projects\home dev\open\backend\src\Stockpile.Domain\bin\Debug\net10.0\Stockpile.Domain.dll
+D:\Projects\home dev\open\backend\src\Stockpile.Domain\bin\Debug\net10.0\Stockpile.Domain.pdb
+D:\Projects\home dev\open\backend\src\Stockpile.Domain\obj\Debug\net10.0\Stockpile.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\home dev\open\backend\src\Stockpile.Domain\obj\Debug\net10.0\Stockpile.Domain.AssemblyInfoInputs.cache
+D:\Projects\home dev\open\backend\src\Stockpile.Domain\obj\Debug\net10.0\Stockpile.Domain.AssemblyInfo.cs
+D:\Projects\home dev\open\backend\src\Stockpile.Domain\obj\Debug\net10.0\Stockpile.Domain.csproj.CoreCompileInputs.cache
+D:\Projects\home dev\open\backend\src\Stockpile.Domain\obj\Debug\net10.0\Stockpile.Domain.dll
+D:\Projects\home dev\open\backend\src\Stockpile.Domain\obj\Debug\net10.0\refint\Stockpile.Domain.dll
+D:\Projects\home dev\open\backend\src\Stockpile.Domain\obj\Debug\net10.0\Stockpile.Domain.pdb
+D:\Projects\home dev\open\backend\src\Stockpile.Domain\obj\Debug\net10.0\ref\Stockpile.Domain.dll

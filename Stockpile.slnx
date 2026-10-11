@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Stockpile.Api/Stockpile.Api.csproj" />
+    <Project Path="src/Stockpile.Application/Stockpile.Application.csproj" />
+    <Project Path="src/Stockpile.Contracts/Stockpile.Contracts.csproj" />
+    <Project Path="src/Stockpile.Domain/Stockpile.Domain.csproj" />
+    <Project Path="src/Stockpile.Infrastructure/Stockpile.Infrastructure.csproj" />
+    <Project Path="src/Stockpile.Worker/Stockpile.Worker.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Stockpile.ArchitectureTests/Stockpile.ArchitectureTests.csproj" />
+    <Project Path="tests/Stockpile.IntegrationTests/Stockpile.IntegrationTests.csproj" />
+    <Project Path="tests/Stockpile.SecurityTests/Stockpile.SecurityTests.csproj" />
+    <Project Path="tests/Stockpile.UnitTests/Stockpile.UnitTests.csproj" />
+  </Folder>
+</Solution>

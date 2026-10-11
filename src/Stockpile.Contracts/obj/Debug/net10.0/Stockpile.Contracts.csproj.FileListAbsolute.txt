@@ -1,0 +1,11 @@
+D:\Projects\home dev\open\backend\src\Stockpile.Contracts\bin\Debug\net10.0\Stockpile.Contracts.deps.json
+D:\Projects\home dev\open\backend\src\Stockpile.Contracts\bin\Debug\net10.0\Stockpile.Contracts.dll
+D:\Projects\home dev\open\backend\src\Stockpile.Contracts\bin\Debug\net10.0\Stockpile.Contracts.pdb
+D:\Projects\home dev\open\backend\src\Stockpile.Contracts\obj\Debug\net10.0\Stockpile.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\home dev\open\backend\src\Stockpile.Contracts\obj\Debug\net10.0\Stockpile.Contracts.AssemblyInfoInputs.cache
+D:\Projects\home dev\open\backend\src\Stockpile.Contracts\obj\Debug\net10.0\Stockpile.Contracts.AssemblyInfo.cs
+D:\Projects\home dev\open\backend\src\Stockpile.Contracts\obj\Debug\net10.0\Stockpile.Contracts.csproj.CoreCompileInputs.cache
+D:\Projects\home dev\open\backend\src\Stockpile.Contracts\obj\Debug\net10.0\Stockpile.Contracts.dll
+D:\Projects\home dev\open\backend\src\Stockpile.Contracts\obj\Debug\net10.0\refint\Stockpile.Contracts.dll
+D:\Projects\home dev\open\backend\src\Stockpile.Contracts\obj\Debug\net10.0\Stockpile.Contracts.pdb
+D:\Projects\home dev\open\backend\src\Stockpile.Contracts\obj\Debug\net10.0\ref\Stockpile.Contracts.dll

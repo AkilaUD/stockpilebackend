@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.4" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Stockpile.Domain\Stockpile.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Stockpile.Application\Stockpile.Application.csproj" />
+    <ProjectReference Include="..\..\src\Stockpile.Contracts\Stockpile.Contracts.csproj" />
+    <ProjectReference Include="..\..\src\Stockpile.Infrastructure\Stockpile.Infrastructure.csproj" />
+    <!-- Task 1.26 (X13) scans the API assembly's controllers for rate-limit
+         declarations; aspnetcore framework types ([EnableRateLimiting],
+         ControllerBase) come from the shared framework reference below. -->
+    <ProjectReference Include="..\..\src\Stockpile.Api\Stockpile.Api.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+</Project>

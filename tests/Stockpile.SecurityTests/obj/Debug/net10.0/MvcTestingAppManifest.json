@@ -1,0 +1,7 @@
+{
+  "Stockpile.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projects\\home dev\\open\\backend\\src\\Stockpile.Api",
+  "Stockpile.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projects\\home dev\\open\\backend\\src\\Stockpile.Application",
+  "Stockpile.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projects\\home dev\\open\\backend\\src\\Stockpile.Contracts",
+  "Stockpile.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projects\\home dev\\open\\backend\\src\\Stockpile.Domain",
+  "Stockpile.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projects\\home dev\\open\\backend\\src\\Stockpile.Infrastructure"
+}

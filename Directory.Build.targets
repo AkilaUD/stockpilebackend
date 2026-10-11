@@ -1,0 +1,14 @@
+<Project>
+
+  <!--
+    Runs after NuGet/test-SDK props have set IsTestProject (Directory.Build.props
+    is evaluated too early for that condition to ever fire — see the comment there).
+    Test code keeps warnings visible but non-fatal; production projects stay
+    warnings-as-errors.
+  -->
+  <PropertyGroup Condition="'$(IsTestProject)' == 'true'">
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+</Project>

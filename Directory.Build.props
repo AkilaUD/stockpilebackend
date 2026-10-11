@@ -1,0 +1,33 @@
+<Project>
+
+  <!--
+    Central build configuration for every project under /backend.
+    See docs/architecture.md §3.1 (dependency rules) and
+    docs/implementation-plan.md §11 (quality rules in force at all times).
+  -->
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <AnalysisMode>Recommended</AnalysisMode>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <Deterministic>true</Deterministic>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <InvariantGlobalization>false</InvariantGlobalization>
+  </PropertyGroup>
+
+  <!-- Test projects are exempt from doc-file generation but not from warnings.
+       The exemption lives in Directory.Build.targets: IsTestProject is set by
+       the test SDK's props, which run AFTER this file, so a condition here
+       would never fire. -->
+
+  <PropertyGroup>
+    <RepositoryRoot>$([MSBuild]::NormalizeDirectory($(MSBuildThisFileDirectory)..))</RepositoryRoot>
+    <StorageRoot>$(RepositoryRoot).storage</StorageRoot>
+  </PropertyGroup>
+
+</Project>
