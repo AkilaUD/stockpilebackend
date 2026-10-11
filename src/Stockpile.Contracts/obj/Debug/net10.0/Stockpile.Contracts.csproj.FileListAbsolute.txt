@@ -9,3 +9,4 @@ D:\Projects\home dev\open\backend\src\Stockpile.Contracts\obj\Debug\net10.0\Stoc
 D:\Projects\home dev\open\backend\src\Stockpile.Contracts\obj\Debug\net10.0\refint\Stockpile.Contracts.dll
 D:\Projects\home dev\open\backend\src\Stockpile.Contracts\obj\Debug\net10.0\Stockpile.Contracts.pdb
 D:\Projects\home dev\open\backend\src\Stockpile.Contracts\obj\Debug\net10.0\ref\Stockpile.Contracts.dll
+D:\Projects\home dev\open\backend\src\Stockpile.Contracts\obj\Debug\net10.0\Stockpile.Contracts.sourcelink.json

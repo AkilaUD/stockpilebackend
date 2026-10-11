@@ -1,0 +1,6 @@
+{
+  "Stockpile.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "~",
+  "Stockpile.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "~",
+  "Stockpile.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "~",
+  "Stockpile.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "~"
+}

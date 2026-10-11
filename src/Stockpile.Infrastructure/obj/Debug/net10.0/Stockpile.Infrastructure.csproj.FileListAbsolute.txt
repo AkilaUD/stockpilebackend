@@ -19,3 +19,4 @@ D:\Projects\home dev\open\backend\src\Stockpile.Infrastructure\obj\Debug\net10.0
 D:\Projects\home dev\open\backend\src\Stockpile.Infrastructure\obj\Debug\net10.0\ref\Stockpile.Infrastructure.dll
 D:\Projects\home dev\open\backend\src\Stockpile.Infrastructure\bin\Debug\net10.0\Stockpile.Contracts.dll
 D:\Projects\home dev\open\backend\src\Stockpile.Infrastructure\bin\Debug\net10.0\Stockpile.Contracts.pdb
+D:\Projects\home dev\open\backend\src\Stockpile.Infrastructure\obj\Debug\net10.0\Stockpile.Infrastructure.sourcelink.json
