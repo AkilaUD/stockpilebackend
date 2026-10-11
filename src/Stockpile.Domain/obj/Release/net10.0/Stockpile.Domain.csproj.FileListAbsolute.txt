@@ -9,3 +9,4 @@ D:\Projects\home dev\open\backend\src\Stockpile.Domain\obj\Release\net10.0\Stock
 D:\Projects\home dev\open\backend\src\Stockpile.Domain\obj\Release\net10.0\refint\Stockpile.Domain.dll
 D:\Projects\home dev\open\backend\src\Stockpile.Domain\obj\Release\net10.0\Stockpile.Domain.pdb
 D:\Projects\home dev\open\backend\src\Stockpile.Domain\obj\Release\net10.0\ref\Stockpile.Domain.dll
+D:\Projects\home dev\open\backend\src\Stockpile.Domain\obj\Release\net10.0\Stockpile.Domain.sourcelink.json

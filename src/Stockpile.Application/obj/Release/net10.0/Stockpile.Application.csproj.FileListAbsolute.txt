@@ -15,3 +15,4 @@ D:\Projects\home dev\open\backend\src\Stockpile.Application\obj\Release\net10.0\
 D:\Projects\home dev\open\backend\src\Stockpile.Application\obj\Release\net10.0\refint\Stockpile.Application.dll
 D:\Projects\home dev\open\backend\src\Stockpile.Application\obj\Release\net10.0\Stockpile.Application.pdb
 D:\Projects\home dev\open\backend\src\Stockpile.Application\obj\Release\net10.0\ref\Stockpile.Application.dll
+D:\Projects\home dev\open\backend\src\Stockpile.Application\obj\Release\net10.0\Stockpile.Application.sourcelink.json

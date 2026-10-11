@@ -19,3 +19,4 @@ D:\Projects\home dev\open\backend\src\Stockpile.Infrastructure\obj\Release\net10
 D:\Projects\home dev\open\backend\src\Stockpile.Infrastructure\obj\Release\net10.0\Stockpile.Infrastructure.pdb
 D:\Projects\home dev\open\backend\src\Stockpile.Infrastructure\obj\Release\net10.0\Stockpile.Infrastructure.genruntimeconfig.cache
 D:\Projects\home dev\open\backend\src\Stockpile.Infrastructure\obj\Release\net10.0\ref\Stockpile.Infrastructure.dll
+D:\Projects\home dev\open\backend\src\Stockpile.Infrastructure\obj\Release\net10.0\Stockpile.Infrastructure.sourcelink.json
