@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Stockpile.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9851924304043ad2465d266e3f2cb90bbc6449c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4534b421281122b97e0d0b2576913c74848b7664")]
 [assembly: System.Reflection.AssemblyProductAttribute("Stockpile.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Stockpile.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
