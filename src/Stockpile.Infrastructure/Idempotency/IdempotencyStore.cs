@@ -72,10 +72,22 @@ public sealed class IdempotencyStore(StockpileDbContext dbContext, TimeProvider 
         {
             // A concurrent twin committed the same key; the winner's row decides.
             await transaction.RollbackAsync(cancellationToken);
+            dbContext.ChangeTracker.Clear();
             IdempotencyKey? winner = await FindAsync(ownerId, key, cancellationToken);
             return winner is null
                 ? new IdempotencyResult(IdempotencyResultKind.KeyConflict)
                 : Adjudicate(winner, requestHash);
+        }
+        catch
+        {
+            // The action failed (or the save did): the transaction rolls back, and
+            // the context's tracked state — the half-built aggregates AND the key
+            // row — must go with it. Left behind, a later SaveChanges on this
+            // scoped context (an audit row written while the error is handled)
+            // would persist the failed request's changes outside any transaction.
+            await transaction.RollbackAsync(CancellationToken.None);
+            dbContext.ChangeTracker.Clear();
+            throw;
         }
     }
 

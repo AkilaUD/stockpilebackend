@@ -4,9 +4,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Hosting;
 using Stockpile.Application.Outbox;
+using Stockpile.Infrastructure.Persistence;
 using Stockpile.IntegrationTests.Outbox;
 
 namespace Stockpile.IntegrationTests.Testing;
@@ -87,6 +90,40 @@ public sealed class StockpileApiFactory : WebApplicationFactory<Program>
         // HTTP (mint → wait past the TTL → refresh answers 401); every other
         // refresh test rotates in sub-second gaps.
         Environment.SetEnvironmentVariable("Auth__RefreshTokenMinutes", "0.17");
+
+        // Subscriptions (business-flows §12): the dev file-sink payment provider is
+        // enabled, with a known webhook secret and a throw-away temp directory, so the
+        // payment tests can sign real webhooks and read back what the sink recorded.
+        // No live gateway exists; nothing here can move money.
+        Environment.SetEnvironmentVariable("Payments__FileSink__Enabled", "true");
+        Environment.SetEnvironmentVariable("Payments__FileSink__WebhookSecret", PaymentWebhookSecret);
+        Environment.SetEnvironmentVariable("Payments__FileSink__Directory", PaymentSinkDirectory);
+    }
+
+    /// <summary>Shared secret that signs the file-sink webhooks in the suite.</summary>
+    public const string PaymentWebhookSecret = "integration-test-filesink-secret";
+
+    /// <summary>Where the file-sink writes during the suite (outside the repository).</summary>
+    public static readonly string PaymentSinkDirectory =
+        Path.Combine(Path.GetTempPath(), "stockpile-integration-payments");
+
+    /// <summary>
+    /// Stockpile_Test accumulates suppliers across runs, and an RFQ fans out to at
+    /// most 50 quotable suppliers per category (ordered by name). Left alone, a
+    /// long-lived test database eventually crowds the suppliers a test just
+    /// registered out of the dispatch and lead tests fail for no product reason.
+    /// So the first host of each run retires every earlier quotable coverage row;
+    /// each test registers the suppliers it needs fresh, after this point.
+    /// </summary>
+    protected override IHost CreateHost(IHostBuilder builder)
+    {
+        IHost host = base.CreateHost(builder);
+        using IServiceScope scope = host.Services.CreateScope();
+        scope.ServiceProvider.GetRequiredService<StockpileDbContext>()
+            .SupplierCategories
+            .Where(coverage => coverage.Quotable)
+            .ExecuteUpdate(setters => setters.SetProperty(coverage => coverage.Quotable, false));
+        return host;
     }
 
     /// <inheritdoc />

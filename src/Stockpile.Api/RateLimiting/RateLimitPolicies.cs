@@ -29,6 +29,11 @@ public static class RateLimitPolicies
     public const string RfqSubmit = "rfq.submit"; // 10 / hour
     public const string QuoteSubmit = "quote.submit"; // 60 / hour
     public const string QuoteRevision = "quote.revision"; // 20 / hour
+    public const string QuoteRespond = "quote.respond"; // 60 / hour — withdraw, decline, request-revision
+    public const string QuoteAccept = "quote.accept"; // 30 / hour — accept (creates an order)
+    public const string OrderWrite = "order.write"; // 60 / hour — order acknowledgement
+    public const string SubscriptionWrite = "subscription.write"; // 30 / hour — subscribe, cancel, initiate payment, operator billing
+    public const string PaymentWebhook = "payment.webhook"; // 120 / min — anonymous, signature-verified provider callbacks
     public const string ContactIntent = "contact.intent"; // 30 / hour
     public const string PriceAlertCreate = "price.alert.create"; // 30 / day
     public const string ReviewCreate = "review.create"; // 5 / day
@@ -76,7 +81,8 @@ public static class RateLimitPolicies
     [
         AuthLogin, AuthReset, AuthRegister, AuthVerify, AuthMfa, AuthRefresh, AuthDraft, AdminUnlock, SearchPublic,
         RfqCreate,
-        RfqSubmit, QuoteSubmit, QuoteRevision, ContactIntent, PriceAlertCreate, ReviewCreate,
+        RfqSubmit, QuoteSubmit, QuoteRevision, QuoteRespond, QuoteAccept, OrderWrite, SubscriptionWrite, PaymentWebhook,
+        ContactIntent, PriceAlertCreate, ReviewCreate,
         UploadPublic, PublicApi,
         OrganizationCreate, OrganizationMemberInvite, AddressWrite,
         MeProfileWrite, MePreferencesWrite, MeNotificationPreferencesWrite,
@@ -107,6 +113,11 @@ public static class RateLimitPolicies
             [RfqSubmit] = (10, TimeSpan.FromHours(1)),
             [QuoteSubmit] = (60, TimeSpan.FromHours(1)),
             [QuoteRevision] = (20, TimeSpan.FromHours(1)),
+            [QuoteRespond] = (60, TimeSpan.FromHours(1)),
+            [QuoteAccept] = (30, TimeSpan.FromHours(1)),
+            [OrderWrite] = (60, TimeSpan.FromHours(1)),
+            [SubscriptionWrite] = (30, TimeSpan.FromHours(1)),
+            [PaymentWebhook] = (120, TimeSpan.FromMinutes(1)),
             [ContactIntent] = (30, TimeSpan.FromHours(1)),
             [PriceAlertCreate] = (30, TimeSpan.FromDays(1)),
             [ReviewCreate] = (5, TimeSpan.FromDays(1)),
@@ -200,5 +211,11 @@ public static class RateLimitPolicies
         [RfqCreate] = 1000,
         [RfqSubmit] = 1000,
         [QuoteSubmit] = 1000,
+        [QuoteRevision] = 1000,
+        [QuoteRespond] = 1000,
+        [QuoteAccept] = 1000,
+        [OrderWrite] = 1000,
+        [SubscriptionWrite] = 1000,
+        [PaymentWebhook] = 1000,
     };
 }

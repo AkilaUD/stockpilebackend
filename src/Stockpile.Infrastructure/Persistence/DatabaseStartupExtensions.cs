@@ -3,9 +3,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Stockpile.Application.Authentication;
 using Stockpile.Application.Idempotency;
+using Stockpile.Application.Orders;
 using Stockpile.Application.Organizations;
 using Stockpile.Application.Procurement;
 using Stockpile.Application.Registration;
+using Stockpile.Application.Subscriptions;
 using Stockpile.Application.Suppliers;
 using Stockpile.Infrastructure.Authentication;
 using Stockpile.Infrastructure.Idempotency;
@@ -86,6 +88,14 @@ public static class DatabaseStartupExtensions
         // with its append-only revisions, committed together with the lead's own
         // response.
         services.AddScoped<IQuotesStore, QuotesStore>();
+
+        // Orders — quote acceptance and the order lists (domain-model §6.3): the
+        // accept is one SaveChanges across quote, RFQ, order, stock and outbox.
+        services.AddScoped<IOrdersStore, OrdersStore>();
+
+        // Subscriptions — plans, supplier subscriptions, invoices and payments
+        // (domain-model §3.5, business-flows §12).
+        services.AddScoped<ISubscriptionsStore, SubscriptionsStore>();
 
         return services;
     }

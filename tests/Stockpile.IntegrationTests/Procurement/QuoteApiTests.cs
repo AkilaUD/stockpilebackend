@@ -408,8 +408,8 @@ public sealed class QuoteApiTests
             expiryDays = 21,
             items = new[]
             {
-                new { description = "Item A", quantity = 10m, categorySlug = Department, unitOfMeasureCode = "each", specification = "Spec A" },
-                new { description = "Item B", quantity = 20m, categorySlug = Department, unitOfMeasureCode = "each", specification = (string?)null },
+                new { description = "Cable item A", quantity = 10m, categorySlug = Department, unitOfMeasureCode = "each", specification = "Spec A" },
+                new { description = "Cable item B", quantity = 20m, categorySlug = Department, unitOfMeasureCode = "each", specification = (string?)null },
             },
         };
         using HttpResponseMessage created = await PostAsync(buyer, $"{ApiBase}/rfqs", payload, token);
@@ -427,6 +427,10 @@ public sealed class QuoteApiTests
         {
             Content = JsonContent.Create(payload, options: Wire),
         };
+
+        // Critical writes (RFQ submit, quote/order actions) require a fresh key per call;
+        // every other route ignores the header.
+        request.Headers.Add("Idempotency-Key", Guid.NewGuid().ToString());
         return await AntiforgeryTestSupport.SendUnsafeAsync(client, request, requestToken);
     }
 

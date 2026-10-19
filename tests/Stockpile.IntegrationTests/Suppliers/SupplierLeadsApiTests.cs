@@ -606,6 +606,10 @@ public sealed class SupplierLeadsApiTests
         {
             Content = JsonContent.Create(payload, options: Wire),
         };
+
+        // Critical writes (RFQ submit, quote/order actions) require a fresh key per call;
+        // every other route ignores the header.
+        request.Headers.Add("Idempotency-Key", Guid.NewGuid().ToString());
         return await AntiforgeryTestSupport.SendUnsafeAsync(client, request, requestToken);
     }
 

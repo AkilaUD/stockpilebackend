@@ -1909,6 +1909,250 @@ namespace Stockpile.Infrastructure.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Stockpile.Domain.Entities.Orders.PurchaseOrder", b =>
+                {
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("AcknowledgedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("BuyerOrganizationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CancelReason")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
+                    b.Property<DateTime?>("CancelledAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ConfirmedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CurrencyCode")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<decimal>("DeliveryCost")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("DeliveryLocationText")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("DeliveryTerms")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<decimal>("DiscountTotal")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<decimal>("GrandTotal")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<int?>("LeadTimeDays")
+                        .HasColumnType("int");
+
+                    b.Property<string>("OrderNumber")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("PaymentTerms")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<Guid>("QuoteId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("QuoteRevisionId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("RequestedDeliveryAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("RfqId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<string>("StockReservation")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<decimal>("Subtotal")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<Guid>("SupplierId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("TaxAmount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("PublicId");
+
+                    b.HasIndex("OrderNumber")
+                        .IsUnique();
+
+                    b.HasIndex("QuoteId")
+                        .IsUnique();
+
+                    b.HasIndex("QuoteRevisionId");
+
+                    b.HasIndex("RfqId");
+
+                    b.HasIndex("BuyerOrganizationId", "CreatedAt");
+
+                    b.HasIndex("SupplierId", "CreatedAt");
+
+                    b.ToTable("PurchaseOrders", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_PurchaseOrders_Status", "[Status] IN ('Draft', 'Confirmed', 'SupplierAcknowledged', 'Processing', 'PartiallyFulfilled', 'Fulfilled', 'Cancelled', 'Disputed')");
+
+                            t.HasCheckConstraint("CK_PurchaseOrders_StockReservation", "[StockReservation] IN ('NotRequired', 'Held', 'Released', 'Consumed')");
+                        });
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Orders.PurchaseOrderItem", b =>
+                {
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<decimal?>("LineDiscountPct")
+                        .HasPrecision(9, 4)
+                        .HasColumnType("decimal(9,4)");
+
+                    b.Property<int>("LineNumber")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("LineTotal")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<Guid?>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ProductNameSnapshot")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<Guid>("PurchaseOrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Quantity")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("SkuSnapshot")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("StockState")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<Guid>("UnitOfMeasureId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.HasKey("PublicId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UnitOfMeasureId");
+
+                    b.HasIndex("PurchaseOrderId", "LineNumber")
+                        .IsUnique();
+
+                    b.ToTable("PurchaseOrderItems", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_PurchaseOrderItems_StockState", "[StockState] IN ('NotRequired', 'Held', 'Released', 'Consumed')");
+                        });
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Orders.PurchaseOrderStatusHistory", b =>
+                {
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ActorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CorrelationId")
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
+
+                    b.Property<string>("FromState")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<DateTime>("OccurredAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("PurchaseOrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Reason")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
+                    b.Property<string>("ToState")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.HasKey("PublicId");
+
+                    b.HasIndex("PurchaseOrderId", "OccurredAt");
+
+                    b.ToTable("PurchaseOrderStatusHistories", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_PurchaseOrderStatusHistories_From", "[FromState] IN ('Draft', 'Confirmed', 'SupplierAcknowledged', 'Processing', 'PartiallyFulfilled', 'Fulfilled', 'Cancelled', 'Disputed')");
+
+                            t.HasCheckConstraint("CK_PurchaseOrderStatusHistories_To", "[ToState] IN ('Draft', 'Confirmed', 'SupplierAcknowledged', 'Processing', 'PartiallyFulfilled', 'Fulfilled', 'Cancelled', 'Disputed')");
+                        });
+                });
+
             modelBuilder.Entity("Stockpile.Domain.Entities.Platform.AuditLog", b =>
                 {
                     b.Property<long>("Id")
@@ -2196,6 +2440,50 @@ namespace Stockpile.Infrastructure.Migrations
                     b.ToTable("SystemSettings", null, t =>
                         {
                             t.HasCheckConstraint("CK_SystemSettings_ValueType", "[ValueType] IN ('String', 'Integer', 'Decimal', 'Boolean', 'Json', 'Duration')");
+                        });
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Procurement.NegotiationMessage", b =>
+                {
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("AgainstRevisionNumber")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Body")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Direction")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<string>("Kind")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<Guid>("QuoteId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("PublicId");
+
+                    b.HasIndex("QuoteId", "CreatedAt");
+
+                    b.ToTable("NegotiationMessages", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_NegotiationMessages_Direction", "[Direction] IN ('BuyerToSupplier', 'SupplierToBuyer')");
+
+                            t.HasCheckConstraint("CK_NegotiationMessages_Kind", "[Kind] IN ('PriceRequest', 'LeadTimeRequest', 'QuantityClarification', 'AlternativeRequest', 'DeliveryTermsRequest', 'General')");
                         });
                 });
 
@@ -2784,6 +3072,324 @@ namespace Stockpile.Infrastructure.Migrations
                     b.ToTable("Provinces", (string)null);
                 });
 
+            modelBuilder.Entity("Stockpile.Domain.Entities.Subscriptions.SubscriptionEntitlement", b =>
+                {
+                    b.Property<Guid>("PlanId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("EntitlementKey")
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsUnlimited")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("LimitValue")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TextValue")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("PlanId", "EntitlementKey");
+
+                    b.ToTable("SubscriptionEntitlements", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_SubscriptionEntitlements_Limit", "[LimitValue] IS NULL OR ([LimitValue] >= 0 AND [IsUnlimited] = 0)");
+                        });
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Subscriptions.SubscriptionInvoice", b =>
+                {
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Amount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("CurrencyCode")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<DateTime>("DueAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ExternalRef")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("InvoiceNumber")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<DateTime>("IssuedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ManualPaymentReason")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
+                    b.Property<Guid?>("MarkedPaidBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("PaidAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("PeriodEnd")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("PeriodStart")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<Guid>("SubscriptionId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("TaxAmount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<decimal>("Total")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.HasKey("PublicId");
+
+                    b.HasIndex("InvoiceNumber")
+                        .IsUnique();
+
+                    b.HasIndex("Status", "IssuedAt");
+
+                    b.HasIndex("SubscriptionId", "IssuedAt");
+
+                    b.ToTable("SubscriptionInvoices", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_SubscriptionInvoices_Amounts", "[Amount] >= 0 AND [TaxAmount] >= 0 AND [Total] >= 0");
+
+                            t.HasCheckConstraint("CK_SubscriptionInvoices_Status", "[Status] IN ('Draft', 'Issued', 'Paid', 'Void', 'Overdue')");
+                        });
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Subscriptions.SubscriptionPayment", b =>
+                {
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Amount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("CurrencyCode")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<string>("IdempotencyKey")
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
+
+                    b.Property<Guid>("InvoiceId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("OccurredAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Provider")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<string>("ProviderRef")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("RawPayload")
+                        .HasMaxLength(4000)
+                        .HasColumnType("nvarchar(4000)");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
+                    b.Property<bool>("SignatureValid")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.HasKey("PublicId");
+
+                    b.HasIndex("InvoiceId");
+
+                    b.HasIndex("Provider", "ProviderRef")
+                        .IsUnique();
+
+                    b.ToTable("SubscriptionPayments", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_SubscriptionPayments_Status", "[Status] IN ('Pending', 'Succeeded', 'Failed')");
+                        });
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Subscriptions.SubscriptionPlan", b =>
+                {
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("BillingPeriod")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CurrencyCode")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsSalesAssisted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<decimal?>("PriceAmount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("PublicId");
+
+                    b.HasIndex("Code")
+                        .IsUnique();
+
+                    b.HasIndex("IsActive", "SortOrder");
+
+                    b.ToTable("SubscriptionPlans", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_SubscriptionPlans_BillingPeriod", "[BillingPeriod] IN ('Monthly', 'Quarterly', 'Yearly')");
+
+                            t.HasCheckConstraint("CK_SubscriptionPlans_Price", "[PriceAmount] IS NULL OR [PriceAmount] >= 0");
+                        });
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Subscriptions.SupplierSubscription", b =>
+                {
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("AutoRenew")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("CancelReason")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
+                    b.Property<DateTime?>("CancelledAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CurrentPeriodEnd")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CurrentPeriodStart")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("GraceEndsAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("PlanId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<Guid>("SupplierId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("PublicId");
+
+                    b.HasIndex("PlanId");
+
+                    b.HasIndex("SupplierId")
+                        .IsUnique()
+                        .HasDatabaseName("UX_SupplierSubscriptions_Supplier_NonTerminal")
+                        .HasFilter("[Status] <> 'Cancelled' AND [Status] <> 'Expired'");
+
+                    b.ToTable("SupplierSubscriptions", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_SupplierSubscriptions_Status", "[Status] IN ('Trial', 'Active', 'PastDue', 'GracePeriod', 'Suspended', 'Cancelled', 'Expired')");
+                        });
+                });
+
             modelBuilder.Entity("Stockpile.Domain.Entities.Catalogue.AttributeDefinition", b =>
                 {
                     b.HasOne("Stockpile.Domain.Entities.Catalogue.UnitOfMeasure", null)
@@ -3233,12 +3839,83 @@ namespace Stockpile.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
                 });
 
+            modelBuilder.Entity("Stockpile.Domain.Entities.Orders.PurchaseOrder", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Identity.Organization", null)
+                        .WithMany()
+                        .HasForeignKey("BuyerOrganizationId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Stockpile.Domain.Entities.Procurement.Quote", null)
+                        .WithMany()
+                        .HasForeignKey("QuoteId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Stockpile.Domain.Entities.Procurement.QuoteRevision", null)
+                        .WithMany()
+                        .HasForeignKey("QuoteRevisionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Stockpile.Domain.Entities.Procurement.Rfq", null)
+                        .WithMany()
+                        .HasForeignKey("RfqId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Stockpile.Domain.Entities.Catalogue.Supplier", null)
+                        .WithMany()
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Orders.PurchaseOrderItem", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Catalogue.Product", null)
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Stockpile.Domain.Entities.Orders.PurchaseOrder", null)
+                        .WithMany()
+                        .HasForeignKey("PurchaseOrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Stockpile.Domain.Entities.Catalogue.UnitOfMeasure", null)
+                        .WithMany()
+                        .HasForeignKey("UnitOfMeasureId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Orders.PurchaseOrderStatusHistory", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Orders.PurchaseOrder", null)
+                        .WithMany()
+                        .HasForeignKey("PurchaseOrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Stockpile.Domain.Entities.Platform.StateTransition", b =>
                 {
                     b.HasOne("Stockpile.Domain.Entities.Identity.Permission", null)
                         .WithMany()
                         .HasForeignKey("PermissionCode")
                         .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Procurement.NegotiationMessage", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Procurement.Quote", null)
+                        .WithMany()
+                        .HasForeignKey("QuoteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Stockpile.Domain.Entities.Procurement.Quote", b =>
@@ -3367,6 +4044,48 @@ namespace Stockpile.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Stockpile.Domain.Entities.Subscriptions.SubscriptionEntitlement", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Subscriptions.SubscriptionPlan", null)
+                        .WithMany("Entitlements")
+                        .HasForeignKey("PlanId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Subscriptions.SubscriptionInvoice", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Subscriptions.SupplierSubscription", null)
+                        .WithMany()
+                        .HasForeignKey("SubscriptionId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Subscriptions.SubscriptionPayment", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Subscriptions.SubscriptionInvoice", null)
+                        .WithMany()
+                        .HasForeignKey("InvoiceId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Subscriptions.SupplierSubscription", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Subscriptions.SubscriptionPlan", null)
+                        .WithMany()
+                        .HasForeignKey("PlanId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Stockpile.Domain.Entities.Catalogue.Supplier", null)
+                        .WithMany()
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Stockpile.Domain.Entities.Catalogue.Supplier", b =>
                 {
                     b.Navigation("Profile");
@@ -3375,6 +4094,11 @@ namespace Stockpile.Infrastructure.Migrations
             modelBuilder.Entity("Stockpile.Domain.Entities.Identity.RegistrationDraft", b =>
                 {
                     b.Navigation("Categories");
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Subscriptions.SubscriptionPlan", b =>
+                {
+                    b.Navigation("Entitlements");
                 });
 #pragma warning restore 612, 618
         }

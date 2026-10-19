@@ -30,11 +30,15 @@ using Stockpile.Application.Authentication;
 using Stockpile.Application.Catalogue;
 using Stockpile.Application.Content;
 using Stockpile.Application.Common.Errors;
+using Stockpile.Application.Orders;
 using Stockpile.Application.Organizations;
 using Stockpile.Application.Procurement;
 using Stockpile.Application.Registration;
+using Stockpile.Application.Subscriptions;
+using Stockpile.Application.Subscriptions.Payments;
 using Stockpile.Application.Suppliers;
 using Stockpile.Contracts.Errors;
+using Stockpile.Infrastructure.Payments;
 using Stockpile.Infrastructure.Audit;
 using Stockpile.Infrastructure.Configuration;
 using Stockpile.Infrastructure.Outbox;
@@ -407,6 +411,36 @@ try
     // RFQ lines and their catalogue snapshots, and commits the quote with the
     // lead's own transition.
     builder.Services.AddScoped<QuotesService>();
+    builder.Services.AddScoped<QuoteComparisonService>();
+
+    // Orders (domain-model §6.3, api.md §2.8): accepting a quote creates the
+    // order in the same transaction; the order surface is the buyer's and the
+    // supplier's own lists and detail.
+    builder.Services.AddScoped<OrderService>();
+
+    // Subscriptions (domain-model §3.5, business-flows §12): plans, a supplier's
+    // subscription and invoices, the entitlement check, and the signed payment
+    // webhook. The only payment provider is the dev file-sink — no live gateway.
+    builder.Services.Configure<SubscriptionOptions>(
+        builder.Configuration.GetSection(SubscriptionOptions.SectionName));
+    builder.Services.Configure<PaymentOptions>(
+        builder.Configuration.GetSection(PaymentOptions.SectionName));
+    {
+        string storageRoot = builder.Configuration["Storage:Root"] is { Length: > 0 } configuredRoot
+            ? configuredRoot
+            : ".storage";
+        string sinkDirectory = builder.Configuration["Payments:FileSink:Directory"] is { Length: > 0 } configuredSink
+            ? configuredSink
+            : Path.Combine(storageRoot, "payments");
+        builder.Services.AddSingleton(new FileSinkLocation(Path.GetFullPath(Path.Combine(
+            builder.Environment.ContentRootPath,
+            sinkDirectory.Replace('/', Path.DirectorySeparatorChar).Replace('\\', Path.DirectorySeparatorChar)))));
+    }
+
+    builder.Services.AddSingleton<IPaymentProvider, FileSinkPaymentProvider>();
+    builder.Services.AddScoped<SubscriptionService>();
+    builder.Services.AddScoped<PaymentWebhookService>();
+    builder.Services.AddScoped<EntitlementService>();
 
     // Task 2E — public catalogue use cases (api.md §2.3–§2.5, §3.1): the
     // relational store pushes filters into SQL; the service owns audience

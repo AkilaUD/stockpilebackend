@@ -3,6 +3,7 @@ using System.Text;
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using Stockpile.Domain.Entities.Content;
+using Stockpile.Domain.Entities.Media;
 using Stockpile.Domain.Entities.Platform;
 using Stockpile.Domain.Enums;
 using Stockpile.Infrastructure.Persistence;
@@ -27,7 +28,7 @@ namespace Stockpile.Api.Persistence;
 internal static class ContentSeeder
 {
     /// <summary>Marker key; the value is the SHA-256 of <c>articles.json</c>.</summary>
-    private const string MarkerKey = "content.seeded.v1";
+    private const string MarkerKey = "content.seeded.v2";
 
     private const int SlugMaxLength = 200;
 
@@ -56,14 +57,19 @@ internal static class ContentSeeder
 
         string datasetPath = ResolveDatasetPath(configuration, environment.ContentRootPath);
         (ContentDataset dataset, string datasetHash) = await LoadDatasetAsync(datasetPath, cancellationToken);
+        string outDir = Path.GetDirectoryName(datasetPath)
+            ?? throw new InvalidOperationException("Cannot locate the content harvest output directory.");
 
-        await SeedCoreAsync(db, dataset, datasetHash, cancellationToken);
+        await SeedCoreAsync(db, dataset, datasetHash, outDir, configuration, environment, cancellationToken);
     }
 
     private static async Task SeedCoreAsync(
         StockpileDbContext db,
         ContentDataset dataset,
         string datasetHash,
+        string outDir,
+        IConfiguration configuration,
+        IWebHostEnvironment environment,
         CancellationToken ct)
     {
         await using var transaction = await db.Database.BeginTransactionAsync(ct);
@@ -151,12 +157,26 @@ internal static class ContentSeeder
 
         await db.SaveChangesAsync(ct);
 
-        // ---- 3. Articles, with their bucket and tag links -------------------
+        // ---- 3. Hero media (optional; ingest-heroes.mjs may not have run) ----
+        string catalogueDir = Path.Combine(OriginalsRoot(configuration, environment), "catalogue");
+        Directory.CreateDirectory(catalogueDir);
+        Dictionary<string, MediaAsset> mediaByKey = await IngestHeroMediaAsync(
+            db, outDir, catalogueDir, ct);
+
+        // ---- 4. Articles, with their bucket, tag, and hero links -------------
         int published = 0;
         foreach (ArticleRow row in dataset.Articles ?? [])
         {
             if (string.IsNullOrWhiteSpace(row.Slug) || string.IsNullOrWhiteSpace(row.Title))
                 continue;
+
+            Guid? heroMediaId = null;
+            if (!string.IsNullOrWhiteSpace(row.HeroFile))
+            {
+                string storageKey = Path.GetFileName(row.HeroFile);
+                if (mediaByKey.TryGetValue(storageKey, out MediaAsset? asset))
+                    heroMediaId = asset.PublicId;
+            }
 
             var article = new ContentItem
             {
@@ -168,6 +188,7 @@ internal static class ContentSeeder
                 Status = ContentStatus.Published,
                 PublishedAt = row.PublishedAt,
                 Locale = "en",
+                HeroImageMediaId = heroMediaId,
             };
             db.ContentItems.Add(article);
 
@@ -199,7 +220,7 @@ internal static class ContentSeeder
 
         await db.SaveChangesAsync(ct);
 
-        // ---- 4. Marker + commit --------------------------------------------
+        // ---- 5. Marker + commit --------------------------------------------
         if (marker is null)
         {
             db.SystemSettings.Add(new SystemSetting
@@ -219,6 +240,89 @@ internal static class ContentSeeder
     }
 
     // --------------------------------------------------------------- helpers
+
+    /// <summary>
+    /// Copies hero bytes from the content-migrate pack into the shared catalogue
+    /// originals tree (served by <c>/api/v1/catalog/media/{key}</c>) and inserts
+    /// <see cref="MediaAsset"/> rows. Missing manifest is a no-op so older packs
+    /// still boot without artwork.
+    /// </summary>
+    private static async Task<Dictionary<string, MediaAsset>> IngestHeroMediaAsync(
+        StockpileDbContext db,
+        string outDir,
+        string catalogueDir,
+        CancellationToken ct)
+    {
+        var mediaByKey = new Dictionary<string, MediaAsset>(StringComparer.Ordinal);
+        string manifestPath = Path.Combine(outDir, "media-manifest.json");
+        if (!File.Exists(manifestPath))
+            return mediaByKey;
+
+        List<MediaManifestEntry> manifest = JsonSerializer.Deserialize<List<MediaManifestEntry>>(
+            await File.ReadAllTextAsync(manifestPath, ct), JsonOptions) ?? [];
+
+        DateTime seededAt = DateTime.UtcNow;
+        foreach (MediaManifestEntry entry in manifest)
+        {
+            if (string.IsNullOrWhiteSpace(entry.FileRelative))
+                continue;
+
+            string storageKey = Path.GetFileName(entry.FileRelative);
+            string source = Path.Combine(outDir, entry.FileRelative.Replace('/', Path.DirectorySeparatorChar));
+            if (!File.Exists(source))
+            {
+                throw new InvalidOperationException(
+                    $"Content hero media '{source}' is missing. Re-run tools/content-migrate/ingest-heroes.mjs.");
+            }
+
+            string destination = Path.Combine(catalogueDir, storageKey);
+            if (!File.Exists(destination) || new FileInfo(destination).Length != new FileInfo(source).Length)
+                File.Copy(source, destination, overwrite: true);
+
+            if (mediaByKey.ContainsKey(storageKey))
+                continue;
+
+            // Deduplicate against catalogue-seeded assets that already share the hash.
+            MediaAsset? existing = await db.MediaAssets
+                .FirstOrDefaultAsync(asset => asset.Sha256 == entry.Sha256, ct);
+            if (existing is not null)
+            {
+                mediaByKey[storageKey] = existing;
+                mediaByKey[existing.StorageKey] = existing;
+                continue;
+            }
+
+            var asset = new MediaAsset
+            {
+                StorageKey = storageKey,
+                OriginalFileName = Path.GetFileName(new Uri(entry.SourceUrl).AbsolutePath),
+                ContentType = entry.ContentType,
+                ByteSize = entry.ByteSize,
+                Sha256 = entry.Sha256,
+                ProvenanceSourceUrl = entry.SourceUrl,
+                ProvenanceRetrievedAt = entry.FetchedAt,
+                ProvenanceAuthorisation = entry.ProvenanceAuthorisation,
+                ProvenanceLicense = entry.Licence,
+                CreatedAt = seededAt,
+            };
+            mediaByKey[storageKey] = asset;
+            db.MediaAssets.Add(asset);
+        }
+
+        await db.SaveChangesAsync(ct);
+        return mediaByKey;
+    }
+
+    private static string OriginalsRoot(IConfiguration configuration, IWebHostEnvironment environment)
+    {
+        string? root = configuration["Storage:Root"];
+        if (string.IsNullOrWhiteSpace(root))
+            root = ".storage";
+        return Path.Combine(
+            environment.ContentRootPath,
+            root.Replace('/', Path.DirectorySeparatorChar).Replace('\\', Path.DirectorySeparatorChar),
+            "originals");
+    }
 
     private static ContentKind ParseKind(string? value)
         => Enum.TryParse(value, ignoreCase: true, out ContentKind kind) ? kind : ContentKind.NewsArticle;
@@ -309,5 +413,16 @@ internal static class ContentSeeder
         List<string>? Tags,
         string? Body,
         string? SourceUrl,
-        List<string>? SourceImages);
+        List<string>? SourceImages,
+        string? HeroFile);
+
+    private sealed record MediaManifestEntry(
+        string SourceUrl,
+        string FileRelative,
+        string Sha256,
+        string ContentType,
+        long ByteSize,
+        DateTime FetchedAt,
+        string Licence,
+        string ProvenanceAuthorisation);
 }

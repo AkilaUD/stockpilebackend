@@ -65,7 +65,20 @@ public sealed class IdempotencyFilter(
             // The action writes its replay reference while it runs; the status
             // is whatever it set when the result executed.
             httpContext.Items.Remove(ReferenceItemsKey);
-            await next();
+            ResourceExecutedContext executed = await next();
+
+            // MVC does not throw out of next(): an exception from the action is
+            // parked on the executed context and rethrown only after every resource
+            // filter has returned. Swallowed here, the store would see a "successful"
+            // execution and COMMIT the failed action's half-written changes together
+            // with a replayable key row. Re-throwing makes the store roll back, drop
+            // the tracked state and leave the key free for a legitimate retry.
+            if (executed.Exception is not null && !executed.ExceptionHandled)
+            {
+                executed.ExceptionDispatchInfo?.Throw();
+                throw executed.Exception;
+            }
+
             return (httpContext.Response.StatusCode, httpContext.Items[ReferenceItemsKey] as string);
         }, cancellationToken);
 

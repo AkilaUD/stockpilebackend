@@ -53,6 +53,15 @@ public sealed partial class AntiforgeryEnvelopeFilter : IAsyncAuthorizationFilte
             return;
         }
 
+        // The one reviewed exemption: a provider webhook has no browser session and
+        // no cookie to double-submit — its authenticity is the HMAC signature over
+        // the raw body, verified by the use case. An architecture test confines the
+        // marker to webhook routes, so no browser-reachable mutation can opt out.
+        if (context.ActionDescriptor.EndpointMetadata.OfType<WebhookCsrfExemptAttribute>().Any())
+        {
+            return;
+        }
+
         try
         {
             await _antiforgery.ValidateRequestAsync(context.HttpContext);

@@ -4,9 +4,11 @@ using Stockpile.Domain.Entities.Catalogue;
 using Stockpile.Domain.Entities.Content;
 using Stockpile.Domain.Entities.Identity;
 using Stockpile.Domain.Entities.Media;
+using Stockpile.Domain.Entities.Orders;
 using Stockpile.Domain.Entities.Platform;
 using Stockpile.Domain.Entities.Procurement;
 using Stockpile.Domain.Entities.Reference;
+using Stockpile.Domain.Entities.Subscriptions;
 
 namespace Stockpile.Infrastructure.Persistence;
 
@@ -155,6 +157,26 @@ public sealed class StockpileDbContext : DbContext
     public DbSet<QuoteRevision> QuoteRevisions => Set<QuoteRevision>();
 
     public DbSet<QuoteRevisionItem> QuoteRevisionItems => Set<QuoteRevisionItem>();
+
+    public DbSet<NegotiationMessage> NegotiationMessages => Set<NegotiationMessage>();
+
+    // ---- Orders (domain-model §7) ----
+    public DbSet<PurchaseOrder> PurchaseOrders => Set<PurchaseOrder>();
+
+    public DbSet<PurchaseOrderItem> PurchaseOrderItems => Set<PurchaseOrderItem>();
+
+    public DbSet<PurchaseOrderStatusHistory> PurchaseOrderStatusHistories => Set<PurchaseOrderStatusHistory>();
+
+    // ---- Subscriptions (domain-model §3.5) ----
+    public DbSet<SubscriptionPlan> SubscriptionPlans => Set<SubscriptionPlan>();
+
+    public DbSet<SubscriptionEntitlement> SubscriptionEntitlements => Set<SubscriptionEntitlement>();
+
+    public DbSet<SupplierSubscription> SupplierSubscriptions => Set<SupplierSubscription>();
+
+    public DbSet<SubscriptionInvoice> SubscriptionInvoices => Set<SubscriptionInvoice>();
+
+    public DbSet<SubscriptionPayment> SubscriptionPayments => Set<SubscriptionPayment>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

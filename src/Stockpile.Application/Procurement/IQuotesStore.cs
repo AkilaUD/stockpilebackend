@@ -41,7 +41,83 @@ public interface IQuotesStore
         IReadOnlyCollection<QuoteRevisionItem> items,
         RfqMatch match,
         CancellationToken cancellationToken);
+
+    // ---- Lifecycle (P2) -------------------------------------------------------
+
+    /// <summary>
+    /// One quote with its history, scoped to the caller's supplier FIRST: another
+    /// supplier's quote matches no row, so it is indistinguishable from a missing
+    /// one (BOLA, api.md §1.6). <paramref name="forUpdate"/> returns the quote
+    /// tracked so the same call's save persists its transition.
+    /// </summary>
+    Task<QuoteDetail?> LoadForSupplierAsync(
+        Guid supplierId, Guid quoteId, bool forUpdate, CancellationToken cancellationToken);
+
+    /// <summary>
+    /// One quote with its history, scoped to quotes against RFQs owned by one of
+    /// the caller's organisations; any other id is the same null (BOLA).
+    /// </summary>
+    Task<QuoteDetail?> LoadForBuyerAsync(
+        IReadOnlyCollection<Guid> organizationIds, Guid quoteId, bool forUpdate, CancellationToken cancellationToken);
+
+    /// <summary>The supplier's own quotes, newest first, capped at <paramref name="limit"/>.</summary>
+    Task<IReadOnlyList<QuoteDetail>> ListForSupplierAsync(
+        Guid supplierId, int limit, CancellationToken cancellationToken);
+
+    /// <summary>Quotes against the organisations' RFQs, newest first, capped at <paramref name="limit"/>.</summary>
+    Task<IReadOnlyList<QuoteDetail>> ListForBuyerAsync(
+        IReadOnlyCollection<Guid> organizationIds, int limit, CancellationToken cancellationToken);
+
+    /// <summary>The RFQ (owned by one of the organisations), its lines and every quote against it; null when the RFQ is not the caller's.</summary>
+    Task<RfqQuotes?> LoadRfqQuotesForBuyerAsync(
+        IReadOnlyCollection<Guid> organizationIds, Guid rfqId, CancellationToken cancellationToken);
+
+    /// <summary>
+    /// Appends a new immutable revision (and its lines, and the supplier's reply
+    /// message when there is one) and persists the quote's own transition in ONE
+    /// save. No existing revision row is touched. A concurrent revise surfaces as
+    /// <c>CONCURRENCY_CONFLICT</c>.
+    /// </summary>
+    Task AddRevisionAsync(
+        Quote quote,
+        QuoteRevision revision,
+        IReadOnlyCollection<QuoteRevisionItem> items,
+        NegotiationMessage? reply,
+        CancellationToken cancellationToken);
+
+    /// <summary>Appends a negotiation message and persists the quote's transition together.</summary>
+    Task AddMessageAsync(Quote quote, NegotiationMessage message, CancellationToken cancellationToken);
+
+    /// <summary>Persists the tracked changes of a loaded quote; a concurrent edit surfaces as <c>CONCURRENCY_CONFLICT</c>.</summary>
+    Task SaveAsync(CancellationToken cancellationToken);
 }
+
+/// <summary>One revision with its lines.</summary>
+public sealed record QuoteRevisionDetail(QuoteRevision Revision, IReadOnlyList<QuoteRevisionItem> Items);
+
+/// <summary>
+/// A quote composed with everything a read needs: its RFQ, the RFQ's lines (with
+/// product snapshots), every revision in order, the negotiation thread, the
+/// supplier's display identity and the order it produced, when it was accepted.
+/// <see cref="Quote"/> is tracked only when loaded for update.
+/// </summary>
+public sealed record QuoteDetail(
+    Quote Quote,
+    Rfq Rfq,
+    string SupplierName,
+    string SupplierSlug,
+    IReadOnlyList<QuoteLineContext> Lines,
+    IReadOnlyList<QuoteRevisionDetail> Revisions,
+    IReadOnlyList<NegotiationMessage> Messages,
+    Guid? OrderId)
+{
+    /// <summary>The revision the quote currently points at.</summary>
+    public QuoteRevisionDetail Current =>
+        Revisions.First(revision => revision.Revision.RevisionNumber == Quote.CurrentRevisionNumber);
+}
+
+/// <summary>An RFQ with its lines and the quotes answering it (comparison input).</summary>
+public sealed record RfqQuotes(Rfq Rfq, IReadOnlyList<QuoteLineContext> Lines, IReadOnlyList<QuoteDetail> Quotes);
 
 /// <summary>The composed facts of one quote submission (see <see cref="IQuotesStore.LoadSubmissionAsync"/>).</summary>
 public sealed record QuoteSubmission(

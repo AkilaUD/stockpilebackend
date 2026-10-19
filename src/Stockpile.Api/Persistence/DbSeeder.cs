@@ -5,6 +5,7 @@ using Stockpile.Contracts.Permissions;
 using Stockpile.Domain.Entities.Identity;
 using Stockpile.Domain.Entities.Platform;
 using Stockpile.Domain.Entities.Reference;
+using Stockpile.Domain.Entities.Subscriptions;
 using Stockpile.Domain.Enums;
 using Stockpile.Domain.StateMachines;
 using Stockpile.Infrastructure.Persistence;
@@ -34,6 +35,7 @@ internal static class DbSeeder
         await SeedStateTransitionsAsync(db, cancellationToken);
         await SeedRolesAsync(db, configuration, cancellationToken);
         await SeedGeographyAsync(db, cancellationToken);
+        await SeedSubscriptionPlansAsync(db, cancellationToken);
 
         // Task 2E — the full live catalogue migration (177 categories, 2,322
         // products, 45 suppliers, 4,320 media assets) from the auditable harvest
@@ -298,6 +300,102 @@ internal static class DbSeeder
             }
         }
     }
+
+    /// <summary>
+    /// The reference plans of business-flows §12 / domain-model §3.14. Plans are
+    /// admin-configurable rows, so this ONLY inserts a plan whose code is missing —
+    /// it never touches an existing plan, so an operator's price or entitlement edit
+    /// survives every restart.
+    /// </summary>
+    private static async Task SeedSubscriptionPlansAsync(StockpileDbContext db, CancellationToken cancellationToken)
+    {
+        HashSet<string> existing = (await db.SubscriptionPlans
+                .Select(plan => plan.Code)
+                .ToListAsync(cancellationToken))
+            .ToHashSet(StringComparer.OrdinalIgnoreCase);
+
+        foreach (SeedPlan seed in ReferencePlans)
+        {
+            if (existing.Contains(seed.Code))
+            {
+                continue;
+            }
+
+            SubscriptionPlan plan = new()
+            {
+                Code = seed.Code,
+                Name = seed.Name,
+                PriceAmount = seed.PriceAmount,
+                CurrencyCode = "LKR",
+                BillingPeriod = BillingPeriod.Monthly,
+                IsSalesAssisted = seed.IsSalesAssisted,
+                IsActive = true,
+                SortOrder = seed.SortOrder,
+            };
+
+            int order = 0;
+            foreach (SeedEntitlement entitlement in seed.Entitlements)
+            {
+                plan.Entitlements.Add(new SubscriptionEntitlement
+                {
+                    PlanId = plan.PublicId,
+                    EntitlementKey = entitlement.Key,
+                    LimitValue = entitlement.Limit,
+                    IsUnlimited = entitlement.Unlimited,
+                    TextValue = entitlement.Text,
+                    DisplayOrder = order++,
+                });
+            }
+
+            db.SubscriptionPlans.Add(plan);
+        }
+    }
+
+    private sealed record SeedEntitlement(string Key, int? Limit = null, bool Unlimited = false, string? Text = null);
+
+    private sealed record SeedPlan(
+        string Code,
+        string Name,
+        decimal? PriceAmount,
+        bool IsSalesAssisted,
+        int SortOrder,
+        SeedEntitlement[] Entitlements);
+
+    private static readonly SeedPlan[] ReferencePlans =
+    [
+        new("starter", "Starter", 10_000m, false, 10,
+        [
+            new("directCalls", Limit: 100),
+            new("productUploads", Limit: 5),
+            new("supplierLogin"),
+            new("supportHours", Text: "Mon-Fri"),
+            new("transactionFees", Text: "none"),
+        ]),
+        new("standard", "Standard", 15_000m, false, 20,
+        [
+            new("directCalls", Limit: 200),
+            new("productUploads", Limit: 5),
+            new("socialAds", Text: "basic"),
+            new("googleAds", Text: "standard"),
+            new("detailedReports"),
+            new("supplierLogin"),
+            new("supportHours", Text: "Mon-Fri"),
+            new("transactionFees", Text: "none"),
+        ]),
+        new("enterprise", "Enterprise", 20_000m, false, 30,
+        [
+            new("directCalls", Unlimited: true),
+            new("productUploads", Limit: 10),
+            new("socialAds", Text: "advanced"),
+            new("googleAds", Text: "advanced"),
+            new("detailedReports"),
+            new("whatsappNotifications"),
+            new("supplierLogin"),
+            new("supportHours", Text: "Mon-Fri"),
+            new("transactionFees", Text: "none"),
+        ]),
+        new("customized", "Customized", null, true, 40, []),
+    ];
 
     private static readonly (string Code, string Name)[] Provinces =
     [

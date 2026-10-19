@@ -21,7 +21,7 @@ namespace Stockpile.Domain.Entities.Procurement;
 /// security-test-matrix X6/S10).
 /// </para>
 /// </summary>
-public sealed class Quote : AuditableEntity
+public sealed class Quote : AggregateRoot
 {
     /// <summary>Guid v4 — sensitive (domain-model §6.1).</summary>
     public Guid PublicId { get; set; } = Guid.NewGuid();

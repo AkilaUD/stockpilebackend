@@ -68,6 +68,17 @@ public sealed class RfqsController : ControllerBase
     public async Task<IActionResult> Get(Guid rfqId, CancellationToken cancellationToken)
         => Ok(await _rfqs.GetAsync(SubjectId(), rfqId, cancellationToken));
 
+    /// <summary>
+    /// The buyer's side-by-side view of the live quotes on one RFQ (api.md §2.7
+    /// <c>GET /rfqs/{id}/comparison</c>). Honest by design: with fewer than two
+    /// live quotes it says so and compares nothing, and it never ranks.
+    /// </summary>
+    [HttpGet("{rfqId:guid}/comparison")]
+    [Authorize(Policy = Permissions.QuoteReadBuyer)]
+    public async Task<IActionResult> Comparison(
+        Guid rfqId, [FromServices] QuoteComparisonService comparison, CancellationToken cancellationToken)
+        => Ok(await comparison.GetAsync(SubjectId(), rfqId, cancellationToken));
+
     /// <summary>The authenticated subject; [Authorize] guarantees it — any ticket without a resolvable sub was denied at the pipeline (1.41).</summary>
     private Guid SubjectId()
         => Guid.Parse(User.FindFirstValue(AuthConstants.SubjectClaim)

@@ -71,6 +71,9 @@ public static class ErrorCodes
     public const string EntitlementLimitReached = "ENTITLEMENT_LIMIT_REACHED";
     public const string NoActiveSubscription = "NO_ACTIVE_SUBSCRIPTION";
     public const string PlanNotActive = "PLAN_NOT_ACTIVE";
+    public const string PlanSalesAssisted = "PLAN_SALES_ASSISTED";
+    public const string SubscriptionExists = "SUBSCRIPTION_EXISTS";
+    public const string PaymentProviderUnavailable = "PAYMENT_PROVIDER_UNAVAILABLE";
     public const string WebhookSignatureInvalid = "WEBHOOK_SIGNATURE_INVALID";
     public const string WebhookReplay = "WEBHOOK_REPLAY";
 
@@ -147,6 +150,9 @@ public static class ErrorCodes
         new(EntitlementLimitReached, "You have reached your plan's limit. Upgrade your plan to continue.", 409),
         new(NoActiveSubscription, "This action needs an active subscription.", 409),
         new(PlanNotActive, "That plan is not currently available.", 409),
+        new(PlanSalesAssisted, "This plan is arranged with our team. Contact sales to set it up.", 409),
+        new(SubscriptionExists, "Your company already has a subscription. Cancel it before starting another.", 409),
+        new(PaymentProviderUnavailable, "Online payment is not available yet. Ask us to settle this invoice by bank transfer.", 503),
         new(WebhookSignatureInvalid, "The webhook signature could not be verified.", 401),
         new(WebhookReplay, "This webhook delivery has already been processed.", 409),
 
