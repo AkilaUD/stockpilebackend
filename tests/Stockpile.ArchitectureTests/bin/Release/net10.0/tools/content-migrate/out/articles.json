@@ -1,0 +1,1841 @@
+{
+  "source": "tests/ref-content/news (tests/news-harvest.mjs)",
+  "locale": "en",
+  "categories": [
+    {
+      "slug": "completed-jobs",
+      "name": "Completed Jobs",
+      "kind": "ProjectCaseStudy"
+    },
+    {
+      "slug": "features",
+      "name": "Features",
+      "kind": "NewsArticle"
+    },
+    {
+      "slug": "stockpile",
+      "name": "Stockpile",
+      "kind": "NewsArticle"
+    },
+    {
+      "slug": "suppliers",
+      "name": "Suppliers",
+      "kind": "SupplierStory"
+    }
+  ],
+  "articles": [
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-self-levelling-epoxy-flooring-nawala-2026-sl-enterprises",
+      "title": "Completed Projects : Self Levelling Epoxy Flooring - Nawala - 2026 - SL Enterprises",
+      "excerpt": null,
+      "publishedAt": "2026-10-06T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "Nawala",
+        "Flooring solutions"
+      ],
+      "body": "<div><h2><strong><span>Self Levelling Epoxy Flooring - Nawala by SL Enterprises</span></strong></h2>\n<p>SL Enterprises finished a self levelling epoxy flooring job at a commercial building in Nawala. The work covered 2,430 sq.ft. If you need the same work done, call SL Enterprises using the button on the product below.</p>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nSelf Leveling Epoxy Flooring\n</span>\n</li>\n<li><strong>Location</strong> : Nawala</li>\n<li><strong>Date of Completion </strong>: 2026</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nIndustrial Self Leveling Epoxy Flooring\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 580.00</span></span>\n<span>\n<span>Rs. 580.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Flooring Project</span></span></h3>\n<p>Need a new floor for your home, shop or factory? Contact <span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-self-levelling-epoxy-flooring-nawala-2026-sl-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/self-levelling-epoxy-flooring-nawala-sl-enterprises.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/w/h/whatsapp_image_2025-03-04_at_10.05.47.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/s/h/shan_teas_athurugiriya_epoxy_flooring2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/self-levelling-epoxy-flooring-nawala-sl-enterprises.jpg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-titanium-wall-finish-athurugiriya-2026-sl-enterprises",
+      "title": "Completed Projects : Titanium Wall Finish - Athurugiriya - 2026 - SL Enterprises",
+      "excerpt": null,
+      "publishedAt": "2026-10-05T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "Titanium wall finish",
+        "SL Enterprises"
+      ],
+      "body": "<div><h2><strong><span>Titanium Wall Finish - Athurugiriya by SL Enterprises</span></strong></h2>\n<p>SL Enterprises finished a titanium wall finish job at a commercial building in Athurugiriya. The work covered 3,460 sq.ft, in yellow, orange and brown panels with black lines. If you need the same work done, call SL Enterprises using the button on the product below.</p>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nTitanium Walls\n</span>\n</li>\n<li><strong>Location</strong> : Athurugiriya</li>\n<li><strong>Date of Completion </strong>: 2026 September</li>\n</ul>\n</div>\n<h3><span><span>Get a Quote for Your Wall Finish Project</span></span></h3>\n<p>Want a new finish for your walls? Contact <span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-titanium-wall-finish-athurugiriya-2026-sl-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Untitled_design2.png",
+        "https://stockpile.lk/media/wysiwyg/Untitled_design_1.png",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-titanium-flooring-puttalam-2026-sl-enterprises",
+      "title": "Completed Projects : Titanium Flooring - Puttalam - 2026 - SL Enterprises",
+      "excerpt": null,
+      "publishedAt": "2026-10-03T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "Puttalam",
+        "Flooring solutions"
+      ],
+      "body": "<div><h2><strong><span>Titanium Flooring - Puttalam by SL Enterprises</span></strong></h2>\n<p>SL Enterprises finished a titanium flooring job at an education institute in Puttalam. The work covered 1,240 sq.ft, including the entrance steps. If you need the same work done, call SL Enterprises using the button on the product below.</p>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nTitanium Flooring\n</span>\n</li>\n<li><strong>Location</strong> : Puttalam</li>\n<li><strong>Date of Completion </strong>: 2026</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nTitanium Flooring with High Gloss Ceramic Coating\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 300.00</span></span>\n<span>\n<span>Rs. 300.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Flooring Project</span></span></h3>\n<p>Need a new floor for your home, shop or factory? Contact <span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-titanium-flooring-puttalam-2026-sl-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/titanium-flooring-puttalam-sl-enterprises.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/t/i/titanium_flooring1.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/t/i/titanium_flooring14.jpeg",
+        "https://stockpile.lk/media/wysiwyg/titanium-flooring-puttalam-sl-enterprises.jpg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-waterproofing-waskaduwa-2026-sl-enterprises",
+      "title": "Completed Projects : Waterproofing - Waskaduwa - 2026 - SL Enterprises",
+      "excerpt": null,
+      "publishedAt": "2026-10-02T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "Waterproofing",
+        "Waskaduwa",
+        "SL Enterprises",
+        "Roof waterproofing",
+        "Flooring solutions"
+      ],
+      "body": "<div><h2><strong><span>Waterproofing - Waskaduwa by SL Enterprises</span></strong></h2>\n<p>SL Enterprises finished a waterproofing job at a private house in Waskaduwa. The work covered 1,540 sq.ft of flat concrete roof. A waterproof layer stops rain water soaking into the concrete and leaking into the rooms below. If you have a roof or slab that needs the same work, call SL Enterprises using the button on the product below.</p>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nCementitious Waterproofing\n</span>\n, <span>\nTwo-Component Acrylic 2K Waterproofing\n</span>\n</li>\n<li><strong>Location</strong> : Waskaduwa</li>\n<li><strong>Date of Completion </strong>: 2026 September</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nCementitious Waterproofing Application\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 200.00</span></span>\n<span>\n<span>Rs. 200.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div><div><div>\n<div>\n<div>\n<h3>\nTwo-Component Acrylic 2K Waterproofing Application\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 320.00</span></span>\n<span>\n<span>Rs. 320.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Waterproofing Project</span></span></h3>\n<p>Need to stop a leaking roof or slab? Contact <span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p>\n</div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-waterproofing-waskaduwa-2026-sl-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Waterproofing_on_a_house_roof_in_Waskaduwa_by_SL_Enterprises.png",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/i/m/img-20250227-wa00321k_waterproofing.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/i/m/img-20250227-wa00351k_waterproofing.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/i/m/img-20250227-wa00321k_waterproofing_1.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/i/m/img-20250227-wa00351k_waterproofing_1.jpg",
+        "https://stockpile.lk/media/wysiwyg/Waterproofing_on_a_house_roof_in_Waskaduwa_by_SL_Enterprises.png",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-waterproofing-palapathwala-matale-2026-sl-enterprises",
+      "title": "Completed Projects : Waterproofing - Palapathwala, Matale - 2026 - SL Enterprises",
+      "excerpt": null,
+      "publishedAt": "2026-10-01T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "Waterproofing",
+        "SL Enterprises",
+        "Roof waterproofing",
+        "Palapathwala",
+        "matale",
+        "Flooring solutions"
+      ],
+      "body": "<div><h2><strong><span>Waterproofing - Palapathwala, Matale by SL Enterprises</span></strong></h2>\n<p>SL Enterprises finished a waterproofing job at a temple in Palapathwala, Matale. The work covered 1,800 sq.ft of flat concrete roof. A waterproof layer stops rain water soaking into the concrete and leaking into the building below. If you have a roof or slab that needs the same work, call SL Enterprises using the button on the product below.</p>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nCementitious Waterproofing\n</span>\n, <span>\nTwo-Component Acrylic 2K Waterproofing\n</span>\n</li>\n<li><strong>Location</strong> : Palapathwala, Matale</li>\n<li><strong>Date of Completion </strong>: 2026 September</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nCementitious Waterproofing Application\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 200.00</span></span>\n<span>\n<span>Rs. 200.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div><div><div>\n<div>\n<div>\n<h3>\nTwo-Component Acrylic 2K Waterproofing Application\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 320.00</span></span>\n<span>\n<span>Rs. 320.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Waterproofing Project</span></span></h3>\n<p>Need to stop a leaking roof or slab? Contact <span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-waterproofing-palapathwala-matale-2026-sl-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Waterproofing_in_Palapathwala_Matale_by_SL_Enterprises.png",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/i/m/img-20250227-wa00321k_waterproofing.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/i/m/img-20250227-wa00351k_waterproofing.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/i/m/img-20250227-wa00321k_waterproofing_1.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/i/m/img-20250227-wa00351k_waterproofing_1.jpg",
+        "https://stockpile.lk/media/wysiwyg/Waterproofing_in_Palapathwala_Matale_by_SL_Enterprises_2.png",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-self-levelling-pu-flooring-galaha-kandy-2026-sl-enterprises",
+      "title": "Completed Projects : Self Levelling PU Flooring - Galaha, Kandy - 2026 - SL Enterprises",
+      "excerpt": null,
+      "publishedAt": "2026-09-23T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "Kandy",
+        "Galaha",
+        "Flooring solutions"
+      ],
+      "body": "<div><h2><strong><span>Self Levelling PU Flooring - Galaha, Kandy by SL Enterprises</span></strong></h2>\n<p>SL Enterprises finished a self levelling pu flooring job at a factory in Galaha, Kandy. The work covered 870 sq.ft. If you need the same work done, call SL Enterprises using the button on the product below.</p>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nPU Flooring\n</span>\n</li>\n<li><strong>Location</strong> : Galaha, Kandy</li>\n<li><strong>Date of Completion </strong>: 2026</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nRoof Top PU Flooring\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 450.00</span></span>\n<span>\n<span>Rs. 450.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-self-levelling-pu-flooring-galaha-kandy-2026-sl-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/self-levelling-pu-flooring-galaha-kandy-sl-enterprises2.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/w/h/whatsapp_image_2025-02-27_at_08.15.27_a586a985.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/w/h/whatsapp_image_2025-02-27_at_08.15.28_f4cfd551.jpg",
+        "https://stockpile.lk/media/wysiwyg/self-levelling-pu-flooring-galaha-kandy-sl-enterprises_2.jpg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-high-build-epoxy-coating-boralesgamuwa-2026-sl-enterprises",
+      "title": "Completed Projects : High Build Epoxy Coating - Boralesgamuwa - 2026 - SL Enterprises",
+      "excerpt": null,
+      "publishedAt": "2026-09-08T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "Flooring solutions",
+        "Boralesgamuwa"
+      ],
+      "body": "<div><h2><strong><span>High Build Epoxy Coating - Boralesgamuwa by SL Enterprises</span></strong></h2>\n<p>SL Enterprises finished a high build epoxy coating job at a vehicle service centre in Boralesgamuwa. The work covered 2,100 sq.ft, with yellow lines marking the walkways and bays. If you need the same work done, call SL Enterprises using the button on the product below.</p>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nHigh Build Epoxy Floor Coating\n</span>\n</li>\n<li><strong>Location</strong> : Boralesgamuwa</li>\n<li><strong>Date of Completion </strong>: 2026 September</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nEpoxy Flooring High Build Industrial Floor Coating\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 300.00</span></span>\n<span>\n<span>Rs. 300.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Flooring Project</span></span></h3>\n<p>Need a new floor for your home, shop or factory? Contact <span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-high-build-epoxy-coating-boralesgamuwa-2026-sl-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Untitled_design_1__1.png",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/h/a/haman_hb_epoxywhatsapp_image_2025-03-04_at_14.45.06haman_hb_epoxy.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/h/b/hb_coating2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Untitled_design_1__2.png",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-high-build-epoxy-coating-kalutara-2026-sl-enterprises",
+      "title": "Completed Projects : High Build Epoxy Coating - Kalutara - 2026 - SL Enterprises",
+      "excerpt": null,
+      "publishedAt": "2026-08-26T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "Self leveling epoxy",
+        "Kalutara",
+        "High build epoxy flooring",
+        "Flooring solutions",
+        "Epoxy flooring",
+        "Epoxy coating",
+        "epoxy",
+        "colombo",
+        "3mm epoxy"
+      ],
+      "body": "<div><h2><strong><span>High Build Epoxy Coating - Kalutara by SL Enterprises</span></strong></h2>\n<p>SL Enterprises finished a high build epoxy coating job at a production facility in Kalutara. The work covered 2,600 sq.ft, across its rooms and corridors. If you need the same work done, call SL Enterprises using the button on the product below.</p>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nHigh Build Epoxy Floor Coating\n</span>\n</li>\n<li><strong>Location</strong> : Kalutara</li>\n<li><strong>Date of Completion </strong>: 2026</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nEpoxy Flooring High Build Industrial Floor Coating\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 300.00</span></span>\n<span>\n<span>Rs. 300.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Flooring Project</span></span></h3>\n<p>Need a new floor for your home, shop or factory? Contact <span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-high-build-epoxy-coating-kalutara-2026-sl-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/high-build-epoxy-coating-kalutara-sl-enterprises.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/h/a/haman_hb_epoxywhatsapp_image_2025-03-04_at_14.45.06haman_hb_epoxy.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/h/b/hb_coating2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/high-build-epoxy-coating-kalutara-sl-enterprises.jpg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-self-levelling-epoxy-flooring-horana-2026-sl-enterprises",
+      "title": "Completed Projects : Self Levelling Epoxy Flooring - Horana - 2026 - SL Enterprises",
+      "excerpt": null,
+      "publishedAt": "2026-08-18T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "Horana",
+        "Flooring solutions"
+      ],
+      "body": "<div><h2><strong><span>Self Levelling Epoxy Flooring - Horana by SL Enterprises</span></strong></h2>\n<p>SL Enterprises finished a self levelling epoxy flooring job at a factory in Horana. The work covered 1,370 sq.ft, in green. If you need the same work done, call SL Enterprises using the button on the product below.</p>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nSelf Leveling Epoxy Flooring\n</span>\n</li>\n<li><strong>Location</strong> : Horana</li>\n<li><strong>Date of Completion </strong>: 2026 September</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nIndustrial Self Leveling Epoxy Flooring\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 580.00</span></span>\n<span>\n<span>Rs. 580.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Flooring Project</span></span></h3>\n<p>Need a new floor for your home, shop or factory? Contact <span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-self-levelling-epoxy-flooring-horana-2026-sl-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/self-levelling-epoxy-flooring-horana-sl-enterprises.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/w/h/whatsapp_image_2025-03-04_at_10.05.47.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/s/h/shan_teas_athurugiriya_epoxy_flooring2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/self-levelling-epoxy-flooring-horana-sl-enterprises.jpg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-high-build-epoxy-coating-kesbewa-2026-sl-enterprises",
+      "title": "Completed Projects : High Build Epoxy Coating - Kesbewa - 2026 - SL Enterprises",
+      "excerpt": null,
+      "publishedAt": "2026-08-16T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "Self leveling epoxy",
+        "Kesbewa",
+        "High build epoxy flooring",
+        "Flooring solutions",
+        "Epoxy flooring",
+        "Epoxy coating",
+        "epoxy",
+        "3mm epoxy"
+      ],
+      "body": "<div><h2><strong><span>High Build Epoxy Coating - Kesbewa by SL Enterprises</span></strong></h2>\n<p>SL Enterprises finished a high build epoxy coating job at a commercial building in Kesbewa. The work covered 860 sq.ft, with yellow edge lines. If you need the same work done, call SL Enterprises using the button on the product below.</p>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nHigh Build Epoxy Floor Coating\n</span>\n</li>\n<li><strong>Location</strong> : Kesbewa</li>\n<li><strong>Date of Completion </strong>: 2026</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nEpoxy Flooring High Build Industrial Floor Coating\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 300.00</span></span>\n<span>\n<span>Rs. 300.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Flooring Project</span></span></h3>\n<p>Need a new floor for your home, shop or factory? Contact <span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-high-build-epoxy-coating-kesbewa-2026-sl-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/high-build-epoxy-coating-kesbewa-sl-enterprises.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/h/a/haman_hb_epoxywhatsapp_image_2025-03-04_at_14.45.06haman_hb_epoxy.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/h/b/hb_coating2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/high-build-epoxy-coating-kesbewa-sl-enterprises.jpg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "NewsArticle",
+      "slug": "updating-product-prices-and-stocks",
+      "title": "Updating Product Prices & Stocks",
+      "excerpt": null,
+      "publishedAt": "2026-08-03T00:00:00Z",
+      "categories": [
+        "features"
+      ],
+      "tags": [],
+      "body": "<h3>Updating stocks and prices is easy now</h3>\n<div>\n<p>We have now made the process of updating your product prices and stock values even easier. You can now view and update the stock values and the prices of all of your products in a single page. View the view below to see how easy the process is.&nbsp; &nbsp;</p>\n</div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/updating-product-prices-and-stocks",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/pricing-stock-update.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-luxury-vinyl-tiles-installation-colombo-5-2026-snt-home-improvement",
+      "title": "Completed Projects : Luxury Vinyl Tiles Installation - Colombo 5 - 2026 - SnT Home Improvement",
+      "excerpt": null,
+      "publishedAt": "2026-07-21T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SnT Home Improvements",
+        "LVT",
+        "LuxuryVinylFlooring",
+        "FlooringInstallation",
+        "Expert installation",
+        "Colombo 5"
+      ],
+      "body": "<div><h2><strong><span><span>Luxury Vinyl Tiles</span> Installation – Marine Drive by SnT Home Improvement</span></strong></h2>\n<div>\n<div>\n<div>\n<p>SnT Luxury Vinyl Flooring Installation has successfully delivered a premium bathroom transformation in Colombo 5. Utilizing exactly 823 luxury vinyl tiles (LVT), this renovation features a high-quality, 100% waterproof, and slip-resistant surface engineered specifically for high-moisture environments. With its sophisticated, natural wood aesthetic, the installation creates a flawless, low-maintenance bathroom space that perfectly balances modern elegance with long-lasting resilience.</p>\n</div>\n</div>\n</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nLuxury Vinyl Flooring\n</span>\n</li>\n<li><strong>Location</strong> : Colombo 5</li>\n<li><strong>Date of Completion </strong>: 2026 June</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<div><div><div><div>1.5mm</div><div>2mm</div><div>3mm</div></div></div></div>\n<h3>\nLuxury Vinyl Flooring 1.5mm, 2mm, 3mm\n</h3>\n<div>\n<div><span>\n<span>\n<span>As low as</span>\n<span><span>Rs. 335.00</span></span>\n<span><span>Rs. 335.00</span></span>\n</span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Luxury Vinyl Flooring Project</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and <span>modern luxury vinyl floor tiles </span>? Contact <span><strong>SnT Home Improvements</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-luxury-vinyl-tiles-installation-colombo-5-2026-snt-home-improvement",
+      "sourceImages": [
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Luxury_Vinyl_Tiles_Installation_Colombo_5.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_3_.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_4_.jpg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Luxury_Vinyl_Tiles_Installation_Colombo_53.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Luxury_Vinyl_Tiles_Installation_Colombo_54.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-self-leveling-epoxy-flooring-gini-restaurant-colombo-2026-sl-enterprises",
+      "title": "Completed Projects : Self Leveling Epoxy Flooring - Gini Restaurant - Colombo - 2026 - SL Enterprises",
+      "excerpt": null,
+      "publishedAt": "2026-07-21T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "Self leveling epoxy",
+        "High build epoxy flooring",
+        "Flooring solutions",
+        "Epoxy flooring",
+        "Epoxy coating",
+        "epoxy",
+        "colombo",
+        "3mm epoxy"
+      ],
+      "body": "<div><h2><strong><span>Self Leveling Epoxy Flooring – Gini Restaurant Colombo by SL Enterprises</span></strong></h2>\n<div>\n<p>SL Enterprises successfully completed a 700 sq.ft Self-Leveling 3mm Epoxy Flooring installation for Gini Restaurant in Colombo, delivering a high-gloss, seamless surface designed for maximum durability and precision. This project required a professional-grade flooring solution capable of withstanding heavy commercial foot traffic and daily restaurant operations while maintaining a sleek, modern aesthetic. The 3mm self-leveling system ensured a perfectly flat and uniform finish, providing a hygienic, chemical-resistant, and low-maintenance environment ideal for a premium dining space.</p>\n</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nSelf Levenling Epoxy Flooring\n</span>\n</li>\n<li><strong>Location</strong> : Gini Restaurant</li>\n<li><strong>Date of Completion </strong>: 2026 June</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nIndustrial Self Leveling Epoxy Flooring\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 580.00</span></span>\n<span>\n<span>Rs. 580.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Self Leveling Epoxy Flooring&nbsp;</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and <span>modern Self Leveling Epoxy Flooring </span>? Contact <span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-self-leveling-epoxy-flooring-gini-restaurant-colombo-2026-sl-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Gini_restaurent_colombo.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/w/h/whatsapp_image_2025-03-04_at_10.05.47.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/s/h/shan_teas_athurugiriya_epoxy_flooring2.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-self-levelling-epoxy-flooring-puttalam-2026-sl-enterprises",
+      "title": "Completed Projects : Self Levelling Epoxy Flooring - Puttalam - 2026 - SL Enterprises",
+      "excerpt": null,
+      "publishedAt": "2026-07-21T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "Self leveling epoxy",
+        "Puttalam",
+        "High build epoxy flooring",
+        "Flooring solutions",
+        "Epoxy flooring",
+        "Epoxy coating",
+        "epoxy",
+        "3mm epoxy"
+      ],
+      "body": "<div><h2><strong><span>Self Levelling Epoxy Flooring - Puttalam by SL Enterprises</span></strong></h2>\n<p>SL Enterprises finished a self levelling epoxy flooring job at an education institute in Puttalam. The work covered 1,240 sq.ft. If you need the same work done, call SL Enterprises using the button on the product below.</p>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nSelf Leveling Epoxy Flooring\n</span>\n</li>\n<li><strong>Location</strong> : Puttalam</li>\n<li><strong>Date of Completion </strong>: 2026</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nIndustrial Self Leveling Epoxy Flooring\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 580.00</span></span>\n<span>\n<span>Rs. 580.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Flooring Project</span></span></h3>\n<p>Need a new floor for your home, shop or factory? Contact <span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-self-levelling-epoxy-flooring-puttalam-2026-sl-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/self-levelling-epoxy-flooring-puttalam-sl-enterprises.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/w/h/whatsapp_image_2025-03-04_at_10.05.47.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/s/h/shan_teas_athurugiriya_epoxy_flooring2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/self-levelling-epoxy-flooring-puttalam-sl-enterprises.jpg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-wall-moulding-borella-snt-home-improvements-2026",
+      "title": "Completed Projects : Wall Moulding - Borella - SNT Home Improvements 2026",
+      "excerpt": null,
+      "publishedAt": "2026-07-21T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "Wall Moulding",
+        "SnT Home Improvements",
+        "Home Renovation",
+        "borella",
+        "Bedroom wall moulding installation"
+      ],
+      "body": "<div><h2><strong><span>Wall Moulding – Borella by SnT Home Improvements</span></strong></h2>\n<div>SnT Home Improvements successfully completed a custom wall moulding project for a private house in Borella. This installation delivered a durable, low-maintenance, and stylish interior solution, enhancing the home with a warm, modern, and sophisticated finish.</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nWall Moulding\n</span>\n</li>\n<li><strong>Location</strong> : Borella</li>\n<li><strong>Date of Completion </strong>: 2026 June&nbsp;</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nWall Moulding\n</h3>\n<div>\n<div><span>\n<span>\n<span>As low as</span>\n<span><span>Rs. 1,700.00</span></span>\n<span>\n<span>Rs. 1,700.00</span></span>\n</span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Wall Moudling Project</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and <span>modern wall moulding</span>? Contact <span><strong>SnT Home Improvements</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-wall-moulding-borella-snt-home-improvements-2026",
+      "sourceImages": [
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Moulding_Borella2.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/w/a/wall_moulding1.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/w/a/wall_moulding7.jpeg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Moulding_Borella1.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-self-levelling-pu-flooring-kollupitiya-2026-sl-enterprises",
+      "title": "Completed Projects : Self Levelling PU Flooring - Kollupitiya - 2026 - SL Enterprises",
+      "excerpt": null,
+      "publishedAt": "2026-07-08T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "Kollupitiya",
+        "Flooring solutions"
+      ],
+      "body": "<div><h2><strong><span>Self Levelling PU Flooring - Kollupitiya by SL Enterprises</span></strong></h2>\n<p>SL Enterprises finished a self levelling pu flooring job at a commercial space in Kollupitiya. The work covered 750 sq.ft. If you need the same work done, call SL Enterprises using the button on the product below.</p>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nPU Flooring\n</span>\n</li>\n<li><strong>Location</strong> : Kollupitiya</li>\n<li><strong>Date of Completion </strong>: 2026</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nRoof Top PU Flooring\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 450.00</span></span>\n<span>\n<span>Rs. 450.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Flooring Project</span></span></h3>\n<p>Need a new floor for your home, shop or factory? Contact <span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p>\n</div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-self-levelling-pu-flooring-kollupitiya-2026-sl-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/self-levelling-pu-flooring-kollupitiya-sl-enterprises.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/w/h/whatsapp_image_2025-02-27_at_08.15.27_a586a985.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/w/h/whatsapp_image_2025-02-27_at_08.15.28_f4cfd551.jpg",
+        "https://stockpile.lk/media/wysiwyg/self-levelling-pu-flooring-kollupitiya-sl-enterprises.jpg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-luxury-vinyl-floor-carpet-installation-piliyandala-2026-snt-home-improvement",
+      "title": "Completed Projects : Luxury Vinyl Tiles Installation - Piliyandala - 2026 - SnT Home Improvement",
+      "excerpt": null,
+      "publishedAt": "2026-06-18T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SnT Home Improvements",
+        "piliyandala",
+        "LVT",
+        "LuxuryVinylFlooring",
+        "FlooringInstallation",
+        "Expert installation"
+      ],
+      "body": "<div><h2><strong><span><span>Luxury Vinyl Tiles</span> Installation – Piliyandala by SnT Home Improvement</span></strong></h2>\n<div>\n<div>\n<div>\n<p>SnT Luxury Vinyl Flooring Installation successfully completed a premium Luxury Vinyl installation for a commercial interior in Piliyandala. Covering an area of 200 sq.ft and utilizing exactly 820 luxury vinyl tiles (LVT), this project delivered a high-quality, waterproof, and scratch-resistant flooring solution. The installation elevates the space with a sophisticated, natural wood aesthetic, resulting in a durable, low-maintenance environment that perfectly balances modern elegance with the long-lasting resilience needed for daily foot traffic.</p>\n</div>\n</div>\n</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nLuxury Vinyl Flooring\n</span>\n</li>\n<li><strong>Location</strong> : Piliyandala</li>\n<li><strong>Date of Completion </strong>: 2026 May</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<div><div><div><div>1.5mm</div><div>2mm</div><div>3mm</div></div></div></div>\n<h3>\nLuxury Vinyl Flooring 1.5mm, 2mm, 3mm\n</h3>\n<div>\n<div><span>\n<span>\n<span>As low as</span>\n<span><span>Rs. 335.00</span></span>\n<span><span>Rs. 335.00</span></span>\n</span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Luxury Vinyl Flooring project</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and <span>modern luxury vinyl floor tiles </span>? Contact <span><strong>SnT Home Improvements</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-luxury-vinyl-floor-carpet-installation-piliyandala-2026-snt-home-improvement",
+      "sourceImages": [
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Piliyandala2.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_3_.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_4_.jpg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Piliyandala1.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Piliyandala3_1.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-luxury-vinyl-floor-tiles-installation-marine-drive-2026-snt-home-improvement",
+      "title": "Completed Projects : Luxury Vinyl Tiles Installation - Marine Drive - 2026 - SnT Home Improvement",
+      "excerpt": null,
+      "publishedAt": "2026-06-18T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SnT Home Improvements",
+        "marine drive",
+        "LVT",
+        "LuxuryVinylFlooring",
+        "FlooringInstallation",
+        "Expert installation"
+      ],
+      "body": "<div><h2><strong><span><span>Luxury Vinyl Tiles</span> Installation – Marine Drive by SnT Home Improvement</span></strong></h2>\n<div>\n<div>\n<div>\n<p>SnT Luxury Vinyl Flooring Installation has successfully delivered a premium commercial interior transformation along Marine Drive. Covering 139 sq.ft and using exactly 810 luxury vinyl tiles (LVT), this project features a high-quality, waterproof, and scratch-resistant surface built to handle demanding daily foot traffic. With its sophisticated, natural wood aesthetic, the installation creates a flawless, low-maintenance environment that perfectly balances modern elegance with rugged durability.&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>\n</div>\n</div>\n</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nLuxury Vinyl Flooring\n</span>\n</li>\n<li><strong>Location</strong> : Marine Drive</li>\n<li><strong>Date of Completion </strong>: 2026 May</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<div><div><div><div>1.5mm</div><div>2mm</div><div>3mm</div></div></div></div>\n<h3>\nLuxury Vinyl Flooring 1.5mm, 2mm, 3mm\n</h3>\n<div>\n<div><span>\n<span>\n<span>As low as</span>\n<span><span>Rs. 335.00</span></span>\n<span><span>Rs. 335.00</span></span>\n</span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Luxury Vinyl Flooring Project</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and <span>modern luxury vinyl floor tiles </span>? Contact <span><strong>SnT Home Improvements</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-luxury-vinyl-floor-tiles-installation-marine-drive-2026-snt-home-improvement",
+      "sourceImages": [
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Marine_Drive3_1.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_3_.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_4_.jpg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-epoxy-flooring-colombo-2026-sl-enterprises",
+      "title": "Completed Projects : Epoxy Flooring - Colombo West International Terminal (CWIT) Warehouse - Colombo - 2026 - SL Enterprises",
+      "excerpt": null,
+      "publishedAt": "2026-06-17T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "High build epoxy flooring",
+        "Flooring solutions",
+        "Epoxy flooring",
+        "Epoxy coating",
+        "epoxy",
+        "Colombo West International Terminal (CWIT) Warehouse",
+        "colombo"
+      ],
+      "body": "<div><h2><strong><span>Epoxy Flooring – Colombo West International Terminal (CWIT) Warehouse by SL Enterprises</span></strong></h2>\n<div>\n<p>SL Enterprises successfully completed a 14,500sq.ft Epoxy Flooring installation in Colombo West International Terminal (CWIT) Warehouse, delivering a high-gloss, seamless surface designed for maximum durability and precision. This project required a professional-grade flooring solution capable of withstanding heavy foot traffic and mechanical wear while maintaining a sleek, modern aesthetic. The self-leveling system ensured a perfectly flat and uniform finish, providing a chemical-resistant and low-maintenance environment ideal for large-scale urban spaces.</p>\n</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nSelf Levenling Epoxy Flooring\n</span>\n</li>\n<li><strong>Location</strong> : Colombo West International Terminal (CWIT) Warehouse</li>\n<li><strong>Date of Completion </strong>: 2026 June</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nIndustrial Self Leveling Epoxy Flooring\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 580.00</span></span>\n<span>\n<span>Rs. 580.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Epoxy Flooring&nbsp;</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and <span>modern Epoxy Flooring&nbsp;</span>? Contact <span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-epoxy-flooring-colombo-2026-sl-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Colombo_hr5.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/w/h/whatsapp_image_2025-03-04_at_10.05.47.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/s/h/shan_teas_athurugiriya_epoxy_flooring2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Colombo_hr2.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Colombo_hr1.jpeg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Colombo_hr7.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-chip-flake-flooring-puttalam-2026-sl-enterprises",
+      "title": "Completed Projects : Chip Flake Flooring - Puttalam - 2026 - SL Enterprises",
+      "excerpt": null,
+      "publishedAt": "2026-05-20T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "Puttalam"
+      ],
+      "body": "<div><h2><strong><span>Chip Flake Flooring - Puttalam by SL Enterprises</span></strong></h2>\n<p>SL Enterprises finished a chip flake flooring job at an education institute in Puttalam. The work covered 1,800 sq.ft, on the stairs and the rooftop walkways. If you need the same work done, call SL Enterprises using the button on the product below.</p>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nChip Flake Flooring\n</span>\n</li>\n<li><strong>Location</strong> : Puttalam</li>\n<li><strong>Date of Completion </strong>: 2026</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nChip Flake Flooring\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 420.00</span></span>\n<span>\n<span>Rs. 420.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Flooring Project</span></span></h3>\n<p>Need a new floor for your home, shop or factory? Contact <span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p>\n</div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-chip-flake-flooring-puttalam-2026-sl-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/chip-flake-flooring-puttalam-sl-enterprises_22.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/0/1/01epoxy_chip_flake.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/c/h/chip_flake_flooring5.jpeg",
+        "https://stockpile.lk/media/wysiwyg/chip-flake-flooring-puttalam-sl-enterprises_2.jpg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-chip-flake-flooring-rooftop-warakamura-2026-sl-enterprises",
+      "title": "Completed Projects : Chip Flake flooring rooftop - Warakamura Matale - 2026 - SL Enterprises",
+      "excerpt": null,
+      "publishedAt": "2026-05-15T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "warakamura",
+        "SL Enterprises",
+        "matale",
+        "High build epoxy flooring",
+        "Flooring solutions",
+        "Epoxy flooring",
+        "Epoxy coating",
+        "epoxy",
+        "chip flake flooring",
+        "Chip Flake"
+      ],
+      "body": "<div><h2><strong><span>Chip Flake Flooring – Warakamura Matale by SL Enterprises</span></strong></h2>\n<div>\n<p>SL Enterprises successfully completed a&nbsp;1,200 sq.ft Flake Chip Flooring installation for a residence in Warakamura, Matale, delivering a durable and visually appealing surface ideal for a rooftop space. This project required a flooring solution that combines aesthetic appeal with resilience, offering superior resistance to weather elements, moisture, and frequent foot traffic. The flake chip system provided a textured, slip-resistant finish, ensuring a safe and low-maintenance environment for the rooftop.</p>\n</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nChip Flake Flooring\n</span>\n</li>\n<li><strong>Location</strong> : Warakamura</li>\n<li><strong>Date of Completion </strong>: 2026 April</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nChip Flake Flooring\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 420.00</span></span>\n<span>\n<span>Rs. 420.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Chip Flake Flooring</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and <span>modern Chip Flake Flooring </span>? Contact <span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-chip-flake-flooring-rooftop-warakamura-2026-sl-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Warakamura_Matale3.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/0/1/01epoxy_chip_flake.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/c/h/chip_flake_flooring5.jpeg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Warakamura_Matale1.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Warakamura_Matale2.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-self-leveling-epoxy-flooring-colombo-2026-sl-enterprises",
+      "title": "Completed Projects : Self Leveling Epoxy Flooring - Colombo - 2026 - SL Enterprises",
+      "excerpt": null,
+      "publishedAt": "2026-05-15T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "High build epoxy flooring",
+        "Flooring solutions",
+        "Epoxy flooring",
+        "Epoxy coating",
+        "epoxy",
+        "colombo"
+      ],
+      "body": "<div><h2><strong><span>Self Leveling Epoxy Flooring – Colombo by SL Enterprises</span></strong></h2>\n<div>\n<p>SL Enterprises successfully completed a&nbsp;5,650sq.ft Self Leveling Epoxy Flooring installation in Colombo, delivering a high-gloss, seamless surface designed for maximum durability and precision. This project required a professional-grade flooring solution capable of withstanding heavy foot traffic and mechanical wear while maintaining a sleek, modern aesthetic. The self-leveling system ensured a perfectly flat and uniform finish, providing a chemical-resistant and low-maintenance environment ideal for large-scale urban spaces.</p>\n</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nSelf Levenling Epoxy Flooring\n</span>\n</li>\n<li><strong>Location</strong> : Colombo</li>\n<li><strong>Date of Completion </strong>: 2026 April</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nIndustrial Self Leveling Epoxy Flooring\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 580.00</span></span>\n<span>\n<span>Rs. 580.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Self Leveling Epoxy Flooring&nbsp;</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and <span>modern Self Leveling Epoxy Flooring </span>? Contact <span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-self-leveling-epoxy-flooring-colombo-2026-sl-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Colombo1.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/w/h/whatsapp_image_2025-03-04_at_10.05.47.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/s/h/shan_teas_athurugiriya_epoxy_flooring2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Colombo4.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Colombo3.jpeg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Colombo2.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-self-leveling-epoxy-flooring-sabaragamuwa-maga-project-2026-sl-enterprises",
+      "title": "Completed Projects : Self Leveling Epoxy Flooring - Sabaragamuwa (Maga Project) - 2026 - SL Enterprises",
+      "excerpt": null,
+      "publishedAt": "2026-05-15T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "Self leveling epoxy",
+        "sabaragamuwa",
+        "maga project",
+        "Epoxy flooring"
+      ],
+      "body": "<div><h2><strong><span>Self Leveling Epoxy Flooring – Sabaragamuwa by SL Enterprises</span></strong></h2>\n<div>\n<p><span>SL Enterprises successfully completed a </span>3,700 sq.ft Self-Leveling Epoxy Flooring installation (Maga Project) in Sabaragamuwa, delivering a high-performance, seamless surface engineered for long-lasting durability. This project required a robust flooring solution that combines structural resilience with a smooth, professional finish, offering excellent resistance to impact, moisture, and heavy usage. The self-leveling epoxy system provided a perfectly level and non-porous environment, ensuring a hygienic and low-maintenance space tailored to the specific needs of the location.</p>\n</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nSelf Levenling Epoxy Flooring\n</span>\n</li>\n<li><strong>Location</strong> : Sabaragamuwa</li>\n<li><strong>Date of Completion </strong>: 2026 April</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nIndustrial Self Leveling Epoxy Flooring\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 580.00</span></span>\n<span>\n<span>Rs. 580.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Self Leveling Epoxy Flooring&nbsp;</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and <span>modern Self Leveling Epoxy Flooring </span>? Contact <span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-self-leveling-epoxy-flooring-sabaragamuwa-maga-project-2026-sl-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Sabaragamuwa_Epoxy2.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/w/h/whatsapp_image_2025-03-04_at_10.05.47.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/s/h/shan_teas_athurugiriya_epoxy_flooring2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Sabaragamuwa_Epoxy1.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Sabaragamuwa_Epoxy3.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-titanium-wall-finish-sabaragamuwa-maga-project-2026-sl-enterprises",
+      "title": "Completed Projects : Titanium Wall Finish - Sabaragamuwa - Maga Project- 2026 - SL Enterprises",
+      "excerpt": null,
+      "publishedAt": "2026-05-15T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "Titanium wall finish",
+        "Titanium flooring",
+        "Titanium",
+        "SL Enterprises",
+        "sabaragamuwa",
+        "maga project"
+      ],
+      "body": "<div><h2><strong><span>Titanium Wall Finish – Sabaragamuwa by SL Enterprises</span></strong></h2>\n<div>\n<p>SL Enterprises successfully completed a Titanium Wall Finish Mega Project in Sabaragamuwa, executing a major 4,800 sq.ft installation along with an additional 700 sq.ft project. This grand-scale development delivered a sleek, modern, and high-durability vertical surface across both sites. The project required a sophisticated finish that combines industrial strength with a refined aesthetic, offering a seamless, cementitious look that is both water-resistant and easy to maintain. The titanium application provided a smooth, polished texture that enhances the architectural character of the spaces while ensuring long-term resilience against environmental wear.</p>\n</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nTitanium Wall Finish\n</span>\n</li>\n<li><strong>Location</strong> : Sabaragamuwa</li>\n<li><strong>Date of Completion </strong>: 2026 April</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nTitanium Wall Finish\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 250.00</span></span>\n<span>\n<span>Rs. 250.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Titanium Wall Finish</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and <span>modern Titanium Wall Finish </span>? Contact <span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-titanium-wall-finish-sabaragamuwa-maga-project-2026-sl-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Sabaragamuwa_Titanium1.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/t/i/titanium_wall_finish4.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/t/i/titanium_wall_finish1.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Sabaragamuwa_Titanium3.jpeg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Sabaragamuwa_700sqft3.jpeg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Sabaragamuwa_700sqft2.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-floor-tiles-installation-negombo-2026-snt-home-improvement",
+      "title": "Completed Projects : Luxury Vinyl Floor Carpet Installation - Negombo - 2026 - SnT Home Improvement",
+      "excerpt": null,
+      "publishedAt": "2026-04-22T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SnT Home Improvements",
+        "negombo",
+        "LVT",
+        "LuxuryVinylFlooring",
+        "FlooringInstallation",
+        "Expert installation"
+      ],
+      "body": "<div><h2><strong><span>Luxury Vinyl Floor Carpet Installation – Negombo by SnT Home Improvement</span></strong></h2>\n<div>\n<p>SnT Luxury Vinyl Flooring Installation successfully completed a premium Luxury Vinyl installation for a residential interior in Negombo. This project delivered a high-quality, waterproof, and scratch-resistant flooring solution, elevating the home with a sophisticated, natural wood aesthetic. The result is a durable, low-maintenance living space that perfectly balances modern elegance with long-lasting resilience.</p>\n</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nLuxury Vinyl Flooring\n</span>\n</li>\n<li><strong>Location</strong> : Negombo</li>\n<li><strong>Date of Completion </strong>: 2026 March</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<div><div><div><div>1.5mm</div><div>2mm</div><div>3mm</div></div></div></div>\n<h3>\nLuxury Vinyl Flooring 1.5mm, 2mm, 3mm\n</h3>\n<div>\n<div><span>\n<span>\n<span>As low as</span>\n<span><span>Rs. 335.00</span></span>\n<span><span>Rs. 335.00</span></span>\n</span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Luxury Vinyl Floor Carpeting project</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and <span>modern luxury vinyl floor carpet </span>? Contact <span><strong>SnT Home Improvements</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-floor-tiles-installation-negombo-2026-snt-home-improvement",
+      "sourceImages": [
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Luxury_Vinyl_Flooring2.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_3_.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_4_.jpg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Luxury_Vinyl_Flooring1.jpeg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Luxury_Vinyl_Flooring3.jpeg",
+        "https://stockpile.lk/media/wysiwyg/supplier_images/Luxury_Vinyl_Flooring4.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-tv-wall-installation-project-kadawatha-2026-m-m-distributors",
+      "title": "Completed Projects : TV Wall Installation Project - Kadawatha - 2026 - M M Distributors",
+      "excerpt": null,
+      "publishedAt": "2026-03-18T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "TV wall installation",
+        "professional wall paneling",
+        "marble sheet wall design",
+        "M M Distributors",
+        "kadawatha",
+        "fluted panel Sri Lanka"
+      ],
+      "body": "<div><h2><strong><span>TV Wall Installation – Kadawatha by M M Distributors &nbsp;TV Wall Installation Project</span></strong></h2>\n<div>\n<p>MM Distributors successfully completed a custom TV Wall Installation featuring Fluted Panels and Marble Sheets for a private residence in Kadawatha. This project delivered a high-end, architectural focal point, transforming the living area into a sophisticated and modern space with a perfectly seamless, professional finish.</p>\n</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nTV Wall Installation\n</span>\n</li>\n<li><strong>Location</strong> : Kadawatha</li>\n<li><strong>Date of Completion </strong>: 2026 March</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nTV Wall Installation\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 790.00</span></span>\n<span>\n<span>Rs. 790.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your TV Wall Installation Project</span></span></h3>\n<p><span>Looking to upgrade your home or commercial space with a stylish and </span>modern tv wall Installation<span>?</span> Contact <span><strong>M M Distributors</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-tv-wall-installation-project-kadawatha-2026-m-m-distributors",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Kadawatha.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/t/v/tv_wall_installation3.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/t/v/tv_wall_installation10.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Kadawatha_2.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-tv-wall-installation-project-kompanyaweediya-2026-m-m-distributors",
+      "title": "Completed Projects : TV Wall Installation Project - Kompanyaweediya -2026 - M M Distributors",
+      "excerpt": null,
+      "publishedAt": "2026-03-18T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "TV wall installation",
+        "professional wall paneling",
+        "marble sheet wall design",
+        "M M Distributors",
+        "kompanyaweediya",
+        "fluted panel Sri Lanka"
+      ],
+      "body": "<div><h2><strong><span>TV Wall Installation – <span>Kompanyaweediya</span> by M M Distributors</span></strong></h2>\n<div>\n<p>MM Distributors successfully completed a custom TV Wall Installation featuring Fluted Panels and Marble Sheets for a private residence in <span>Kompanyaweediya</span>. This project delivered a high-end, architectural focal point, transforming the living area into a sophisticated and modern space with a perfectly seamless, professional finish.</p>\n</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nTV Wall Installation\n</span>\n</li>\n<li><strong>Location</strong> : <span>Kompanyaweediya</span></li>\n<li><strong>Date of Completion </strong>: 2026 March</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nTV Wall Installation\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 790.00</span></span>\n<span>\n<span>Rs. 790.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your TV Wall Installation Project</span></span></h3>\n<p><span>Looking to upgrade your home or commercial space with a stylish and </span>modern tv wall Installation<span>?</span> Contact <span><strong>M M Distributors</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-tv-wall-installation-project-kompanyaweediya-2026-m-m-distributors",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Colombo_2.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/t/v/tv_wall_installation3.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/t/v/tv_wall_installation10.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Colombo_2.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-tv-wall-installation-project-kotahena-2026-m-m-distributors",
+      "title": "Completed Projects : TV Wall Installation Project - Kotahena - 2026 - M M Distributors",
+      "excerpt": null,
+      "publishedAt": "2026-03-18T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "TV wall installation",
+        "professional wall paneling",
+        "marble sheet wall design",
+        "M M Distributors",
+        "kotahena",
+        "fluted panel Sri Lanka"
+      ],
+      "body": "<div><h2><strong><span>TV Wall Installation – Kotahena by M M Distributors &nbsp;TV Wall Installation Project</span></strong></h2>\n<div>\n<p>MM Distributors successfully completed a custom TV Wall Installation featuring Fluted Panels and LED Lighting for a private residence in Kotahena. This project delivered a high-end, architectural focal point, transforming the living area into a sophisticated and modern space with a perfectly seamless, professional finish.</p>\n</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nTV Wall Installation\n</span>\n</li>\n<li><strong>Location</strong> : Kotahena</li>\n<li><strong>Date of Completion </strong>: 2026 March</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nTV Wall Installation\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 790.00</span></span>\n<span>\n<span>Rs. 790.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your TV Wall Installation Project</span></span></h3>\n<p><span>Looking to upgrade your home or commercial space with a stylish and </span>modern tv wall Installation<span>?</span> Contact <span><strong>M M Distributors</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-tv-wall-installation-project-kotahena-2026-m-m-distributors",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Colomo_13_02.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/t/v/tv_wall_installation3.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/t/v/tv_wall_installation10.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Colombo_13_01.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/Colombo_13_02_1.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-tv-wall-installation-project-kotikawatta-m-m-distributors-tv-wall-installation-20",
+      "title": "Completed Projects : TV Wall Installation Project - Kotikawaththa - 2026 - M M Distributors",
+      "excerpt": null,
+      "publishedAt": "2026-03-18T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "TV wall installation",
+        "professional wall paneling",
+        "marble sheet wall design",
+        "M M Distributors",
+        "kotikawatta",
+        "fluted panel Sri Lanka"
+      ],
+      "body": "<div><h2><strong><span>TV Wall Installation – Kotikawatta by M M Distributors &nbsp;TV Wall Installation Project</span></strong></h2>\n<div>\n<p>MM Distributors successfully completed a custom TV Wall Installation featuring Fluted Panels and Marble Sheets for a private residence in Kotikawatta. This project delivered a high-end, architectural focal point, transforming the living area into a sophisticated and modern space with a perfectly seamless, professional finish.</p>\n</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nTV Wall Installation\n</span>\n</li>\n<li><strong>Location</strong> : Kotikawatta</li>\n<li><strong>Date of Completion </strong>: 2026 March</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nTV Wall Installation\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 790.00</span></span>\n<span>\n<span>Rs. 790.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your TV Wall Installation Project</span></span></h3>\n<p><span>Looking to upgrade your home or commercial space with a stylish and </span>modern tv wall Installation<span>?</span> Contact <span><strong>M M Distributors</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-tv-wall-installation-project-kotikawatta-m-m-distributors-tv-wall-installation-20",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Kotikawaththa.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/t/v/tv_wall_installation3.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/t/v/tv_wall_installation10.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Kotikawaththa.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-tv-wall-installation-project-minuwangoda-2026-m-m-distributors",
+      "title": "Completed Projects : TV Wall Installation Project - Minuwangoda - 2026 - M M Distributors",
+      "excerpt": null,
+      "publishedAt": "2026-03-18T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "TV wall installation",
+        "professional wall paneling",
+        "M M Distributors",
+        "fluted panel Sri Lanka"
+      ],
+      "body": "<div><h2><strong><span>TV Wall Installation – Minuwangoda by M M Distributors &nbsp;TV Wall Installation Project</span></strong></h2>\n<div>\n<p>MM Distributors successfully completed a custom TV Wall Installation featuring Fluted Panels for a private residence in Minuwangoda. This project delivered a high-end, architectural focal point, transforming the living area into a sophisticated and modern space with a perfectly seamless, professional finish.</p>\n</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nTV Wall Installation\n</span>\n</li>\n<li><strong>Location</strong> : Minuwangoda</li>\n<li><strong>Date of Completion </strong>: 2026 March</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nTV Wall Installation\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 790.00</span></span>\n<span>\n<span>Rs. 790.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your TV Wall Installation Project</span></span></h3>\n<p><span>Looking to upgrade your home or commercial space with a stylish and </span>modern tv wall Installation<span>?</span> Contact <span><strong>M M Distributors</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-tv-wall-installation-project-minuwangoda-2026-m-m-distributors",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Minuwangoda.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/t/v/tv_wall_installation3.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/t/v/tv_wall_installation10.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Minuwangoda.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-outdoor-grass-carpet-project -in-negombo-2026-by-snt-home-improvement",
+      "title": "Completed Projects : Outdoor Grass Carpet project - Negombo - 2026 - SnT Home Improvement",
+      "excerpt": null,
+      "publishedAt": "2026-03-17T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SnT Home Improvements",
+        "Outdoor grass carpet",
+        "negombo",
+        "GrassCarpetInstallation",
+        "Expert installation",
+        "ArtificialGrassSriLanka"
+      ],
+      "body": "<div><h2><strong><span>Grass Carpet installation – Negombo by SnT Home Impprovement</span></strong></h2>\n<div>\n<p>SnT Grass Carpet Installation successfully completed a custom Outdoor Grass Carpet installation for a residential garden in Negombo. This project provided a high-quality, UV-resistant, and low-maintenance green space, transforming the outdoor area into a stylish and durable environment with a perfectly seamless, natural finish.</p>\n</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nArtificial Grass Carpet\n</span>\n</li>\n<li><strong>Location</strong> : Negombo</li>\n<li><strong>Date of Completion </strong>: 2026 March</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nArtificial Grass Carpet\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 300.00</span></span>\n<span>\n<span>Rs. 300.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Outdoor Grass Carpet project</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and <span>modern outdoor grass carpet </span>? Contact <span><strong>SnT Home Improvements</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-outdoor-grass-carpet-project -in-negombo-2026-by-snt-home-improvement",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Outdoor_grass_carpet_project_3.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/g/r/grass_carpet3.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/g/r/grass_carpet4.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Outdoor_grass_carpet_project_1_1.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/Outdoor_grass_carpet_project_3.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Outdoor_grass_carpet_project_2_2.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-wall-moulding-rajagiriya-snt-home-improvements -2026",
+      "title": "Completed Projects : Wall Moulding - Rajagiriya - SNT Home Improvements 2026",
+      "excerpt": null,
+      "publishedAt": "2026-02-26T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "Wall Moulding",
+        "SnT Home Improvements",
+        "rajagiriya",
+        "Home Renovation",
+        "Bedroom wall moulding installation"
+      ],
+      "body": "<div><h2><strong><span>Wall Moulding – Rajagiriya by SnT Home Improvements</span></strong></h2>\n<div><span>SnT Home Improvements successfully completed a custom wall moulding project for a private bedroom in Rajagiriya. This installation delivered a durable, low-maintenance, and stylish interior solution, enhancing the home with a warm, modern, and sophisticated finish.</span></div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nWall Moulding\n</span>\n</li>\n<li><strong>Location</strong> : Rajagiriya</li>\n<li><strong>Date of Completion </strong>: 2026 February&nbsp;</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nWall Moulding\n</h3>\n<div>\n<div><span>\n<span>\n<span>As low as</span>\n<span><span>Rs. 1,700.00</span></span>\n<span>\n<span>Rs. 1,700.00</span></span>\n</span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Wall Moudling Project</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and <span>modern wall moulding</span>? Contact <span><strong>SnT Home Improvements</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-wall-moulding-rajagiriya-snt-home-improvements -2026",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/wall_moulding2.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/w/a/wall_moulding1.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/w/a/wall_moulding7.jpeg",
+        "https://stockpile.lk/media/wysiwyg/wall_moulding1_2.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/wall_moulding2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/wall_moulding3.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "razor-barbed-wire-fence-for-safety-kadawatha-ferdimesh-hardware-2026",
+      "title": "Razor Barbed Wire Fence for Safety Kadawatha - Ferdimesh Hardware - 2026",
+      "excerpt": null,
+      "publishedAt": "2026-02-26T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "razor barbed wire",
+        "outdoor fence",
+        "kadawatha",
+        "ferdimesh",
+        "fence",
+        "blade barbed wire"
+      ],
+      "body": "<div><h2><strong><span>Razor Barbed Wire Fence for Safety - <span>Kadawatha</span> - by Ferdimesh Hardware</span></strong></h2>\n<div><span>Ferdimesh Hardware supplied Razor Barbed Wire for safety in Kadawatha, using 450 mm razor wire, delivering a strong, reliable, and effective perimeter security solution designed to enhance residential safety and protection.</span></div>\n<div>\n<ul>\n<li><strong>Service &nbsp; &nbsp;</strong>: <span>\nRazor barbed wire\n</span>\n</li>\n<li><strong>Location</strong>&nbsp; : Kadawatha</li>\n<li><strong>Quantity &nbsp;</strong>: 16 Rolls</li>\n<li><strong>Diameter</strong>&nbsp;: 450mm</li>\n<li><strong>Date of Completion </strong>: 2026 January&nbsp;</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nFerdimesh Concertina Razor Blade Barbed Wire\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 8,900.00</span></span>\n<span>\n<span>Rs. 8,900.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Razor Barbed Wire Fence</span></span></h3>\n<p>Looking to enhance your property with high-security razor barbed wire fencing? Contact <strong><span>Ferdimesh Hardware</span></strong> today for a site visit, expert consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/razor-barbed-wire-fence-for-safety-kadawatha-ferdimesh-hardware-2026",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Razor_Babed_Kadawatha2.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/c/o/concertina_barbed_wire_1.jpg",
+        "https://stockpile.lk/media/wysiwyg/Razor_Babed_Kadawatha2_1.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/Razor_Babed_Kadawatha1.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "razor-barbed-wire-fence-for-safety-mirihana-ferdimesh-hardware-2026",
+      "title": "Razor Barbed Wire Fence for Safety - Mirihana - Ferdimesh Hardware - 2026",
+      "excerpt": null,
+      "publishedAt": "2026-02-26T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "razor barbed wire",
+        "outdoor fence",
+        "mirihana",
+        "ferdimesh",
+        "fence",
+        "blade barbed wire"
+      ],
+      "body": "<div><h2><strong><span>Razor Barbed Wire Fence for Safety - Mirihana - by Ferdimesh Hardware</span></strong></h2>\n<div><span>Ferdimesh Hardware supplied Razor Barbed Wire for safety in Mirihana, using 450 mm razor wire across 18 rolls, delivering a strong, reliable, and effective perimeter security solution designed to enhance residential safety and protection.</span></div>\n<div>\n<ul>\n<li><strong>Service &nbsp; &nbsp;</strong>: <span>\nRazor barbed wire\n</span>\n</li>\n<li><strong>Location</strong>&nbsp; : Mirihana</li>\n<li><strong>Quantity &nbsp;</strong>: 18 Rolls</li>\n<li><strong>Diameter</strong>&nbsp;: 450mm</li>\n<li><strong>Date of Completion </strong>: 2026 January&nbsp;</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nFerdimesh Concertina Razor Blade Barbed Wire\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 8,900.00</span></span>\n<span>\n<span>Rs. 8,900.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Razor Barbed Wire Fence</span></span></h3>\n<p>Looking to enhance your property with high-security razor barbed wire fencing? Contact <strong><span>Ferdimesh Hardware</span></strong> today for a site visit, expert consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/razor-barbed-wire-fence-for-safety-mirihana-ferdimesh-hardware-2026",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Razor_barbed_mirihana_image_3.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/c/o/concertina_barbed_wire_1.jpg",
+        "https://stockpile.lk/media/wysiwyg/Razor_barbed_mirihana_image_3.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/Razor_barbed_mirihana_image_2.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "razor-barbed-wire-fence-for-safety-mount-lavinia-ferdimesh-hardware-2026-duplicated",
+      "title": "Razor Barbed Wire Fence for Safety - Mount Lavinia - Ferdimesh Hardware - 2026",
+      "excerpt": null,
+      "publishedAt": "2026-02-26T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "razor barbed wire",
+        "outdoor fence",
+        "mount lavinia",
+        "ferdimesh",
+        "fence",
+        "blade barbed wire"
+      ],
+      "body": "<div><h2><strong><span>Razor Barbed Wire Fence for Safety - Mount Lavinia - by Ferdimesh Hardware</span></strong></h2>\n<div><span>Ferdimesh Hardware supplied Razor Barbed Wire for safety in Mount Lavinia, using 450 mm razor wire across 16 rolls, delivering a strong, reliable, and effective perimeter security solution designed to enhance residential safety and protection.</span></div>\n<div>\n<ul>\n<li><strong>Service &nbsp; &nbsp;</strong>: <span>\nRazor barbed wire\n</span>\n</li>\n<li><strong>Location</strong>&nbsp; : Mount Lavinia</li>\n<li><strong>Quantity &nbsp;</strong>: 16 Rolls</li>\n<li><strong>Diameter</strong>&nbsp;: 450mm</li>\n<li><strong>Date of Completion </strong>: 2026 January&nbsp;</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nFerdimesh Concertina Razor Blade Barbed Wire\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 8,900.00</span></span>\n<span>\n<span>Rs. 8,900.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Razor Barbed Wire Fence</span></span></h3>\n<p>Looking to enhance your property with high-security razor barbed wire fencing? Contact <strong><span>Ferdimesh Hardware</span></strong> today for a site visit, expert consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/razor-barbed-wire-fence-for-safety-mount-lavinia-ferdimesh-hardware-2026-duplicated",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Razor_Barbed_mount_lavinia_2.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/c/o/concertina_barbed_wire_1.jpg",
+        "https://stockpile.lk/media/wysiwyg/Razor_Barbed_mount_lavinia_2_2.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/Razor_Barbed_mount_lavinia_1_1.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Razor_Barbed_mount_lavinia_3.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-razor-barbed-wire-fence-for-house-safety-anuradhapura-ferdimesh-hardware-2026",
+      "title": "Completed Projects : Razor Barbed Wire Fence for House Safety - Anuradhapura - Ferdimesh Hardware - 2026",
+      "excerpt": null,
+      "publishedAt": "2026-02-25T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "razor barbed wire",
+        "outdoor fence",
+        "ferdimesh",
+        "fence",
+        "blade barbed wire",
+        "anuradhapura"
+      ],
+      "body": "<div><h2><strong><span>Razor Barbed Wire Fence for House Safety - Anuradhapura - by Ferdimesh Hardware</span></strong></h2>\n<div><span>Ferdimesh Hardware supplied Razor Barbed Wire for house safety in Anuradhapura, using 450 mm razor wire across 13 rolls, delivering a strong, reliable, and effective perimeter security solution designed to enhance residential safety and protection.</span></div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nRazor barbed wire\n</span>\n</li>\n<li><strong>Location</strong> : Anuradhapura</li>\n<li><strong>Quantity </strong>: 13 Rolls</li>\n<li><strong>Diameter</strong> : 450mm</li>\n<li><strong>Date of Completion </strong>: 2026 January&nbsp;</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nFerdimesh Concertina Razor Blade Barbed Wire\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 8,900.00</span></span>\n<span>\n<span>Rs. 8,900.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Razor Barbed Wire Fence</span></span></h3>\n<p>Looking to enhance your property with high-security razor barbed wire fencing? Contact <strong><span>Ferdimesh Hardware</span></strong> today for a site visit, expert consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-razor-barbed-wire-fence-for-house-safety-anuradhapura-ferdimesh-hardware-2026",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Razer_Barb_Anuradhapura1.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/c/o/concertina_barbed_wire_1.jpg",
+        "https://stockpile.lk/media/wysiwyg/Razer_Barb_Anuradhapura1.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/Razer_Barb_Anuradhapura2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Razer_Barb_Anuradhapura3.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Razer_Barb_Anuradhapura4.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-razor-barbed-wire-fence-for-safety-mabima-ferdimesh-hardware",
+      "title": "Razor Barbed Wire Fence for Safety - Mabima - Ferdimesh Hardware - 2026",
+      "excerpt": null,
+      "publishedAt": "2026-02-25T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "razor barbed wire",
+        "outdoor fence",
+        "mabima",
+        "ferdimesh",
+        "fence",
+        "blade barbed wire"
+      ],
+      "body": "<div><h2><strong><span>Razor Barbed Wire Fence for Safety - Mabima - by Ferdimesh Hardware</span></strong></h2>\n<div><span>Ferdimesh Hardware supplied Razor Barbed Wire for safety in Mabima, using 450 mm razor wire across 15 rolls, delivering a strong, reliable, and effective perimeter security solution designed to enhance residential safety and protection.</span></div>\n<div>\n<ul>\n<li><strong>Service &nbsp; &nbsp;</strong>: <span>\nRazor barbed wire\n</span>\n</li>\n<li><strong>Location</strong>&nbsp; : Mabima</li>\n<li><strong>Quantity &nbsp;</strong>: 15 Rolls</li>\n<li><strong>Diameter</strong>&nbsp;: 450mm</li>\n<li><strong>Date of Completion </strong>: 2026 January&nbsp;</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nFerdimesh Concertina Razor Blade Barbed Wire\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 8,900.00</span></span>\n<span>\n<span>Rs. 8,900.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Razor Barbed Wire Fence</span></span></h3>\n<p>Looking to enhance your property with high-security razor barbed wire fencing? Contact <strong><span>Ferdimesh Hardware</span></strong> today for a site visit, expert consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-razor-barbed-wire-fence-for-safety-mabima-ferdimesh-hardware",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Advantis_Mabima_Logistics_Hub1.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/c/o/concertina_barbed_wire_1.jpg",
+        "https://stockpile.lk/media/wysiwyg/Advantis_Mabima_Logistics_Hub1_1.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/Advantis_Mabima_Logistics_Hub4.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Advantis_Mabima_Logistics_Hub2_1.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Advantis_Mabima_Logistics_Hub3.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-luxury-vinyl-tiles-kotte-snt-home-improvements-2026-duplicated",
+      "title": "Completed Projects : Luxury Vinyl Tiles - Kotte - SNT Home Improvements 2026",
+      "excerpt": null,
+      "publishedAt": "2026-02-16T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "vinyl flooring",
+        "SnT Home Improvements",
+        "luxury vinyl tiles",
+        "Flooring solutions"
+      ],
+      "body": "<div><h2><strong><span>Luxury Vinyl Tiles – Kotte by SnT Home Improvements</span></strong></h2>\n<div>SnT Home Improvements successfully completed a vinyl flooring installation at a commercial showroom space in Kotte, delivering a stylish, durable, and low-maintenance flooring solution that enhanced the home with a warm, modern finish.</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nLuxury Vinyl Tiles\n</span>\n</li>\n<li><strong>Location</strong> : Kotte</li>\n<li><strong>Quantity </strong>: 219sqft</li>\n<li><strong>Date of Completion </strong>: 2026</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<div><div><div><div>1.5mm</div><div>2mm</div><div>3mm</div></div></div></div>\n<h3>\nLuxury Vinyl Flooring 1.5mm, 2mm, 3mm\n</h3>\n<div>\n<div><span>\n<span>\n<span>As low as</span>\n<span><span>Rs. 335.00</span></span>\n<span><span>Rs. 335.00</span></span>\n</span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Vinyl Tiles Project</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and durable luxury vinyl tiles? Contact&nbsp;<span><strong>SnT Home Improvements</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-luxury-vinyl-tiles-kotte-snt-home-improvements-2026-duplicated",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/LVT_SNT_kotte1.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_3_.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_4_.jpg",
+        "https://stockpile.lk/media/wysiwyg/LVT_SNT_kotte1_1.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/LVT_SNT_kotte2_1.jpeg",
+        "https://stockpile.lk/media/wysiwyg/LVT_SNT_kotte3_1.jpeg",
+        "https://stockpile.lk/media/wysiwyg/LVT_SNT_kotte4_1.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-luxury-vinyl-tiles-colombo-14--snt-home-improvements-2026-duplicated",
+      "title": "Completed Projects : Luxury Vinyl Tiles - Colombo 14 - SNT Home Improvements 2026",
+      "excerpt": null,
+      "publishedAt": "2026-02-06T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "vinyl flooring",
+        "SnT Home Improvements",
+        "pvc skirting",
+        "luxury vinyl tiles",
+        "Flooring solutions"
+      ],
+      "body": "<div><h2><strong><span>Luxury Vinyl Tiles – Colombo 14 by SnT Home Improvements</span></strong></h2>\n<div>SnT Home Improvements successfully completed a vinyl flooring installation at a commercial showroom space in Colombo 14, delivering a stylish, durable, and low-maintenance flooring solution that enhanced the home with a warm, modern finish.</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nLuxury Vinyl Tiles\n</span>\n</li>\n<li><strong>Location</strong> : Colombo 14</li>\n<li><strong>Quantity </strong>: 219sqft</li>\n<li><strong>Date of Completion </strong>: 2026</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<div><div><div><div>1.5mm</div><div>2mm</div><div>3mm</div></div></div></div>\n<h3>\nLuxury Vinyl Flooring 1.5mm, 2mm, 3mm\n</h3>\n<div>\n<div><span>\n<span>\n<span>As low as</span>\n<span><span>Rs. 335.00</span></span>\n<span><span>Rs. 335.00</span></span>\n</span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Vinyl Flooring Project</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and durable luxury vinyl flooring? Contact <span><strong>SnT Home Improvements</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-luxury-vinyl-tiles-colombo-14--snt-home-improvements-2026-duplicated",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/LVT_Col_143_cropped.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_3_.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_4_.jpg",
+        "https://stockpile.lk/media/wysiwyg/LVT_Col_141_cropped_1.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/LVT_narahenpita2_2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/LVT_Col_143_cropped_1.jpeg",
+        "https://stockpile.lk/media/wysiwyg/LVT_Col_144_cropped.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-luxury-vinyl-tiles-Narahenpita-snt-home-improvements-2026",
+      "title": "Completed Projects : Luxury Vinyl Tiles - Narahenpita - SNT Home Improvements 2026",
+      "excerpt": null,
+      "publishedAt": "2026-02-06T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "vinyl flooring",
+        "SnT Home Improvements",
+        "pvc skirting",
+        "luxury vinyl tiles",
+        "Flooring solutions"
+      ],
+      "body": "<div><h2><strong><span>Luxury Vinyl Tiles – Narahenpita by SnT Home Improvements</span></strong></h2>\n<div>SnT Home Improvements successfully completed a vinyl flooring installation at a commercial space in Narahenpita, delivering a stylish, durable, and low-maintenance flooring solution that enhanced the home with a warm, modern finish.</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nLuxury Vinyl Tiles\n</span>\n</li>\n<li><strong>Location</strong> : Narahenpita</li>\n<li><strong>Quantity </strong>: 228sqft</li>\n<li><strong>Date of Completion </strong>: 2026</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<div><div><div><div>1.5mm</div><div>2mm</div><div>3mm</div></div></div></div>\n<h3>\nLuxury Vinyl Flooring 1.5mm, 2mm, 3mm\n</h3>\n<div>\n<div><span>\n<span>\n<span>As low as</span>\n<span><span>Rs. 335.00</span></span>\n<span><span>Rs. 335.00</span></span>\n</span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Vinyl Flooring Project</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and durable luxury vinyl flooring? Contact <span><strong>SnT Home Improvements</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-luxury-vinyl-tiles-Narahenpita-snt-home-improvements-2026",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/LVT_narahenpita1.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_3_.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_4_.jpg",
+        "https://stockpile.lk/media/wysiwyg/katana_vinyl_and_skirting3.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/LVT_narahenpita2_1.jpeg",
+        "https://stockpile.lk/media/wysiwyg/LVT_narahenpita3_1.jpeg",
+        "https://stockpile.lk/media/wysiwyg/LVT_narahenpita4_1.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-flake-chip-flooring-katugastota-sl-enterprices-2026",
+      "title": "Completed Projects : Flake Chip Flooring - Katugastota - SL Enterprises 2026",
+      "excerpt": null,
+      "publishedAt": "2026-01-29T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "chip flake flooring"
+      ],
+      "body": "<div><h2><strong><span>Flake Chip Flooring – Residence House Katugastota by SL Enterprises</span></strong></h2>\n<div><span>SL Enterprises completed the flake chip flooring installation at the rooftop of Mr. Azad’s residence in Katugastota, covering 1,320 sq. ft., delivering a durable, modern finish.</span></div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nChip Flake Flooring\n</span>\n</li>\n<li><strong>Location</strong> : Katugastota</li>\n<li><strong>Quantity </strong>: 1320sqft&nbsp;</li>\n<li><strong>Date of Completion </strong>: 2026</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nChip Flake Flooring\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 420.00</span></span>\n<span>\n<span>Rs. 420.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Flake Chip Flooring Project</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and durable Flake Chip flooring? Contact&nbsp;<span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-flake-chip-flooring-katugastota-sl-enterprices-2026",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/flake_chip_flooring6-2.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/0/1/01epoxy_chip_flake.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/c/h/chip_flake_flooring5.jpeg",
+        "https://stockpile.lk/media/wysiwyg/flake_chip_flooring5-2.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/flake_chip_flooring7-2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/flake_chip_flooring8-2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/flake_chip_flooring6-2.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-titanium-wall-and-roof-sabaragamuwa-university-sl-enterprises-2026",
+      "title": "Completed Projects : Titanium Wall and Roof - Sabargamuwa University - SL Enterprises 2026",
+      "excerpt": null,
+      "publishedAt": "2026-01-29T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "Titanium wall finish",
+        "Titanium flooring",
+        "SL Enterprises"
+      ],
+      "body": "<div><h2><strong><span>Titanium Wall and Roof – Sabaragamuwa University by SL Enterprises</span></strong></h2>\n<div>SL Enterprises completed the titanium wall and roofing installation for the MAGA Sabaragamuwa Campus project, covering 4,500 sq. ft., delivering a durable, weather-resistant solution with a clean, modern finish.</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nTitanium Wall Finish\n</span>\n</li>\n<li><strong>Location</strong> : Sabaragamuwa University&nbsp;</li>\n<li><strong>Quantity </strong>: 4500sqft&nbsp;</li>\n<li><strong>Date of Completion </strong>: 2026</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nTitanium Wall Finish\n</h3>\n<div>\n<div>\n<span>\n<span><span>Rs. 250.00</span></span>\n<span>\n<span>Rs. 250.00</span></span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Titanium Project</span></span></h3>\n<p><span>Upgrade your space with durable titanium wall systems</span>? Contact <span><strong>SL Enterprises</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-titanium-wall-and-roof-sabaragamuwa-university-sl-enterprises-2026",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Titanium_wall_finish2-2.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/t/i/titanium_wall_finish4.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/t/i/titanium_wall_finish1.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Titanium_wall_finish2-2.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/Titanium_wall_finish1-2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Titanium_wall_finish3-2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Titanium_wall_finish4-2_1.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-luxury-vinyl-tiles-anuradapura-snt-home-improvements-2026",
+      "title": "Completed Projects : Luxury Vinyl Tiles - Anuradhapura - SNT Home Improvements 2026",
+      "excerpt": null,
+      "publishedAt": "2026-01-27T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "vinyl flooring",
+        "SnT Home Improvements",
+        "pvc skirting",
+        "luxury vinyl tiles",
+        "Flooring solutions"
+      ],
+      "body": "<div><h2><strong><span>Luxury Vinyl Tiles – Anuradhapura by SnT Home Improvements</span></strong></h2>\n<div>SnT Home Improvements successfully completed a vinyl flooring installation at a residence in Anuradhapura, &nbsp;delivering a stylish, durable, and low-maintenance flooring solution that enhanced the home with a warm, modern finish.</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nLuxury Vinyl Tiles\n</span>\n</li>\n<li><strong>Location</strong> : Anuradhapura</li>\n<li><strong>Quantity </strong>: 500sqft (LVT)</li>\n<li><strong>Date of Completion </strong>: 2026</li>\n</ul>\n</div>\n<div>\n<div>\n<div>\n<div>\n<div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<div><div><div><div>1.5mm</div><div>2mm</div><div>3mm</div></div></div></div>\n<h3>\nLuxury Vinyl Flooring 1.5mm, 2mm, 3mm\n</h3>\n<div>\n<div><span>\n<span>\n<span>As low as</span>\n<span><span>Rs. 335.00</span></span>\n<span><span>Rs. 335.00</span></span>\n</span>\n</span>\n</div> </div>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Vinyl Flooring Project</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and durable luxury vinyl flooring? Contact <span><strong>SnT Home Improvements</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-luxury-vinyl-tiles-anuradapura-snt-home-improvements-2026",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/LVT_Anuradhapura2-2.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_3_.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_4_.jpg",
+        "https://stockpile.lk/media/wysiwyg/LVT_Anuradhapura2-2.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/LVT_Anuradhapura1-2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/LVT_Anuradhapura4-2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Lvt_anuradapura5-2.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-coconut-land-razor-fence-for-safety-fedimesh-hardware",
+      "title": "Completed Projects : Coconut Land Razor Fence for Safety - Kurunegala - Ferdimesh Hardware - 2025",
+      "excerpt": null,
+      "publishedAt": "2026-01-16T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "razor barbed wire",
+        "outdoor fence",
+        "ferdimesh",
+        "fence",
+        "blade barbed wire"
+      ],
+      "body": "<div><h2><strong><span>Cocount Land Razor Fence For Safety – Kurunegala by Ferdimesh Hardware</span></strong></h2>\n<div>\n<div>Ferdimesh Hardware successfully supplied &nbsp;Razor Barbed Wire for a project in Coconut Land Kurunegala, providing 900 mm razor wire across 30 rolls to deliver a strong, reliable, and high-security fencing solution designed to enhance safety and perimeter protection.</div>\n</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nRazor barbed wire\n</span>\n</li>\n<li><strong>Location</strong> : Kurunegala</li>\n<li><strong>Quantity </strong>: 30 rolls</li>\n<li><strong>Diameter : </strong>900mm</li>\n<li><strong>Date of Completion </strong>: 2025</li>\n</ul>\n</div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nFerdimesh Concertina Razor Blade Barbed Wire\n</h3>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Razor Barbed Wire Fence</span></span></h3>\n<p>Looking to enhance your property with high-security razor barbed wire fencing? Contact <strong><span>Ferdimesh Hardware</span></strong> today for a site visit, expert consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-coconut-land-razor-fence-for-safety-fedimesh-hardware",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/kurunegala_barbed_wire.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/c/o/concertina_barbed_wire_1.jpg",
+        "https://stockpile.lk/media/wysiwyg/WhatsApp_Image_2026-01-16_at_09.01.26-2.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-luxury-vinyl-tiles-and-pvc-skirting-katana-snt-home-improvements-2025",
+      "title": "Completed Projects : Luxury Vinyl Tiles and PVC Skirting - Katana - SNT Home Improvements 2025",
+      "excerpt": null,
+      "publishedAt": "2026-01-16T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "vinyl flooring",
+        "SnT Home Improvements",
+        "skirting",
+        "pvc skirting",
+        "luxury vinyl tiles",
+        "Flooring solutions"
+      ],
+      "body": "<div><h2><strong><span>Luxury Vinyl Tiles and PVC Skirting – Katana by SnT Home Improvements</span></strong></h2>\n<div>SnT Home Improvements successfully completed a vinyl flooring installation at a residence in Katana, complemented by Dark Brown PVC skirting, delivering a stylish, durable, and low-maintenance flooring solution that enhanced the home with a warm, modern finish.</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nLuxury Vinyl Tiles\n</span>\n,<div>\nPlastic PVC Skirting\n</div>\n</li>\n<li><strong>Location</strong> : Katana</li>\n<li><strong>Quantity </strong>: 950sqft (LVT), 280lft (Skirting)</li>\n<li><strong>Date of Completion </strong>: 2025</li>\n</ul>\n</div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nLuxury Vinyl Flooring 1.5mm, 2mm, 3mm\n</h3>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Vinyl Flooring Project</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and durable luxury vinyl flooring? Contact <span><strong>SnT Home Improvements</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-luxury-vinyl-tiles-and-pvc-skirting-katana-snt-home-improvements-2025",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/katana_vinyl_and_skirting4.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_3_.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_4_.jpg",
+        "https://stockpile.lk/media/wysiwyg/katana_vinyl_and_skirting3.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/katana_vinyl_and_skirting1.jpeg",
+        "https://stockpile.lk/media/wysiwyg/katana_vinyl_and_skirting4.jpeg",
+        "https://stockpile.lk/media/wysiwyg/katana_vinyl_and_skirting2.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-razor-barbed-wire-fence-for-house-safety-athurugiriya-ferdimesh-hardware-2025",
+      "title": "Completed Projects : Razor Barbed Wire Fence for House Safety - Athurugiriya - Ferdimesh Hardware - 2025",
+      "excerpt": null,
+      "publishedAt": "2026-01-15T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "razor barbed wire",
+        "outdoor fence",
+        "ferdimesh",
+        "fence",
+        "blade barbed wire",
+        "athurugiriya"
+      ],
+      "body": "<div><h2><strong><span>Razor Barbed Wire Fence for House Safety - Athurugiriya -by Ferdimesh Hardware</span></strong></h2>\n<div><span>Ferdimesh Hardware supplied Razor Barbed Wire for house safety in Athurugiriya, using 450 mm razor wire across 8 rolls, delivering a strong, reliable, and effective perimeter security solution designed to enhance residential safety and protection.</span></div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nRazor barbed wire\n</span>\n,</li>\n<li><strong>Location</strong> : Athurugiriya</li>\n<li><strong>Quantity </strong>: 8 Rolls</li>\n<li><strong>Diameter</strong> : 450mm</li>\n<li><strong>Date of Completion </strong>: 2025</li>\n</ul>\n</div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nFerdimesh Concertina Razor Blade Barbed Wire\n</h3>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n<h3><span><span>Get a Quote for Your Razor Barbed Wire Fence</span></span></h3>\n<p>Looking to enhance your property with high-security razor barbed wire fencing? Contact <strong><span>Ferdimesh Hardware</span></strong> today for a site visit, expert consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-razor-barbed-wire-fence-for-house-safety-athurugiriya-ferdimesh-hardware-2025",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/athurugirya_razore_wire_project1-3-2.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/c/o/concertina_barbed_wire_1.jpg",
+        "https://stockpile.lk/media/wysiwyg/athurugirya_razore_wire_project2-2_1.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/athurugirya_razore_wire_project1-3_1.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-luxury-vinyl-tiles-boralesgamuwa-snt-home-improvements-2025",
+      "title": "Completed Projects : Luxury Vinyl Tiles Boralesgamuwa - SNT Home Improvements 2025",
+      "excerpt": null,
+      "publishedAt": "2026-01-12T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "vinyl flooring",
+        "SnT Home Improvements",
+        "luxury vinyl tiles",
+        "Flooring solutions"
+      ],
+      "body": "<div><h2><strong><span>Luxury Vinyl Tiles – &nbsp;Boralesgamuwa (1000sqft) by SnT Home Improvements</span></strong></h2>\n<div>SnT Home Improvements successfully completed a 1,000 sq.ft Luxury Vinyl Tile (LVT) installation in Boralesgamuwa, delivering a modern, durable, and low-maintenance flooring solution</div>\n<ul>\n<li><strong>Service </strong>:&nbsp;<span>\nLuxury Vinyl Tiles\n</span>\n</li>\n<li><strong>Location</strong> : Boralesgamuwa</li>\n<li><strong>Quantity </strong>: 1000sqft</li>\n<li><strong>Date of Completion </strong>: 2025</li>\n</ul>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nLuxury Vinyl Flooring 1.5mm, 2mm, 3mm\n</h3>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n<h3><span>Get a Quote for Your Vinyl Flooring Project</span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and durable luxury vinyl flooring? Contact<span> <span><strong>SnT Home Improvements</strong></span> </span>today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-luxury-vinyl-tiles-boralesgamuwa-snt-home-improvements-2025",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/lvt_snt_home_improvements4.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_3_.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_4_.jpg",
+        "https://stockpile.lk/media/wysiwyg/lvt_snt_home_improvements1.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/lvt_snt_home_improvements2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/lvt_snt_home_improvements3.jpeg",
+        "https://stockpile.lk/media/wysiwyg/lvt_snt_home_improvements4.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-luxury-vinyl-tiles-rathmalana-and-skiritng-mirigama-snt-home-improvements-2025-du",
+      "title": "Completed Projects : Luxury Vinyl Tiles and Skirting - Mirigama - SNT Home Improvements 2025",
+      "excerpt": null,
+      "publishedAt": "2026-01-12T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "vinyl flooring",
+        "SnT Home Improvements",
+        "skirting",
+        "pvc skirting",
+        "luxury vinyl tiles",
+        "Flooring solutions"
+      ],
+      "body": "<div><h2><strong><span>Luxury Vinyl Tiles and Skirting – &nbsp;Mirigama (800sqft) by SnT Home Improvements</span></strong></h2>\n<div>SnT Home Improvements successfully completed an 800 sq.ft Luxury Vinyl Tile (LVT) flooring installation at an old home in Mirigama, along with 120 linear feet of 3″ plastic skirting, delivering a refreshed, modern, and low-maintenance flooring solution.</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nLuxury Vinyl Tiles\n</span>\n,<div>\nPlastic PVC Skirting\n</div>\n</li>\n<li><strong>Location</strong> : Mirigama</li>\n<li><strong>Quantity </strong>: 800sqft (LVT), 120lft (Skirting)</li>\n<li><strong>Date of Completion </strong>: 2025</li>\n</ul>\n</div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nLuxury Vinyl Flooring 1.5mm, 2mm, 3mm\n</h3>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n,</div>\n<h3><span><span>Get a Quote for Your Vinyl Flooring Project</span></span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and durable luxury vinyl flooring? Contact <span><strong>SnT Home Improvements</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-luxury-vinyl-tiles-rathmalana-and-skiritng-mirigama-snt-home-improvements-2025-du",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Lvt_842_mirigama_snt3.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_3_.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_4_.jpg",
+        "https://stockpile.lk/media/wysiwyg/Lvt_842_mirigama_snt4.jpg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/Lvt_842_mirigama_snt3.jpg",
+        "https://stockpile.lk/media/wysiwyg/Lvt_842_mirigama_snt2.jpg",
+        "https://stockpile.lk/media/wysiwyg/WhatsApp_Image_2026-01-12_at_09.44.11.jpg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-luxury-vinyl-tiles-rathmalana-snt-home-improvements-2025",
+      "title": "Completed Projects : Luxury Vinyl Tiles Rathmalana - SNT Home Improvements 2025",
+      "excerpt": null,
+      "publishedAt": "2026-01-12T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "vinyl flooring",
+        "SnT Home Improvements",
+        "luxury vinyl tiles",
+        "Flooring solutions"
+      ],
+      "body": "<div><h2><strong><span>Luxury Vinyl Tiles – &nbsp;Rathmalana (500sqft) by SnT Home Improvements</span></strong></h2>\n<div>SnT Home Improvements successfully completed a 500 sq.ft Luxury Vinyl Tile (LVT) installation in Rathmalana, delivering a modern, durable, and low-maintenance flooring solution ideal for residential use.&nbsp;</div>\n<div>\n<ul>\n<li><strong>Service </strong>: <span>\nLuxury Vinyl Tiles\n</span>\n</li>\n<li><strong>Location</strong> : Rathmalana</li>\n<li><strong>Quantity </strong>: 500sqft</li>\n<li><strong>Date of Completion </strong>: 2025</li>\n</ul>\n</div>\n<div> <div>\n<div>\n<div><div><div><div>\n<div>\n<div>\n<h3>\nLuxury Vinyl Flooring 1.5mm, 2mm, 3mm\n</h3>\n</div>\n</div>\n</div></div></div></div></div>\n</div>\n</div>\n<h3><span>Get a Quote for Your Vinyl Flooring Project</span></h3>\n<p>Looking to upgrade your home or commercial space with stylish and durable luxury vinyl flooring? Contact <span><strong>SnT Home Improvements</strong></span> today for a site visit, professional consultation, and a customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-luxury-vinyl-tiles-rathmalana-snt-home-improvements-2025",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/lvt_rathmalana_snt1.jpeg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_3_.jpg",
+        "https://stockpile.lk/media/catalog/product/cache/944ee164ff2029290f3199a8c80e74d1/l/u/luxury_vinyl_flooring_4_.jpg",
+        "https://stockpile.lk/media/wysiwyg/lvt_rathmalana_snt1.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/lvt_rathmalana_snt2_1.jpeg",
+        "https://stockpile.lk/media/wysiwyg/lvt_rathmalana_snt3.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Luxury_Vinyl_Tiles_in_Rathamalana_500sqft_by_SNT_Home_Improvements_image1.jpeg"
+      ]
+    },
+    {
+      "kind": "NewsArticle",
+      "slug": "stockpile-in-sinhala",
+      "title": "Stockpile in Sinhala",
+      "excerpt": null,
+      "publishedAt": "2025-12-30T00:00:00Z",
+      "categories": [],
+      "tags": [
+        "Stockpile Sinhala"
+      ],
+      "body": "<div>Today we have taken our first steps towards a multi-language site by serving web pages in Sinhala. This is part of Stockpile’s effort to continuously improve and make the procurement journey easier for the customer. Users visiting the site will be prompted to chose between Sinhala and English, and their preference will be stored for future visit. At the moment, we have translated the important product attributes and their values into Sinhala, next we’ll translate the product categories. Once that is complete, we will then begin the process of translating key product details. And finally, taking our learnings from the changes and how it benefits the customers, we will make the website available in Tamil. We take this opportunity to thank our partnering suppliers and our customers for their valuable feedback and support towards making Stockpile the ultimate source of construction material in Sri Lanka.</div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/stockpile-in-sinhala",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/__200x85.png"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-nadiyas-warehouse-high-build-epoxy-coating-nawalapitiya",
+      "title": "Completed Projects : Nadiyas warehouse High Build Epoxy Coating - SL Enterprises 2025",
+      "excerpt": null,
+      "publishedAt": "2025-12-12T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "High build epoxy flooring",
+        "Flooring solutions",
+        "Epoxy flooring",
+        "Epoxy coating",
+        "epoxy"
+      ],
+      "body": "<div><h2><strong><span>High Build Epoxy Coating – &nbsp;Nadiyas warehouse 1st floor Nawalapitiya (2950sqft) by SL Enterprises</span></strong></h2>\n<div>SL Enterprises successfully completed a 2,950 sq.ft high-build epoxy coating installation for Nadiyas Warehouse (1st Floor), delivering a durable, seamless, and high-performance flooring solution suited for warehouse and storage operations. This project required a robust coating system capable of withstanding heavy foot traffic, material handling activities, and daily operational wear while maintaining a clean and dust-free surface. The high-build epoxy coatingprovided excellent abrasion resistance, easy maintenance, and long-term durability, resulting in a strong, functional, and professionally finished floor tailored to the operational demands of Nadiyas Warehouse.</div>\n<div>\n<ul>\n<li><strong>Service </strong>: High Build Epoxy</li>\n<li><strong>Location</strong> : Nawalapitiya</li>\n<li><strong>Quantity </strong>: 2950sqft</li>\n<li><strong>Date of Completion </strong>: 2025</li>\n</ul>\n</div>\n<h3><span>Get a Quote for Your Industrial Flooring Project</span></h3>\n<p>Looking to upgrade your industrial or commercial space with high-build epoxy flooring? Contact SL Enterprises today for a site visit, consultation, and customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-nadiyas-warehouse-high-build-epoxy-coating-nawalapitiya",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Nadiyas__warehouse_Epoxy_coating2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Nadiyas__warehouse_Epoxy_coating1.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/Nadiyas__warehouse_Epoxy_coating2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Nadiyas__warehouse_Epoxy_coating3.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Nadiyas__warehouse_Epoxy_coating4.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-flake-chip-flooring-rooftop-pebble-wash-stair-case-ukuwela-sl-enterprises-2025",
+      "title": "Completed Projects : Flake Chip Flooring Rooftop / Pebble Wash Stair Case Ukuwela - SL Enterprises 2025",
+      "excerpt": null,
+      "publishedAt": "2025-12-03T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "High build epoxy flooring",
+        "Flooring solutions",
+        "Epoxy flooring",
+        "Epoxy coating",
+        "epoxy"
+      ],
+      "body": "<div><h2><strong><span>Flake Chip Flooring Rooftop and Pebble Wash Stair Case – Mr.Akhrel's residence Ukuwela (1200 sq.ft) by SL Enterprises</span></strong></h2>\n<div><span>SL Enterprises successfully completed a </span>1,200 sq.ft Flake Chip Flooring rooftop and Pebble Wash Staircase<span>installation for </span>Mr. Akhrel’s residence in Ukuwela<span>, delivering a durable, weather-resistant, and visually appealing outdoor flooring solution. The flake chip system provided a textured, slip-resistant, and long-lasting finish ideal for rooftop exposure to sun and rain, while the pebble wash staircase offered enhanced traction, natural aesthetics, and superior durability for daily use. Together, these upgrades created a cohesive, low-maintenance outdoor environment that enhances both safety and the overall look of the residence.</span></div>\n<div>\n<ul>\n<li><strong>Service </strong>: Flake Chip Flooring Rooftop / Pebble Wash Stair Case</li>\n<li><strong>Location</strong> : Ukuwela</li>\n<li><strong>Quantity </strong>: 1,200sqft</li>\n<li><strong>Date of Completion </strong>: 2025</li>\n</ul>\n</div>\n<h3><span>Get a Quote for Your Industrial Flooring Project</span></h3>\n<p>Looking to upgrade your industrial or commercial space with high-build epoxy flooring? Contact SL Enterprises today for a site visit, consultation, and customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-flake-chip-flooring-rooftop-pebble-wash-stair-case-ukuwela-sl-enterprises-2025",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/rooftop_and_stair_case_flake_chip_flooring3.jpeg",
+        "https://stockpile.lk/media/wysiwyg/rooftop_and_stair_case_flake_chip_flooring3.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/rooftop_and_stair_case_flake_chip_flooring4.jpeg",
+        "https://stockpile.lk/media/wysiwyg/rooftop_and_stair_case_flake_chip_flooring2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/rooftop_and_stair_case_flake_chip_flooring1_1.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-flake-chip-flooring-rooftop-matale-sl-enterprises-2025",
+      "title": "Completed Projects : Flake chip flooring rooftop Matale - SL Enterprises 2025",
+      "excerpt": null,
+      "publishedAt": "2025-12-02T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "High build epoxy flooring",
+        "Flooring solutions",
+        "Epoxy flooring",
+        "Epoxy coating",
+        "epoxy"
+      ],
+      "body": "<div><h2><strong><span>Flake Chip Flooring Rooftop – Matale (1450 sq.ft) by SL Enterprises</span></strong></h2>\n<div><span>SL Enterprises successfully completed a </span>1,450 sq.ft Flake Chip Flooring<span> installation for</span>&nbsp;residence in Dola Rd, Matale<span>, delivering a durable and visually appealing surface ideal for a rooftop space. This project required a flooring solution that combines aesthetic appeal with resilience, offering superior resistance to weather elements, moisture, and frequent foot traffic. The flake chip system provided a textured, slip-resistant finish, ensuring a safe and low-maintenance environment for the rooftop.</span></div>\n<div>\n<ul>\n<li><strong>Service </strong>: Flake Chip Flooring Rooftop</li>\n<li><strong>Location</strong> : Matale</li>\n<li><strong>Quantity </strong>: 1,450sqft</li>\n<li><strong>Date of Completion </strong>: 2025</li>\n</ul>\n</div>\n<h3><span>Get a Quote for Your Industrial Flooring Project</span></h3>\n<p>Looking to upgrade your industrial or commercial space with high-build epoxy flooring? Contact SL Enterprises today for a site visit, consultation, and customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-flake-chip-flooring-rooftop-matale-sl-enterprises-2025",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/flake_chip_flooring2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/flake_chip_flooring1.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/flake_chip_flooring2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/flake_chip_flooring3.jpeg",
+        "https://stockpile.lk/media/wysiwyg/flake_chip_flooring4.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-3mm-self-levelling-epoxy-shan-teas-pvt-ltd-athurugiriya-sl-enterprises-2025",
+      "title": "Completed Projects : 3mm self levelling epoxy - Shan Teas Pvt Ltd - SL Enterprises 2025",
+      "excerpt": null,
+      "publishedAt": "2025-11-27T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "High build epoxy flooring",
+        "Flooring solutions",
+        "Epoxy flooring",
+        "Epoxy coating",
+        "epoxy"
+      ],
+      "body": "<div><h2><strong><span>3mm Self Levelling Epoxy – &nbsp;Shan Teas Pvt Ltd Athurugiriya (1450 sq.ft) by SL Enterprises</span></strong></h2>\n<div>SL Enterprises successfully completed a 1,450 sq.ft 3mm self-levelling epoxy flooring installation for Shan Teas (Pvt) Ltd in Athurugiriya, delivering a smooth, seamless, and high-performance floor ideal for tea processing and packaging operations. This project required a flooring system that offers superior hygiene, chemical resistance, and a dust-free finish while withstanding frequent foot traffic and equipment movement. The 3mm self-levelling epoxy system provided the perfect solution, ensuring a durable, easy-to-clean, and visually refined surface tailored to the operational standards of Shan Teas.</div>\n<div>\n<ul>\n<li><strong>Service </strong>: 3mm self leveling epoxy</li>\n<li><strong>Location</strong> : Athurugiriya</li>\n<li><strong>Quantity </strong>: 1,450sqft</li>\n<li><strong>Date of Completion </strong>: 2025</li>\n</ul>\n</div>\n<h3><span>Get a Quote for Your Industrial Flooring Project</span></h3>\n<p>Looking to upgrade your industrial or commercial space with high-build epoxy flooring? Contact SL Enterprises today for a site visit, consultation, and customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-3mm-self-levelling-epoxy-shan-teas-pvt-ltd-athurugiriya-sl-enterprises-2025",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Shan_Teas2-2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Shan_Teas1-2_1.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/Shan_Teas2-2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Shan_Teas3-2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Shan_Teas4-2.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-industrial-epoxy-coating-hb-jp-fruits-pvt-ltd-sl-enterprises-2025",
+      "title": "Completed Projects : Industrial epoxy coating HB - JP Fruits Pvt Ltd Embilipitiya - SL Enterprises 2025",
+      "excerpt": null,
+      "publishedAt": "2025-11-27T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "High build epoxy flooring",
+        "Flooring solutions",
+        "Epoxy flooring",
+        "Epoxy coating",
+        "epoxy"
+      ],
+      "body": "<div><h2><strong><span>Industrial Epoxy Coating HB – JP Fruits Pvt Ltd Embilipitiya (1250 sq.ft) by SL Enterprises</span></strong></h2>\n<div>SL Enterprises successfully completed a 1,250 sq.ft high-build industrial epoxy flooring installation for JP Fruits (Pvt) Ltd in Embilipitiya, delivering a durable, hygienic, and seamless floor system ideal for food-handling and processing environments. This project required a coating solution that could withstand continuous moisture exposure, frequent foot traffic, and heavy equipment movement while ensuring a clean, easy-to-maintain surface. The high-build epoxy coating provided the perfect balance of strength, safety, and long-lasting performance for JP Fruits’ operational needs.</div>\n<div>\n<ul>\n<li><strong>Service </strong>: High Build Epoxy Flooring</li>\n<li><strong>Location</strong> : Embilipitiya</li>\n<li><strong>Quantity </strong>: 1,250sqft</li>\n<li><strong>Date of Completion </strong>: 2025</li>\n</ul>\n</div>\n<h3><span>Get a Quote for Your Industrial Flooring Project</span></h3>\n<p>Looking to upgrade your industrial or commercial space with high-build epoxy flooring? Contact SL Enterprises today for a site visit, consultation, and customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-industrial-epoxy-coating-hb-jp-fruits-pvt-ltd-sl-enterprises-2025",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Jp_fruits_Hb_epoxy1-2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Jp_fruits_Hb_epoxy1-2.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/Jp_fruits_Hb_epoxy2-2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Jp_fruits_Hb_epoxy3-2.jpeg",
+        "https://stockpile.lk/media/wysiwyg/Jp_fruits_Hb_epoxy4-2.jpeg"
+      ]
+    },
+    {
+      "kind": "ProjectCaseStudy",
+      "slug": "completed-projects-epoxy-high-build-coating-nethu-print-solutions-sl-enterprises-2025",
+      "title": "Completed Projects : Epoxy high build coating - Nethu print solutions - SL Enterprises 2025",
+      "excerpt": null,
+      "publishedAt": "2025-11-19T00:00:00Z",
+      "categories": [
+        "completed-jobs"
+      ],
+      "tags": [
+        "SL Enterprises",
+        "High build epoxy flooring",
+        "Flooring solutions",
+        "Epoxy flooring",
+        "Epoxy coating",
+        "epoxy"
+      ],
+      "body": "<div><h2><strong><span>Epoxy High-Build Coating – Nethu Print Solutions, Piliyandala (5,720 sq.ft) by SL Enterprises</span></strong></h2>\n<p>SL Enterprises successfully completed a 5,720 sq.ft high-build epoxy flooring installation for Nethu Print Solutions in Piliyandala, delivering a durable, seamless, and visually clean industrial floor ideal for continuous printing, production, and storage operations. This project required a flooring system capable of handling heavy machinery, frequent foot traffic, and ink or chemical exposure making high-build epoxy coating the perfect solution.</p>\n<div>\n<ul>\n<li><strong>Service </strong>: High Build Epoxy Flooring</li>\n<li><strong>Location</strong> : Piliyandala</li>\n<li><strong>Quantity </strong>: 5,720sqft</li>\n<li><strong>Date of Completion </strong>: 2025</li>\n</ul>\n</div>\n<h3><span>Get a Quote for Your Industrial Flooring Project</span></h3>\n<p>Looking to upgrade your industrial or commercial space with high-build epoxy flooring? Contact SL Enterprises today for a site visit, consultation, and customized quotation.</p></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/completed-projects-epoxy-high-build-coating-nethu-print-solutions-sl-enterprises-2025",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/nethu_print_solutions1_2_.jpeg",
+        "https://stockpile.lk/media/wysiwyg/nethu_print_solutions1_2_.jpeg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg",
+        "https://stockpile.lk/media/wysiwyg/nethu_print_solutions2_2_.jpeg",
+        "https://stockpile.lk/media/wysiwyg/nethu_print_solutions3_1_.jpeg",
+        "https://stockpile.lk/media/wysiwyg/nethu_print_solutions4_1_.jpeg"
+      ]
+    },
+    {
+      "kind": "NewsArticle",
+      "slug": "communicate-easily-with-whatsapp",
+      "title": "Communicate Easily With WhatsApp!",
+      "excerpt": null,
+      "publishedAt": "2025-06-09T00:00:00Z",
+      "categories": [
+        "stockpile"
+      ],
+      "tags": [],
+      "body": "<div><span>As we continuously develop new features to offer a better service, we have integrated WhatApp messaging into the Stockpile platform to provide you with the following features. As a registered supplier on Stockpile, we now offer you the following:</span></div>\n<div><strong><span>Incoming Customer Call Number</span></strong></div>\n<div><span>Receive the customer's number directly to your WhatApp so you can respond with prices or send product photographs without having to note down the number.&nbsp;</span></div>\n<div><strong><span>Missed Customer Call Cumber</span></strong></div>\n<div><span>If everyone in your company misses a customer's call, then you can receive a notice with the customer's number to easily return their call.&nbsp;</span></div>\n<div><strong><span>Payment Reminders</span></strong></div>\n<div><span>In the event of any delays in settling your invoices, a reminder message will be sent to you.&nbsp;</span></div>\n<div><strong><span>Share Your Profile With Customers</span></strong></div>\n<div><span><span>Make a positive impression on the customer by&nbsp;</span></span><span>having your company profile automatically sent on WhatsApp to customers who call you (including missed calls). They will instantly see your company name &amp; address, phone number and WhatApp number along with a short description of your products and services.&nbsp;&nbsp;</span></div>\nTalk to us to find out how you can get started with these features.",
+      "sourceUrl": "https://stockpile.lk/en/news/post/communicate-easily-with-whatsapp",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/WhatsApp.svg.png",
+        "https://stockpile.lk/media/magefan_blog/Shared_Supplier_Profile_01.jpg"
+      ]
+    },
+    {
+      "kind": "SupplierStory",
+      "slug": "mitutoyo-digital-vernier-calipers",
+      "title": "Mitutoyo Digital Vernier Calipers",
+      "excerpt": null,
+      "publishedAt": "2025-04-28T00:00:00Z",
+      "categories": [
+        "suppliers"
+      ],
+      "tags": [
+        "vernier calipers",
+        "unicorn metalics",
+        "mitutoyo",
+        "measuring instruments"
+      ],
+      "body": "<h1>Mitutoyo Digital Vernier Calipers </h1>\n<p>No one can deny the fundamental necessity of precision measurement. Why? Because precise measurements ensure structural integrity and protection. Without precise measurements, errors can lead to misaligned structures, weakness, and failure. Regulations set by regulatory authorities and governing bodies are meant to reduce these errors and prevent potential safety and legal issues. Accordingly, calipers are meant to provide precise measurements in several industrial applications.</p>\n<h2>Why Use Precision Vernier Calipers</h2>\n<p>Accuracy is key in different industry applications, and therefore highly accurate calipers must be used to achieve accurate measurements. Industries such as construction, manufacturing, medical and automotive need these precision vernier calipers for precise machining and quality control. Precision vernier calipers are used to get the least deviated outside dimensions, inside dimensions, and depths. An indispensable tool built to provide accuracy, efficiency, and quality.</p>\n<p>Modern industry applications use accurate calipers to reduce the tiniest possible variation in measurements to meet quality standards and legal obligations. Quality standards strictly prohibit deviations in many industrial projects. Take an example of factories that manufacture electronic parts, calipers ensure each circuit board and microchip is aligned together correctly and functions as required.</p>\n<h2>Mitutoyo Vernier Calipers for Every Need</h2>\n<p>Mitutoyo is highly regarded amongst precision measuring equipment for smooth operations, digital indicators, clear dials, durability, reliability, variety, and the use of advanced technology. Their calipers are used in a wide range of operations in several industries, across the world.</p>\n<p>Mitutoyo produces a broad and diverse range of calipers in multiple variations, including digimatic calipers or digital Vernier Calipers, Vernier Calipers, Dial Calipers, and accessories. Absolute digimatic calipers product variations range from 0-1000mm / 0-40”, and are sold in Sri Lanka by the agent Unicorn Metalics. The most common industry application is the 0-150mm / 0-6” caliper, Mitutoyo Absolute Digimatic 150mm, which delivers the best in accuracy and speed, for repeatable measurements.</p>\n<p>Mitutoyo designs and constructs their instruments with high-quality materials, accurate machining, and easy-to-read scales. The significance of these calipers is that the patented Absolute (ABS) sensor retains the origin point and eliminates constant zeroing, reducing error chances and improving efficient accuracy.</p>\n<h2>Unicorn Metalics</h2>\n<p>In Sri Lanka, Unicorn Metalics is the authorized agent for Mitutoyo calipers. Since 1977, they have supplied global power and hand tools, machinery, equipment, instruments, and accessories brands. They represent the biggest and most prestigious brands around the globe, including large industries and corporates. As the authorized agent for Mitutoyo Vernier calipers, they provide warranties, after-sales support, and replacements.</p>\n<h2>Final Words</h2>\n<p>Stockpile is a B2B marketplace for construction equipment in Sri Lanka that offers a complete procurement platform to industry professionals and construction companies. Unicorn Metalics is a registered supplier of Stockpile, providing a wide range of products. These are widely used tools in modern industry applications, and Stockpile enlists Unicorn Metalics as a trusted supplier of high quality products for various industry applications. Visit Stockpile and Unicorn Metalics to gather more information and see their variety of products that best serve your needs.</p>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/mitutoyo-digital-vernier-calipers",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Unicorn-Metalics-Mitutoyo-24x302.jpg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "NewsArticle",
+      "slug": "what-are-mdf-hdf-and-hmr-boards",
+      "title": "What are MDF, HDF, and HMR Boards?",
+      "excerpt": null,
+      "publishedAt": "2025-02-26T00:00:00Z",
+      "categories": [
+        "stockpile"
+      ],
+      "tags": [
+        "mdf",
+        "hmr",
+        "hdf"
+      ],
+      "body": "<p><span>When selecting engineered wood products, it’s essential to understand the differences between </span><span><strong>MDF (Medium Density Fibreboard), HDF (High Density Fibreboard), and HMR (High Moisture Resistant) boards</strong></span><span>. Each type offers distinct properties, making them suitable for various applications in Sri Lanka’s construction and furniture industries.</span></p>\n<h2><span>MDF (Medium Density Fibreboard)</span></h2>\n<p><span>MDF is an affordable and versatile wood composite made from wood fibres bonded with resin and heat. It has a smooth surface, making it ideal for </span><span><strong>furniture, cabinetry, and interior décor</strong></span><span>. In Sri Lanka, MDF is widely used for </span><span><strong>wardrobes, wall panels, and decorative elements</strong></span><span>, especially in residential and commercial spaces.</span></p>\n<h2><span>HDF (High Density Fibreboard)</span></h2>\n<p><span>HDF is a denser version of MDF, providing greater strength and durability. It is commonly used for </span><span><strong>flooring, doors, and high-traffic furniture</strong></span><span>. In Sri Lanka, HDF is particularly popular for </span><span><strong>laminate flooring and high-end furniture manufacturing</strong></span><span>, where durability is a key factor.</span></p>\n<h2><span>HMR (High Moisture Resistant) Board</span></h2>\n<p><span>HMR boards are engineered to resist moisture, making them perfect for </span><span><strong>kitchen cabinets, bathroom vanities, and humid environments</strong></span><span>. Given Sri Lanka’s tropical climate, HMR boards are widely used in </span><span><strong>coastal areas and regions with high humidity</strong></span><span>, ensuring longevity in challenging conditions.</span></p>\n<h2><span>Find Reliable Suppliers on Stockpile.lk</span></h2>\n<p><span>For high-quality MDF, HDF, and HMR boards, visit </span><span><strong>Stockpile.lk</strong></span><span>, Sri Lanka’s trusted B2B marketplace for construction, to connect with leading suppliers and ensure the best materials for your projects.</span></p>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/what-are-mdf-hdf-and-hmr-boards",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/what-is-mdf-hdf-hmr-225.jpg"
+      ]
+    },
+    {
+      "kind": "NewsArticle",
+      "slug": "fluted-wall-panel-tv-walls",
+      "title": "Fluted Wall Panel TV Walls",
+      "excerpt": null,
+      "publishedAt": "2024-10-08T00:00:00Z",
+      "categories": [
+        "stockpile"
+      ],
+      "tags": [],
+      "body": "<div><div><div><div><div><div>\n<div>\n<div>\n<div>\n<h2><strong>Transforming TV Walls with Fluted Wall Panels</strong></h2>\n</div>\n</div>\n</div>\n</div>\n<strong>Fluted wall panels</strong> are becoming a popular trend in modern interior design, especially when it comes to creating stylish <strong>TV walls</strong>. These panels are characterized by their vertical grooves, adding texture and dimension to a room's aesthetic. When used as a backdrop for flat-screen TVs, fluted wall panels not only enhance the visual appeal but also bring a sense of sophistication to the living space.One of the main benefits of using fluted wall panels for <strong>TV walls</strong> is their ability to create a focal point. The panels draw attention to the area, turning the TV wall into a stylish feature rather than just a functional space. Additionally, the texture of fluted panels can help to reduce glare and reflection from the TV screen, providing a better viewing experience.<strong>Fluted wall panels</strong> come in a variety of materials such as wood, MDF, or PVC, making them versatile enough to match different interior styles. Whether you prefer a natural wood finish for a warm and cozy feel or a sleek modern look with painted panels, there are plenty of options to suit your taste. Installing a flat-screen TV in front of these panels creates a seamless, integrated look that blends technology with design.Beyond their aesthetic appeal, fluted wall panels also offer practical benefits like durability and ease of maintenance. They are designed to be long-lasting, making them an ideal investment for anyone looking to upgrade their TV wall into a more stylish and elegant centerpiece.<strong>Design Gallery Trading</strong> specializes in interior decoration projects, with <strong>fluted panel TV walls</strong> being one of their specialities. Speak to one of their agents today to schedule your TV room upgrade by calling 0114-222-555 ext 0142.</div></div></div></div></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/fluted-wall-panel-tv-walls",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Fluted_Wall_Panels_8_.jpg"
+      ]
+    },
+    {
+      "kind": "NewsArticle",
+      "slug": "choosing-a-waste-water-treatment-plant-in-sri-lanka",
+      "title": "Choosing A Waste Water Treatment Plant in Sri Lanka",
+      "excerpt": null,
+      "publishedAt": "2024-05-12T00:00:00Z",
+      "categories": [
+        "stockpile"
+      ],
+      "tags": [],
+      "body": "If you're looking for methods to treat waste water in Sri Lanka such as sewage or manufacturing discharged water for the purpose of recycling or discharging it ethically and legally, then this article will attempt to shed some light on the procedure.&nbsp;\n<h2>What is Waste Water?</h2>\nWaste water is any form of water that has been contaminated by some artificial process. The dictionary definition being <span><span><em>water that has been used in the home, in a business, or as part of an industrial process</em>. By this definition, waste water includes water from kitchens, bathroom showers, sinks, toilets, hotels, restaurants, and also industrial waste water discharged from manufacturing facilities such as textile factories, rubber manufacturing, bottle washing, food processing, etc. As a result, waste water treatment plants are also commonly referred to as sewage treatment plants and sewer treatment plants. It is illegal to discharge such water into any public stream, lake, water way or the ocean, as it can contain harmful chemicals or biological organisms that can negatively affect the ecosystem.&nbsp;</span></span>\n<h2>What is Waste Water Treatment?</h2>\n<span><span>Simply put, waste water treatment is a process by which bacteria is used to consume the biological and chemical components in the water, which results in water with reduced Biological Oxygen Demand (BOD) and a sludge that can be safely dissipated. The process would normally take a few days, but the methods in which the treatment plants handle the water can result in a continuous discharge of treated water.&nbsp;</span></span>\n<h2>Where should Waste Water Treatment Plants Be Used?</h2>\n<span>Under Sri Lankan government regulations, if access to a sewage line is unavailable or not approved, then according to the Central Environment Authority (CEA) of Sri Lanka, any waste water that is being discharged into a public stream, lake, water way or ocean, should be tested and pass the required Biological Oxygen Demand (BOD) numbers stipulated by them.&nbsp;Example:</span>\n<ul>\n<li>Condominiums (apartments)</li>\n<li>Hotels</li>\n<li>Manufacturing &amp; production facilities</li>\n<li>Hospitals&nbsp;</li>\n<li>Restaurants</li>\n</ul>\n<span><span>It is important to know the BOD requirement for your relevant application. The relevant gazette can be found on the CEA website's <strong>Acts &amp; Regulations</strong> page under <strong>Industrial Effluent (Water) Quality Management</strong>.&nbsp;</span></span>\n<h2>What Are The Types of Waste Water Treatment Plants?</h2>\n<span><span>Waste water treatment plants can be separated into many different categories based on the process, and the physical characteristics of the plants.Physically, the plant can be a modular design, where components can be assembled remotely and installed on the location within a short period of time. Alternatively, the plant's chambers can be constructed on-site with the mechanical components being installed afterwards; this method would require more time. Both methods have advantages and disadvantages. It is the condition and requirements of the site that would help determine which method of installation should be used.&nbsp;The process can vary between <strong>Moving Bed Biofilm Reactor</strong> (MBBR), <strong>Fixed Bed Biofilm Reactor</strong> (FBBR), and <strong>Sequencing Batch Reactor</strong> (SBR). MBBR and FBBR processes both continuously circulate the influent waste water through chambers that contain the bacteria and discharge treated water continuously. This design requires treatment chambers large enough to sufficiently dilute the intake waste water with the treated water so that it meets the BOD regulations. SBR treatment plants process the water in stages, and therefore the chambers should be large enough to hold the entire intake of waste water for the duration of the stage.&nbsp;</span></span>\n<h2>Who Are Suppliers of Waste Water Treatment Plants in Sri Lanka?</h2>\n<span><span>In Sri Lanka there are numerous suppliers of all varieties of sewage treatment plants to meet your specifications and requirements, with ICC Smart Eco Solutions being one of them. They manufacture modular as well as on-site constructed MBBR and FBBR waste water treatment plants. View the product details and list of successfully completed projects on each of the product pages.</span></span>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/choosing-a-waste-water-treatment-plant-in-sri-lanka",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/MBBR_03.png",
+        "https://stockpile.lk/media/wysiwyg/RFQ_CALL_400x320.jpg"
+      ]
+    },
+    {
+      "kind": "NewsArticle",
+      "slug": "are-tor-tmt-and-qst-steel-bars-the-same",
+      "title": "Are TOR, TMT and QST Steel Bars the same?",
+      "excerpt": null,
+      "publishedAt": "2023-12-10T00:00:00Z",
+      "categories": [
+        "stockpile"
+      ],
+      "tags": [
+        "TOR",
+        "TMT",
+        "Steel",
+        "Reinforcement",
+        "QST"
+      ],
+      "body": "When it comes to steel reinforcement, you may have heard people using many different words and acronyms to specify them. In this article we'll explain what each of those mean, and what they are suitable for.&nbsp;\n<h2>TOR</h2>\n<p>TOR steel is the generic term used to refer to reinforcement steel. It is actually a brand name of steel produced by <strong>Toristeg Steel Corporation of Luxembourg,</strong> or TOR for short. Because of the brand's popularity people still refer to regular cold twisted deformed bars as TOR steel, but this is incorrect use of the name.&nbsp;</p>\n<h2>CTD</h2>\n<p>Cold Twisted Deformed is a high-strength steel bar which is twisted resulting in ribs and lugs on the surface. This texture on the surface enhances the grip that concrete has with the bar in comparison to a smooth bar, and prevents slippage.&nbsp;</p>\n<h2>TMT</h2>\n<p>Thermo-Mechanically Treated bars undergo a process of quenching and tempering, which results in a tougher outer surface but retains a ductile inner core. The combination results in a high tensile strength with flexibility.&nbsp;</p>\n<h2>QST</h2>\n<p>Quenched Self-Tempered is a process where the heated bar is rapidly cooled, then reheated and allowed to cool naturally <span>&nbsp;to create a fine-grained microstructure</span>.&nbsp;&nbsp;</p>\n<div>\n<table>\n<tbody>\n<tr>\n<td><span><strong>TOR/CTD</strong></span></td>\n<td><span><strong>QST</strong></span></td>\n<td><span><strong>TMT</strong></span></td>\n</tr>\n<tr>\n<td>Strength</td>\n<td>Regular</td>\n<td>High</td>\n<td>Highest</td>\n</tr>\n<tr>\n<td>Ductility</td>\n<td>Regular</td>\n<td>High</td>\n<td>High</td>\n</tr>\n<tr>\n<td>Cost</td>\n<td>Regular</td>\n<td>High</td>\n<td>Highest</td>\n</tr>\n</tbody>\n</table>\n</div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/are-tor-tmt-and-qst-steel-bars-the-same",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/tor_qst_tmt.jpg"
+      ]
+    },
+    {
+      "kind": "SupplierStory",
+      "slug": "icc-timber",
+      "title": "ICC Timber",
+      "excerpt": null,
+      "publishedAt": "2023-12-06T00:00:00Z",
+      "categories": [
+        "suppliers"
+      ],
+      "tags": [],
+      "body": "<div>\n<div>ICC Timber is a leading manufacturer of prefinished natural timber flooring, solid wood doors and plywood doors with locally and internationally sourced timber at their factory in Bandarama, Sri Lanka.</div>\n</div>\n<div>\n<div>View ICC Timber Porducts - ICC Timber</div>\n</div>\n<div>\n<div>#flooring #plywoodfurniture</div>\n</div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/icc-timber",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/ICC_Timber_Portfolio_2023.jpg",
+        "https://stockpile.lk/media/magefan_blog/supplier_updates/ICC_Timber_Portfolio_2023.jpg"
+      ]
+    },
+    {
+      "kind": "SupplierStory",
+      "slug": "terra-walkers",
+      "title": "Terra Walkers",
+      "excerpt": null,
+      "publishedAt": "2023-12-06T00:00:00Z",
+      "categories": [
+        "suppliers"
+      ],
+      "tags": [
+        "Terra Walkers",
+        "Street Lights",
+        "Panel Lights",
+        "LED lights",
+        "Interior Lights",
+        "Floor Lights",
+        "Architectural Lights"
+      ],
+      "body": "<div>\n<div>Terra Walkers specializes in offering a wide range of lighting solutions, including industrial, street, and architectural lighting, to meet all your lighting needs.</div>\n</div>\n<div>\n<div>See Terra Walkers products - Terra Walkers Products</div>\n</div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/terra-walkers",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Terra_Walkers_Portfolio_Dec_2023.jpg",
+        "https://stockpile.lk/media/magefan_blog/supplier_updates/Terra_Walkers_Portfolio_Dec_2023.jpg"
+      ]
+    },
+    {
+      "kind": "SupplierStory",
+      "slug": "glass-garden",
+      "title": "Glass Garden",
+      "excerpt": null,
+      "publishedAt": "2023-12-02T00:00:00Z",
+      "categories": [
+        "suppliers"
+      ],
+      "tags": [
+        "temperedglass",
+        "glass",
+        "floatglass",
+        "fabrication"
+      ],
+      "body": "<div>\n<div>As importers, Glass Garden offers a diverse range of clear float and tempered glass, complemented by expert fabrication services. With over 1,000 distributors across the country they are a reliable choice for all your glass needs.</div>\n</div>\n<div>\n<div>View Glass Garden's Products - Glass Garden Products</div>\n</div>\n<div>\n<div>#glass #facbrication #temperedglass #floatglass</div>\n</div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/glass-garden",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/glass_garden_portfolio_Dec_2023.jpg",
+        "https://stockpile.lk/media/magefan_blog/supplier_updates/glass_garden_portfolio_Dec_2023.jpg"
+      ]
+    },
+    {
+      "kind": "SupplierStory",
+      "slug": "kelaniwood-enterprises",
+      "title": "Kelaniwood Enterprises",
+      "excerpt": null,
+      "publishedAt": "2023-11-22T00:00:00Z",
+      "categories": [
+        "suppliers"
+      ],
+      "tags": [
+        "shutterboard",
+        "plywoodsheets",
+        "plywoodboards",
+        "plywood",
+        "mdf"
+      ],
+      "body": "<div>\n<div>Kelaniwood Enterprises, offers a range of plywood &amp; MDF melamine products at the best prices. They provide island-wide delivery for your convenience.</div>\n</div>\n<div>\n<div>View Kelaniwood Products#plywood #plywoodsheets #plywoodboards</div>\n</div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/kelaniwood-enterprises",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Kelaniwood_Portfolio_Dec_2023.jpg",
+        "https://stockpile.lk/media/magefan_blog/supplier_updates/Kelaniwood_Portfolio_Dec_2023.jpg"
+      ]
+    },
+    {
+      "kind": "NewsArticle",
+      "slug": "new-suppliers-in-october-and-november-2022",
+      "title": "New Suppliers in October & November 2022",
+      "excerpt": null,
+      "publishedAt": "2022-11-30T00:00:00Z",
+      "categories": [
+        "stockpile"
+      ],
+      "tags": [],
+      "body": "<p>Stockpile is excited to announce that we have partnered with nine new suppliers within the month of October and November 2022.</p>\n<p>Terra Walkers was established in 2013 and has a wide range of light fittings in stock for both interior and exterior applications using LED and incandescent bulbs from many leading and affordable manufacturers.</p>\n<p>Power Mix Products is an innovative Sri Lankan manufacturer of ready-mix plaster and skim coat in accordance with the guidelines set out by the Central Environmental Authority. With due priority given to customer feedback, Power Mix Products will continuously develop and customize their solutions to suit the needs and requirements of your projects.</p>\n<p>H &amp; S Industrial Suppliers specializes in safety equipment and power tools. Their large inventory and excellent response time expedites the procurement process, making them a suitable supplier on Stockpile.</p>\n<p>C C Construction is our first Titanium supplier and installer, carrying a range of products from Crystolac, including Super Titanium. Established in 2007, C C Construction have successfully completed many domestic and commercial projects. With many branches situated island-wide, distribution to projects can be done hassle-free.</p>\n<p>Ferdimesh was established in 2015 &nbsp;and is a specialized supplier of all forms of fencing materials, welded mesh, PVC coated GI wire mesh, roofing and rainwater solutions.</p>\n<p>Lucky Hardware has been an established importer and distributor since 2007 of a wide variety of hardware items, aluminum bars, cladding &amp; gypsum boards, ceiling components, polycarbonate sheets and related miscellaneous accessories.</p>\n<p>Mitsui Agencies specializes in high quality caster wheels, safety equipment, marine materials, anchor bolts and tools. Firmly established in 2000, Mitsui Agencies brings over 20 years of experience and reliability as a supplier.</p>\n<p>Williams Glass is a leading glass supplier in Sri Lanka specializing in the importation and distribution of branded glass, mirrors and glass accessories for all indoor and outdoor construction projects in Sri Lanka since its foundation in 1992.</p>\n<p>Kelanylac International is our 2<sup>nd</sup> titanium flooring supplier and installer. <span>The company manufactures all kinds of titanium products including titanium powder &amp; coloring powder, titanium top coat, Super Sand Base Bond, Base bond polymer, Mixed powder polymer and coloring liquid at its own factory.</span></p>\n<p>To get quotes for your construction RFQs from these suppliers and more, simply create an account on Stockpile and upload your BOQ directly. Call us today on 070-6655-665 to get more details.&nbsp;&nbsp;See all our suppliers on the Supplier List.&nbsp;</p>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/new-suppliers-in-october-and-november-2022",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Oct_Nov_2022.jpeg",
+        "https://stockpile.lk/media/avatar/TW_Logo.jpg",
+        "https://stockpile.lk/media/avatar/powermix_logo.jpg",
+        "https://stockpile.lk/media/avatar/hands_Logo.jpg",
+        "https://stockpile.lk/media/avatar/Super_Titanium_Logo.jpg",
+        "https://stockpile.lk/media/avatar/FM_Logo.jpg",
+        "https://stockpile.lk/static/version1791934575/frontend/MageBig/martfury_layout05/en_GB/Magefan_LazyLoad/images/pixel.jpg"
+      ]
+    },
+    {
+      "kind": "NewsArticle",
+      "slug": "new-suppliers-in-september-and-october-2022",
+      "title": "New Suppliers in September & October 2022",
+      "excerpt": null,
+      "publishedAt": "2022-10-09T00:00:00Z",
+      "categories": [
+        "stockpile"
+      ],
+      "tags": [],
+      "body": "<p>Stockpile is excited to announce that we have partnered with four new suppliers within the month of September and October 2022.</p>\n<p>SMG Construction was established in 2017 and is currently one of the largest manufacturers specializing in precast concrete spacers/cover blocks in Sri Lanka. By utilizing high grade concrete, precision moulds and maintaining high quality control standards, SMG Construction products have been recognized and used in many large scale construction projects. See their full range of cover blocks here</p>\n<p>Gamage &amp; Sons is a supplier specializing in safety equipment, small tools, hand tools and power tools. Having established in 2020, they have built a reputation for supplying high quality products suitable for the Sri Lankan construction and manufacturing sectors.</p>\n<p>Nawashakthi.lk emerged into the market with their e-commerce sales and a large portfolio of hardware, safety, ironmongery and plumbing products. With a keen focus on using product videos and new technologies to inform the buyer, Nawashakthi is at the forefront of improving the procurement experience.</p>\n<p>Paints.lk provides a wide array of paint and coating products from many leading domestic and international manufacturers for both interior and exterior applications. With over 10 years of experience and excellent after-sales service, Paints.lk aims to penetrate large-scale construction projects and provide the same reputed levels of service.To get quotes for your construction RFQs from these suppliers and more, simply create an account on Stockpile and upload your BOQ directly. Call us today on 070-6655-665 to get more details.&nbsp;&nbsp;</p>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/new-suppliers-in-september-and-october-2022",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Sept_Oct_2022.jpg",
+        "https://stockpile.lk/media/wysiwyg/Logo.jpg",
+        "https://stockpile.lk/media/wysiwyg/logo.jpg",
+        "https://stockpile.lk/media/wysiwyg/logo_1.jpg",
+        "https://stockpile.lk/media/wysiwyg/logo-text_638x638.png"
+      ]
+    },
+    {
+      "kind": "NewsArticle",
+      "slug": "pubudu-engineering-and-cubocian-join-stockpile",
+      "title": "Pubudu Engineering & Cubocian join Stockpile",
+      "excerpt": null,
+      "publishedAt": "2022-06-28T00:00:00Z",
+      "categories": [
+        "stockpile"
+      ],
+      "tags": [],
+      "body": "<div><div><div>Pubudu Engineering (Pvt) Ltd is one of the leading Low Voltage Electrical Switchboard manufacturers in Sri Lanka. They are specialists in Designing and Manufacturing of in Low to Medium Voltage Distribution boards, Motor Control Centers, and PLC Automation Panels, along with their sister company Cubicoan (Pvt) Ltd., who are specializing in supply of Data-Center Cabinets, Network Equipment Racks, Raised floor systems and Power Distribution Units for Telecommunication Systems, join Stockpile as part of their initiative to adapt to the volatile market by adopting technologies that help to streamline their efforts and expand their audience.Established in 1991, Pubudu Engineering (Pvt) Ltd has achieved many milestones by overcoming many challenges to become a leader in the Electro-Mechanical Sector. By continuously improving their manufacturing practices, the company has been able to achieve international manufacturing standards such as IEC 61439 design verification and is ISO 9001-2008 certified.Cubicoan (Pvt) Ltd was launched in 2006 as a trading arm of Pubudu Engineering, but has since expanded it’s portfolio to a service the growing demand for infrastructure equipment in IT market. With much effort placed on R&amp;D, Cubicoan is constantly developing new products and improving their existing range to deliver high quality products to their clients. Speaking about Stockpile, Thilina Tippalagama, Managing Director of Cubicoan (Pvt) Ltd., said, “We can rely on Stockpile to expand our online presence and search engine optimization to capture leads from projects and interested parties so that we can focus on our core competency, which is developing and manufacturing high quality products to the local and export industries”.\n<table>\n<tbody>\n<tr>\n<td><strong>PUBUDU ENGINEERING (PVT) LTD</strong></td>\n<td><strong>CUBICOAN (PVT) LTD</strong></td>\n</tr>\n<tr>\n<td>Click to view the product range</td>\n<td>Click to view the product range</td>\n</tr>\n<tr>\n<td>Click to Request a Quotation (RFQ)</td>\n<td>Click to Request a Quotation (RFQ)</td>\n</tr>\n<tr>\n<td>Check out HOW IT WORKS to learn how Stockpile can work for you&nbsp;&nbsp;</td>\n</tr>\n</tbody>\n</table>\n<table>\n<tbody>\n<tr>\n<td><span>Standing from L to R: From Pubudu Engineering Mr. Thushara Saman, Mr. Malith Krishan Sales Executive Cubicoan, Mr. Pankaja Wagaarachchi Sr. Mngr Water &amp; Industrial Solutions and Mr. Sapumal Perera Design Estimation Department Head at Pubudu Engineering, Mr. Pubudu Tippalagama Director of Pubudu Engineering, Mr. Thilina Tippalagama Managing Director of Cubicoan, From Stockpile Mr. Charith Perera Director, Mr. Kushan Kaushalya Procurement Specialist.</span></td>\n</tr>\n</tbody>\n</table></div></div></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/pubudu-engineering-and-cubocian-join-stockpile",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/news_logo_120.png",
+        "https://stockpile.lk/media/wysiwyg/logo.png",
+        "https://stockpile.lk/media/wysiwyg/cubicoan-logo-120x120.png",
+        "https://stockpile.lk/media/wysiwyg/20220602_104626.jpg"
+      ]
+    },
+    {
+      "kind": "NewsArticle",
+      "slug": "stockpile-goes-live",
+      "title": "Stockpile Goes Live",
+      "excerpt": null,
+      "publishedAt": "2022-04-05T00:00:00Z",
+      "categories": [
+        "stockpile"
+      ],
+      "tags": [],
+      "body": "<div><div><div>On April 7th 2022 Stockpile made its services available to the public via its website STOCKPILE.LKIf interested in listing their products and services, suppliers of solutions, materials, tools and equipment for the construction industry can now register directly on the website, which is targeted specifically towards general contractors, architects and consultants engaged in the Sri Lankan construction industry. Once registered, suppliers will receive all Request for Quotations (RFQ)s relevant to their products and services that have been submitted by registered contractors. Potential buyers can browse and view product details, specifications, past projects and terms of sale of each supplier. Stockpile is a product of Construction Trade Technologies (Pvt) Ltd. and aims to eliminate the inefficiencies of material procurement in the Sri Lankan construction industry. By using the software procurement teams can request quotations, negotiate and submit purchase orders directly to the suppliers, thereby streamlining the entire procurement process.Click on How It Works to learn more about how Stockpile can work for both buyers and suppliers.</div></div></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/stockpile-goes-live",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/Stockpile_Logo_Black_120x24.png"
+      ]
+    },
+    {
+      "kind": "NewsArticle",
+      "slug": "stockpile-signs-agreement-with-ycf",
+      "title": "Stockpile signs agreement with YCF",
+      "excerpt": null,
+      "publishedAt": "2022-01-04T00:00:00Z",
+      "categories": [
+        "stockpile"
+      ],
+      "tags": [],
+      "body": "<div><div><div>On January 6th 2022 Construction Trade Technologies (Pvt) Ltd. signed a collaborative agreement with the Young Constructors’ Forum (YCF) to make Stockpile the method of choice for procuring construction materials by their member companies for a minimum period of two years.The members of the YCF have provided valuable feedback throughout the design and development phases to make Stockpile user-friendly and customized to address the needs of the Sri Lankan construction industry.Construction material procurement is a tedious process susceptible to many errors and is widely considered inefficient due to the ad-hoc nature of project-based procurement. The process of obtaining technical data for the purpose of project approvals take on average five communication attempts in Sri Lanka, mainly due to the lack of preparation on the part of suppliers and manufacturers. Stockpile aims to eliminate these inefficiencies by standardizing the requirements and collating the data for each product. Furthermore; procurement teams can request quotations, negotiate and submit purchase orders directly to the suppliers, thereby streamlining the entire procurement process.The commitment by the YCF to use Stockpile provides the suppliers on Stockpile the assurance that they will receive the purchasing requirements of the member companies without requiring any additional effort on their part.The Young Constructors Forum was founded on Feb 1st 2011 and consists of representatives of all leading construction firms in Sri Lanka.The member companies of the YCF include:\n<ul>\n<li>Consulting Engineers &amp; Contractors (Pvt) Ltd.</li>\n<li>Edward and Christie Engineering Solutions (Pvt) Ltd</li>\n<li>Engineering and Laboratory Services (Pvt) Ltd</li>\n<li>Gamini Construction&nbsp;</li>\n<li>GKUC International (Pvt) Ltd.</li>\n<li>International Construction Consortium (Pvt) Ltd.</li>\n<li>Isuru Engineering (PTE) Ltd.</li>\n<li>KDA Weerasinghe &amp; Co. (Pvt) Ltd.</li>\n<li>Kent Engineers (Pvt) Ltd.</li>\n<li>Liyanwala Builders&nbsp;</li>\n<li>Maga Engineering (Pvt) Ltd.</li>\n<li>Nawaloka Construction Company (Pvt) Ltd.</li>\n<li>Nuwani Construction (Pvt) Ltd.</li>\n<li>Pubudu Engineering (Pvt) Ltd.</li>\n<li>RH Holdings (Pvt) Ltd.</li>\n<li>Sanken Construction (Pvt) Ltd.</li>\n<li>Sierra Construction Ltd.</li>\n<li>Tudawe Brothers (Pvt) Ltd.</li>\n</ul>\nFurther details about the YCF can be obtained from their website at <strong>http://ycf.lk/</strong></div></div></div>",
+      "sourceUrl": "https://stockpile.lk/en/news/post/stockpile-signs-agreement-with-ycf",
+      "sourceImages": [
+        "https://stockpile.lk/media/magefan_blog/ycflogo.png"
+      ]
+    }
+  ]
+}

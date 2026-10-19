@@ -1,0 +1,54 @@
+{
+  "tool": "harvest.mjs",
+  "finishedAt": "2026-10-08T17:23:54.912Z",
+  "node": "v24.20.0",
+  "sampleOnly": false,
+  "excludedProducts": [
+    {
+      "slug": "https-generalpower-lk-product-srne-hp2440-12v-24v-40a-pwm-solar-charge-controller",
+      "url": "https://stockpile.lk/en/https-generalpower-lk-product-srne-hp2440-12v-24v-40a-pwm-solar-charge-controller.html",
+      "name": "SRNE PWM SOLAR CHARGE CONTROLLER HP SERIES 40A SR-HP series is a PWM charge controller with LCD display.it is mainly for rural Electrification and solar home power systems application. It is included HP2440 models.",
+      "reason": "source page has no category breadcrumb; Product.CategoryId is required, so the product cannot be migrated without inventing taxonomy (spec §0.6)",
+      "excludedAt": "2026-10-08T18:54:11.458Z"
+    }
+  ],
+  "taxonomyCorrection": {
+    "at": "2026-10-08T19:14:18.658Z",
+    "reason": "source URL paths contain stale url-key segments from a pre-reorganisation Magento taxonomy (19 URL-path parents are absent from the sitemap and return HTTP 404) while breadcrumb chains — built from live category path IDs and displayed by the source site itself — resolve completely; chains recomputed from breadcrumb parenting so MaterializedPath prefix-subtrees match the tree (api.md slug == materialized path). Source `url` fields unchanged.",
+    "moved": 8,
+    "records": [
+      {
+        "from": "general-materials/cement-concrete",
+        "to": "building-materials/cement-concrete"
+      },
+      {
+        "from": "general-materials/cement-concrete/grout",
+        "to": "building-materials/cement-concrete/grout"
+      },
+      {
+        "from": "general-materials/chemicals/lubricant",
+        "to": "building-materials/chemicals/lubricant"
+      },
+      {
+        "from": "general-materials/panels-partitions",
+        "to": "building-materials/panels-partitions"
+      },
+      {
+        "from": "general-materials/panels-partitions/glass-mirrors",
+        "to": "building-materials/panels-partitions/glass-mirrors"
+      },
+      {
+        "from": "general-materials/panels-partitions/wood-panels",
+        "to": "building-materials/panels-partitions/wood-panels"
+      },
+      {
+        "from": "general-materials/steel-items",
+        "to": "building-materials/steel-items"
+      },
+      {
+        "from": "general-materials/timber/plywood",
+        "to": "building-materials/timber/plywood"
+      }
+    ]
+  }
+}

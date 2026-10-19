@@ -1,0 +1,21 @@
+﻿  Determining projects to restore...
+  Restored D:\Projects\home dev\open\backend\tests\Stockpile.SecurityTests\Stockpile.SecurityTests.csproj (in 884 ms).
+  Restored D:\Projects\home dev\open\backend\tests\Stockpile.IntegrationTests\Stockpile.IntegrationTests.csproj (in 1.12 sec).
+  Restored D:\Projects\home dev\open\backend\tests\Stockpile.UnitTests\Stockpile.UnitTests.csproj (in 1.13 sec).
+  Restored D:\Projects\home dev\open\backend\tests\Stockpile.ArchitectureTests\Stockpile.ArchitectureTests.csproj (in 1.12 sec).
+  6 of 10 projects are up-to-date for restore.
+
+The following sources were used:
+   https://api.nuget.org/v3/index.json
+   C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+
+The given project `Stockpile.Api` has no vulnerable packages given the current sources.
+The given project `Stockpile.Application` has no vulnerable packages given the current sources.
+The given project `Stockpile.Contracts` has no vulnerable packages given the current sources.
+The given project `Stockpile.Domain` has no vulnerable packages given the current sources.
+The given project `Stockpile.Infrastructure` has no vulnerable packages given the current sources.
+The given project `Stockpile.Worker` has no vulnerable packages given the current sources.
+The given project `Stockpile.ArchitectureTests` has no vulnerable packages given the current sources.
+The given project `Stockpile.IntegrationTests` has no vulnerable packages given the current sources.
+The given project `Stockpile.SecurityTests` has no vulnerable packages given the current sources.
+The given project `Stockpile.UnitTests` has no vulnerable packages given the current sources.
