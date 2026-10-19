@@ -57,11 +57,45 @@ public sealed class TestOnlyController : ControllerBase
         AntiforgeryTokenSet tokens = _antiforgery.GetAndStoreTokens(HttpContext);
         return Ok(new { requestToken = tokens.RequestToken });
     }
+    /// <summary>
+    /// Reverse-proxy seam (threat-model §18, security-test-matrix H9): reports
+    /// what the pipeline sees AFTER forwarded-header processing — scheme, host
+    /// and peer address — so the accepted and ignored cases are asserted
+    /// against the real middleware order, not a reconstruction of it.
+    /// </summary>
+    [HttpGet("connection")]
+    [AllowAnonymous]
+    public IActionResult Connection() => Ok(new
+    {
+        scheme = HttpContext.Request.Scheme,
+        host = HttpContext.Request.Host.Value,
+        isHttps = HttpContext.Request.IsHttps,
+        remoteIp = HttpContext.Connection.RemoteIpAddress?.ToString(),
+    });
+
     /// <summary>Throws unclassified → 500 INTERNAL_ERROR envelope.</summary>
     [HttpGet("unhandled")]
     [AllowAnonymous]
     public IActionResult Unhandled() =>
         throw new InvalidOperationException("Deliberate test failure — must not reach the wire.");
+
+    /// <summary>
+    /// Client-hang-up seam (defect B18): marks the request aborted exactly the
+    /// way Kestrel does when the peer closes the connection, then throws a
+    /// provider-shaped cancellation — deliberately NOT an
+    /// <see cref="OperationCanceledException"/>, because that type is the whole
+    /// point: SqlClient answers a cancelled command with
+    /// <c>SqlException: Operation cancelled by user</c>, and classifying the
+    /// 499 on the exception type is what missed it. The handler now reads the
+    /// request state, so this seam answers 499 and never reaches the 500 branch.
+    /// </summary>
+    [HttpGet("abandoned")]
+    [AllowAnonymous]
+    public IActionResult Abandoned()
+    {
+        HttpContext.RequestAborted = new CancellationToken(canceled: true);
+        throw new InvalidOperationException("Operation cancelled by user");
+    }
 
     /// <summary>Known business failure → the status registered for the code (409).</summary>
     [HttpGet("business")]

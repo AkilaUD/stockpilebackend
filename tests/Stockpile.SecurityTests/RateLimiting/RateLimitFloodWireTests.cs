@@ -89,9 +89,11 @@ public sealed class RateLimitFloodWireTests : IClassFixture<CredentialBudgetApiF
     /// budget by rotating the header (the classic proxy-trust bypass). The
     /// fourth request trips the shared connection partition of `auth.reset`
     /// (3 / hour) instead — proof the partition reads the socket peer, not
-    /// the attacker-controlled header. `X-Forwarded-Proto` rides along: no
-    /// ForwardedHeaders middleware is registered, so neither header reaches
-    /// any middleware's options.
+    /// the attacker-controlled header. Trust is declared, and this host
+    /// declares a proxy address no request can come from
+    /// (<see cref="CredentialBudgetApiFactory"/>), so the refusal is the
+    /// trust check's doing: the middleware runs and rejects the claim rather
+    /// than being absent (threat-model §18).
     /// </summary>
     [Fact]
     public async Task Rotating_forwarded_client_headers_cannot_reset_the_budget()

@@ -4,9 +4,13 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Stockpile.Application.Authentication;
 using Stockpile.Application.Idempotency;
 using Stockpile.Application.Organizations;
+using Stockpile.Application.Procurement;
+using Stockpile.Application.Registration;
+using Stockpile.Application.Suppliers;
 using Stockpile.Infrastructure.Authentication;
 using Stockpile.Infrastructure.Idempotency;
 using Stockpile.Infrastructure.Outbox;
+using Stockpile.Infrastructure.Persistence.Stores;
 
 namespace Stockpile.Infrastructure.Persistence;
 
@@ -51,6 +55,11 @@ public static class DatabaseStartupExtensions
         // probed by hash alone from the anonymous verify endpoint (A11).
         services.AddScoped<IEmailVerificationTokenStore, EmailVerificationTokenStore>();
 
+        // business-flows §2/§3 — resumable registration drafts (api.md §2.1): the
+        // same hashed-at-rest discipline as the ledgers above, addressed by hash
+        // alone from the anonymous save/resume endpoints.
+        services.AddScoped<IRegistrationDraftStore, RegistrationDraftStore>();
+
         // Task 1.40 — rotating refresh tokens: hashed at rest, chain-linked by
         // RotatedToId, reuse of a rotated head revokes the whole chain (T1.4,
         // A8/A9).
@@ -59,6 +68,24 @@ public static class DatabaseStartupExtensions
         // Task 1.43 — organisations, members and addresses (implementation-plan
         // 1.43, P9): one scoped store for the use cases and the session payload.
         services.AddScoped<IOrganizationStore, OrganizationStore>();
+
+        // Task 2F — supplier self-registration: one transactional write that
+        // creates the supplier company, its membership and its category coverage.
+        services.AddScoped<ISupplierRegistrationStore, SupplierRegistrationStore>();
+
+        // Procurement — RFQ persistence for the draft/submit/matching use cases
+        // (domain-model §5.3–§5.5): writes commit the aggregate, its matches and
+        // its status history together.
+        services.AddScoped<IRfqStore, RfqStore>();
+
+        // Procurement — the supplier's side of the same rows: the buying-lead
+        // inbox over RFQMatches (business-flows §6, api.md §2.9).
+        services.AddScoped<ISupplierLeadsStore, SupplierLeadsStore>();
+
+        // Procurement — quotations (domain-model §6.1–§6.2): the quote aggregate
+        // with its append-only revisions, committed together with the lead's own
+        // response.
+        services.AddScoped<IQuotesStore, QuotesStore>();
 
         return services;
     }

@@ -31,7 +31,17 @@ internal sealed partial class ApiExceptionHandler(
         // (nginx's "client closed request") keeps the completion log honest and
         // avoids the middleware's misread "produced a 404" warning for a
         // response that was deliberately left unwritten.
-        if (exception is OperationCanceledException && httpContext.RequestAborted.IsCancellationRequested)
+        //
+        // The abort is read from the REQUEST STATE, not from the exception type.
+        // It used to key on OperationCanceledException, but when the connection
+        // closes while a database command is in flight the data layer surfaces
+        // its provider's own cancellation exception — SqlClient's "Operation
+        // cancelled by user" — which is not an OperationCanceledException. One
+        // e2e run that navigated away from 8 in-flight auth reads logged 8 of
+        // those as unhandled 500s with full stack traces (defect B18).
+        // An OperationCanceledException that arrives with the request still
+        // live is a server-side cancellation (a timeout), and stays a 500.
+        if (httpContext.RequestAborted.IsCancellationRequested)
         {
             httpContext.Response.StatusCode = 499;
             return true;

@@ -1,0 +1,27 @@
+﻿  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Stockpile.Contracts -> D:\Projects\home dev\open\backend\src\Stockpile.Contracts\bin\Debug\net10.0\Stockpile.Contracts.dll
+  Stockpile.Domain -> D:\Projects\home dev\open\backend\src\Stockpile.Domain\bin\Debug\net10.0\Stockpile.Domain.dll
+  Stockpile.Application -> D:\Projects\home dev\open\backend\src\Stockpile.Application\bin\Debug\net10.0\Stockpile.Application.dll
+  Stockpile.Infrastructure -> D:\Projects\home dev\open\backend\src\Stockpile.Infrastructure\bin\Debug\net10.0\Stockpile.Infrastructure.dll
+  Stockpile.UnitTests -> D:\Projects\home dev\open\backend\tests\Stockpile.UnitTests\bin\Debug\net10.0\Stockpile.UnitTests.dll
+Test run for D:\Projects\home dev\open\backend\tests\Stockpile.UnitTests\bin\Debug\net10.0\Stockpile.UnitTests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+
+Passed!  - Failed:     0, Passed:    45, Skipped:     0, Total:    45, Duration: 843 ms - Stockpile.UnitTests.dll (net10.0)
+  Stockpile.Api -> D:\Projects\home dev\open\backend\src\Stockpile.Api\bin\Debug\net10.0\Stockpile.Api.dll
+  Stockpile.ArchitectureTests -> D:\Projects\home dev\open\backend\tests\Stockpile.ArchitectureTests\bin\Debug\net10.0\Stockpile.ArchitectureTests.dll
+  Stockpile.SecurityTests -> D:\Projects\home dev\open\backend\tests\Stockpile.SecurityTests\bin\Debug\net10.0\Stockpile.SecurityTests.dll
+Test run for D:\Projects\home dev\open\backend\tests\Stockpile.ArchitectureTests\bin\Debug\net10.0\Stockpile.ArchitectureTests.dll (.NETCoreApp,Version=v10.0)
+Test run for D:\Projects\home dev\open\backend\tests\Stockpile.SecurityTests\bin\Debug\net10.0\Stockpile.SecurityTests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+  Stockpile.IntegrationTests -> D:\Projects\home dev\open\backend\tests\Stockpile.IntegrationTests\bin\Debug\net10.0\Stockpile.IntegrationTests.dll
+Test run for D:\Projects\home dev\open\backend\tests\Stockpile.IntegrationTests\bin\Debug\net10.0\Stockpile.IntegrationTests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+A total of 1 test files matched the specified pattern.
+
+Passed!  - Failed:     0, Passed:    13, Skipped:     0, Total:    13, Duration: 563 ms - Stockpile.ArchitectureTests.dll (net10.0)
+
+Passed!  - Failed:     0, Passed:     2, Skipped:     0, Total:     2, Duration: 49 s - Stockpile.SecurityTests.dll (net10.0)
+
+Passed!  - Failed:     0, Passed:   197, Skipped:     0, Total:   197, Duration: 2 m 58 s - Stockpile.IntegrationTests.dll (net10.0)

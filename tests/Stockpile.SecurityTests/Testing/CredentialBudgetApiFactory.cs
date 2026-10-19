@@ -1,5 +1,9 @@
+using System.Net;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Stockpile.SecurityTests.Testing;
 
@@ -26,6 +30,13 @@ namespace Stockpile.SecurityTests.Testing;
 /// </summary>
 public sealed class CredentialBudgetApiFactory : WebApplicationFactory<Program>
 {
+    /// <summary>
+    /// The peer every request arrives from (TEST-NET-2, RFC 5737) — never the
+    /// declared proxy below. TestServer reports no peer of its own, and a real
+    /// transport always does; see <see cref="PeerReportingHttpContextFactory"/>.
+    /// </summary>
+    private static readonly IPAddress TestPeer = IPAddress.Parse("198.51.100.7");
+
     static CredentialBudgetApiFactory()
     {
         Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Testing");
@@ -38,8 +49,29 @@ public sealed class CredentialBudgetApiFactory : WebApplicationFactory<Program>
         // auth.reset = 3 / hour (RateLimitPolicies.Specs — the canonical
         // §13.7 numbers).
         Environment.SetEnvironmentVariable("RateLimiting__RelaxUnderTesting", "false");
+
+        // H9 — trust is declared, so this host declares a proxy no test request
+        // can come from. The flood's peer is therefore an untrusted address and
+        // its forwarded headers are ignored because the trust check refuses
+        // them, not because no middleware is registered (threat-model §18).
+        Environment.SetEnvironmentVariable("ReverseProxy__KnownProxies__0", "203.0.113.9");
     }
 
     /// <inheritdoc />
-    protected override void ConfigureWebHost(IWebHostBuilder builder) => builder.UseEnvironment("Testing");
+    protected override void ConfigureWebHost(IWebHostBuilder builder)
+    {
+        builder.UseEnvironment("Testing");
+
+        builder.ConfigureServices(services =>
+        {
+            // TestServer's requests arrive with no peer address, which is the
+            // one case ForwardedHeadersMiddleware applies the forwarded headers
+            // without checking the declared proxies. This host's whole H9
+            // assertion is about that check, so report the peer a transport
+            // would report and let the middleware make the decision.
+            services.RemoveAll<IHttpContextFactory>();
+            services.AddSingleton<IHttpContextFactory>(
+                provider => new PeerReportingHttpContextFactory(provider, TestPeer));
+        });
+    }
 }

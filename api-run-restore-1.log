@@ -1,0 +1,8 @@
+Using launch settings from backend\src\Stockpile.Api\Properties\launchSettings.json...
+10:29:33.267 INF Now listening on: http://localhost:5080 {"EventId": {"Id": 14, "Name": "ListeningOnAddress"}, "SourceContext": "Microsoft.Hosting.Lifetime", "service": "stockpile-api"}
+10:29:33.308 INF Application started. Press Ctrl+C to shut down. {"SourceContext": "Microsoft.Hosting.Lifetime", "service": "stockpile-api"}
+10:29:33.312 INF Hosting environment: Development {"SourceContext": "Microsoft.Hosting.Lifetime", "service": "stockpile-api"}
+10:29:33.319 INF Content root path: D:\Projects\home dev\open\backend\src\Stockpile.Api {"SourceContext": "Microsoft.Hosting.Lifetime", "service": "stockpile-api"}
+10:29:34.232 INF HTTP GET /api/v1/catalog/summary responded 200 in 479.7634 ms {"SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware", "CorrelationId": "6cc02dd0-02ad-47a5-a81a-aafa7aed30c8", "RequestId": "0HNPAF4D9DIB7:00000001", "ConnectionId": "0HNPAF4D9DIB7", "service": "stockpile-api"}
+10:30:37.281 INF HTTP GET /api/v1/catalog/summary responded 200 in 136.0532 ms {"SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware", "CorrelationId": "0ede4da9-3f79-4862-88ef-3e7cd8357855", "RequestId": "0HNPAF4D9DIB8:00000001", "ConnectionId": "0HNPAF4D9DIB8", "service": "stockpile-api"}
+10:30:37.390 INF HTTP GET /api/v1/auth/session responded 401 in 48.3938 ms {"SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware", "CorrelationId": "6569112d-bb2d-4a6d-b39a-ab1caeb0270d", "RequestId": "0HNPAF4D9DIB9:00000001", "ConnectionId": "0HNPAF4D9DIB9", "service": "stockpile-api"}

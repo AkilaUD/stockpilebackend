@@ -1,0 +1,31 @@
+Using launch settings from backend\src\Stockpile.Api\Properties\launchSettings.json...
+17:48:14.212 INF Now listening on: http://localhost:5099 {"EventId": {"Id": 14, "Name": "ListeningOnAddress"}, "SourceContext": "Microsoft.Hosting.Lifetime", "service": "stockpile-api"}
+17:48:14.241 INF Application started. Press Ctrl+C to shut down. {"SourceContext": "Microsoft.Hosting.Lifetime", "service": "stockpile-api"}
+17:48:14.246 INF Hosting environment: Development {"SourceContext": "Microsoft.Hosting.Lifetime", "service": "stockpile-api"}
+17:48:14.265 INF Content root path: D:\Projects\home dev\open\backend\src\Stockpile.Api {"SourceContext": "Microsoft.Hosting.Lifetime", "service": "stockpile-api"}
+17:48:17.045 WRN Request from ::1 reached the API over plain HTTP while Authentication:RequireHttps is true, so the public surface is HTTPS and this hop is not. Forwarded headers as received: X-Forwarded-Proto '(absent)', X-Forwarded-For '(absent)', X-Forwarded-Host '(absent)'. If ::1 is the TLS-terminating proxy in front of this API (the deployed topology), declare it in ReverseProxy:KnownProxies or ReverseProxy:KnownNetworks — an undeclared peer's headers are ignored, and antiforgery token minting answers 500 until the public scheme is known (threat-model §18, security-test-matrix H9). {"EventId": {"Id": 2402, "Name": "LogPlainRequestWhileHttpsRequired"}, "SourceContext": "Stockpile.Api.Configuration.ReverseProxyConfiguration", "RequestId": "0HNPAMPI8AJLH:00000001", "RequestPath": "/api/v1/health/live", "ConnectionId": "0HNPAMPI8AJLH", "service": "stockpile-api"}
+17:48:17.094 INF HTTP GET /api/v1/health/live responded 200 in 37.5484 ms {"SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware", "CorrelationId": "0f316ecc-a882-4a94-bc37-b908ec4ec93a", "RequestId": "0HNPAMPI8AJLH:00000001", "ConnectionId": "0HNPAMPI8AJLH", "service": "stockpile-api"}
+17:48:17.210 ERR Unhandled exception. CorrelationId: 692bd721-95c6-4d64-9ea7-be5841dbbb9e, SupportReference: SUP-64d1cd {"EventId": {"Id": 1903, "Name": "LogUnhandledException"}, "SourceContext": "Stockpile.Api.Errors.ApiExceptionHandler", "RequestId": "0HNPAMPI8AJLI:00000001", "RequestPath": "/api/v1/auth/antiforgery", "ConnectionId": "0HNPAMPI8AJLI", "service": "stockpile-api"}
+System.InvalidOperationException: The antiforgery system has the configuration value AntiforgeryOptions.Cookie.SecurePolicy = Always, but the current request is not an SSL request.
+   at Microsoft.AspNetCore.Antiforgery.DefaultAntiforgery.CheckSSLConfig(HttpContext context)
+   at Microsoft.AspNetCore.Antiforgery.DefaultAntiforgery.GetAndStoreTokens(HttpContext httpContext)
+   at Stockpile.Api.Controllers.AuthController.Antiforgery() in D:\Projects\home dev\open\backend\src\Stockpile.Api\Controllers\AuthController.cs:line 235
+   at lambda_method330(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+17:48:17.231 ERR HTTP GET /api/v1/auth/antiforgery responded 500 in 62.9421 ms {"SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware", "CorrelationId": "692bd721-95c6-4d64-9ea7-be5841dbbb9e", "RequestId": "0HNPAMPI8AJLI:00000001", "ConnectionId": "0HNPAMPI8AJLI", "service": "stockpile-api"}

@@ -94,6 +94,17 @@ public static class StockpileIdentityServiceExtensions
                 + $"Configured: {authOptions.RefreshTokenMinutes}.");
         }
 
+        // business-flows §2/§3 — the resumable registration-draft window. A draft
+        // that never expires (or dies before the visitor can return) is a bug, never
+        // a configuration choice.
+        if (authOptions.RegistrationDraftExpiryHours is < 1 or > 720)
+        {
+            throw new InvalidOperationException(
+                $"Auth:RegistrationDraftExpiryHours must be inside [1, 720] hours "
+                + $"(resumable registration draft, business-flows §2/§3). "
+                + $"Configured: {authOptions.RegistrationDraftExpiryHours}.");
+        }
+
         // Task 1.39 — the exponential lockout ladder (threat-model T1.1): a base
         // below 6 s is nonsense, the ceiling must never exceed a week, and the cap
         // must sit at or above the base or the "exponential" part is flat. The

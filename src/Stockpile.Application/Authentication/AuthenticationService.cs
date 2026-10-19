@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using Stockpile.Application.Audit;
 using Stockpile.Application.Common.Errors;
 using Stockpile.Application.Organizations;
+using Stockpile.Application.Suppliers;
 using Stockpile.Contracts.Authentication;
 using Stockpile.Contracts.Errors;
 using Stockpile.Domain.Common;
@@ -39,6 +40,7 @@ public sealed class AuthenticationService
     private readonly ICurrentRequestContext _requestContext;
     private readonly IUserPermissionStore _permissions;
     private readonly IOrganizationStore _organizations;
+    private readonly ISupplierRegistrationStore _supplierRegistration;
     private readonly IAuditService _audit;
     private readonly ISecurityEventService _securityEvents;
     private readonly IPasswordHasher<User> _passwordHasher;
@@ -57,6 +59,7 @@ public sealed class AuthenticationService
         ICurrentRequestContext requestContext,
         IUserPermissionStore permissions,
         IOrganizationStore organizations,
+        ISupplierRegistrationStore supplierRegistration,
         IAuditService audit,
         ISecurityEventService securityEvents,
         IPasswordHasher<User> passwordHasher,
@@ -74,6 +77,7 @@ public sealed class AuthenticationService
         _requestContext = requestContext;
         _permissions = permissions;
         _organizations = organizations;
+        _supplierRegistration = supplierRegistration;
         _audit = audit;
         _securityEvents = securityEvents;
         _passwordHasher = passwordHasher;
@@ -104,28 +108,102 @@ public sealed class AuthenticationService
     // ---- Registration (business-flows §2 step 1) ---------------------------
 
     /// <summary>
-    /// Creates the staged buyer account. Throws <see cref="AppException"/>
-    /// (422 <c>VALIDATION_FAILED</c>) for a duplicate email or a password the
-    /// configured policy rejects (A12). The account is created unverified —
-    /// verification and its email arrive with task 1.38; the email remains the
-    /// single login identifier and can sign in right away (the verification
-    /// gate lands on RFQ submit, A11).
+    /// Creates an active buyer account using the email as its login identifier.
+    /// Email ownership is not verified during registration.
     /// </summary>
-    public async Task RegisterAsync(RegisterRequest request, CancellationToken cancellationToken)
+    public async Task<Guid> RegisterAsync(RegisterRequest request, CancellationToken cancellationToken)
     {
-        // The registered-user role is config-seeded data (domain-model §2.2).
-        // Fail fast BEFORE an account is created: a misconfigured role must not
-        // produce a role-less account that the seeder would later contradict.
-        Role? registeredRole = await _roleStore.FindByNameAsync(
-            _options.RegisteredUserRole.ToUpperInvariant(), cancellationToken);
-        if (registeredRole is null)
+        Role registeredRole = await ResolveRoleAsync(
+            _options.RegisteredUserRole, "Auth:RegisteredUserRole", cancellationToken);
+
+        User user = await CreateAccountAsync(
+            request.Email,
+            request.Password,
+            registeredRole.Code,
+            firstName: request.Email.Trim().Split('@', 2)[0],
+            lastName: string.Empty,
+            phone: null,
+            cancellationToken);
+
+        await _audit.RecordAsync(
+            new AuditEntry("auth.register", "User", user.PublicId.ToString(), AuditResult.Success), cancellationToken);
+
+        // The caller retires this registration's draft (if any) — see
+        // AuthController.RetireDraftAsync for why that is done outside this use case.
+        return user.PublicId;
+    }
+
+    /// <summary>
+    /// Task 2F — supplier self-registration (business-flows §3.3, api.md §2.1
+    /// <c>POST /auth/register/supplier</c>): one submit creates the account with
+    /// the configured supplier role and then — in one transaction — the supplier
+    /// organisation, the caller's accepted membership, the supplier aggregate
+    /// with its public profile and its category coverage. Category slugs are
+    /// resolved against the live taxonomy BEFORE the account exists, so a submit
+    /// that names no real category fails without creating a user.
+    /// </summary>
+    public async Task<Guid> RegisterSupplierAsync(RegisterSupplierRequest request, CancellationToken cancellationToken)
+    {
+        Role supplierRole = await ResolveRoleAsync(
+            _options.RegisteredSupplierRole, "Auth:RegisteredSupplierRole", cancellationToken);
+
+        IReadOnlyList<Guid> categoryIds =
+            await _supplierRegistration.ResolveCategoryIdsAsync(request.Categories, cancellationToken);
+        if (categoryIds.Count == 0)
         {
-            throw new InvalidOperationException(
-                $"Auth:RegisteredUserRole '{_options.RegisteredUserRole}' is not seeded in 'Seed:Roles'. "
-                + "Roles are seeded from configuration (domain-model §2.2); register a role with that code.");
+            throw new AppException(
+                ErrorCodes.ValidationFailed,
+                [new FieldError("categories", "Unknown", "Choose at least one category the platform recognises.")]);
         }
 
-        string normalizedEmail = NormalizeEmail(request.Email);
+        string firstName = request.ContactFirstName.Trim();
+        string lastName = request.ContactLastName.Trim();
+
+        User user = await CreateAccountAsync(
+            request.Email,
+            request.Password,
+            supplierRole.Code,
+            firstName,
+            lastName,
+            request.Phone.Trim(),
+            cancellationToken);
+
+        Guid supplierId = await _supplierRegistration.CreateSupplierAsync(
+            new SupplierRegistrationDraft(
+                UserId: user.PublicId,
+                CompanyName: request.CompanyName,
+                RegistrationNumber: request.RegistrationNumber,
+                Website: request.Website,
+                ContactPerson: $"{firstName} {lastName}".Trim(),
+                Phone: request.Phone.Trim(),
+                Email: request.Email.Trim(),
+                CategoryIds: categoryIds),
+            cancellationToken);
+
+        await _audit.RecordAsync(
+            new AuditEntry("supplier.register", "Supplier", supplierId.ToString(), AuditResult.Success), cancellationToken);
+
+        return user.PublicId;
+    }
+
+    // ---- Shared registration helpers ---------------------------------------
+
+    /// <summary>
+    /// The one account-creation path both registrations share: normalise the
+    /// login, refuse a duplicate, run the breach check when enabled, create the
+    /// Identity user and assign the single seeded role. Buyer and supplier
+    /// registration differ only in the role code and the person fields.
+    /// </summary>
+    private async Task<User> CreateAccountAsync(
+        string email,
+        string password,
+        string roleCode,
+        string firstName,
+        string lastName,
+        string? phone,
+        CancellationToken cancellationToken)
+    {
+        string normalizedEmail = NormalizeEmail(email);
 
         if (await _userManager.FindByEmailAsync(normalizedEmail) is not null)
         {
@@ -137,7 +215,7 @@ public sealed class AuthenticationService
         if (await IsBreachCheckingEnabledAsync())
         {
             IPasswordBreachChecker checker = _services.GetRequiredService<IPasswordBreachChecker>();
-            if (await checker.IsBreachedAsync(request.Password, cancellationToken))
+            if (await checker.IsBreachedAsync(password, cancellationToken))
             {
                 throw new AppException(
                     ErrorCodes.ValidationFailed,
@@ -148,39 +226,47 @@ public sealed class AuthenticationService
         var user = new User
         {
             PublicId = Guid.NewGuid(),
-            Email = request.Email.Trim(),
+            Email = email.Trim(),
             EmailNormalized = normalizedEmail,
-            FirstName = request.FirstName.Trim(),
-            LastName = request.LastName.Trim(),
-            Phone = string.IsNullOrWhiteSpace(request.Phone) ? null : request.Phone.Trim(),
+            EmailConfirmedAt = _time.GetUtcNow().UtcDateTime,
+            FirstName = firstName,
+            LastName = lastName,
+            Phone = phone,
             PreferredLocale = "en",
             Status = UserStatus.Active,
         };
 
-        IdentityResult created = await _userManager.CreateAsync(user, request.Password);
+        IdentityResult created = await _userManager.CreateAsync(user, password);
         if (!created.Succeeded)
         {
             throw ToValidationFailure(created);
         }
 
-        IdentityResult roleAssigned = await _userManager.AddToRoleAsync(user, registeredRole.Code);
+        IdentityResult roleAssigned = await _userManager.AddToRoleAsync(user, roleCode);
         if (!roleAssigned.Succeeded)
         {
             throw ToValidationFailure(roleAssigned);
         }
 
-        await _audit.RecordAsync(new AuditEntry(
-            "auth.register", "User", user.PublicId.ToString(), AuditResult.Success), cancellationToken);
-        await _securityEvents.RecordAsync(
-            SecurityEventType.EmailVerificationRequested,
-            user.PublicId,
-            "registration created; verification email pending",
-            cancellationToken: cancellationToken);
+        return user;
+    }
 
-        // Task 1.38 — the verification email is a real deliverable now: mint the
-        // one-time token and raise the identity.user.registered outbox event whose
-        // payload carries it for the email renderer (same transaction, §10.1).
-        await MintVerificationTokenAsync(user, cancellationToken);
+    /// <summary>
+    /// Resolve a config-seeded role code, failing fast BEFORE an account is
+    /// created: a misconfigured role must not produce a role-less account that
+    /// the seeder would later contradict (domain-model §2.2).
+    /// </summary>
+    private async Task<Role> ResolveRoleAsync(string roleName, string settingName, CancellationToken cancellationToken)
+    {
+        Role? role = await _roleStore.FindByNameAsync(roleName.ToUpperInvariant(), cancellationToken);
+        if (role is null)
+        {
+            throw new InvalidOperationException(
+                $"{settingName} '{roleName}' is not seeded in 'Seed:Roles'. "
+                + "Roles are seeded from configuration (domain-model §2.2); register a role with that code.");
+        }
+
+        return role;
     }
 
     // ---- Login (threat-model §13.4, T1.1) ----------------------------------
@@ -479,7 +565,7 @@ public sealed class AuthenticationService
 
     /// <summary>256 bits from the CSPRNG — the raw value only ever travels in the cookie, only the hash is stored.</summary>
     private static string CreateOpaqueToken()
-        => Convert.ToBase64String(RandomNumberGenerator.GetBytes(32));
+        => OpaqueTokens.Create();
 
     // ---- Logout / session management ---------------------------------------
 
@@ -970,7 +1056,7 @@ public sealed class AuthenticationService
 
     /// <summary>SHA-256 hex of the opaque reset token — the ONLY thing stored at rest (T1.5 "hashed at rest").</summary>
     private static string HashToken(string token)
-        => Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(token))).ToLowerInvariant();
+        => OpaqueTokens.Hash(token);
 
     /// <summary>camelCase for outbox payloads (the email renderer and tests read the same shape).</summary>
     private static readonly JsonSerializerOptions PayloadJson = new(JsonSerializerDefaults.Web);

@@ -51,6 +51,7 @@
           "OpenTelemetry.Instrumentation.Http": "1.19.0",
           "OpenTelemetry.Instrumentation.Runtime": "1.19.0",
           "OpenTelemetry.Instrumentation.SqlClient": "1.19.0",
+          "Scalar.AspNetCore": "2.17.14",
           "Serilog.AspNetCore": "10.0.0",
           "Stockpile.Application": "1.0.0",
           "Stockpile.Contracts": "1.0.0",
@@ -2090,7 +2091,7 @@
           "Microsoft.SqlServer.Server": "1.0.0",
           "System.Configuration.ConfigurationManager": "9.0.11",
           "System.IdentityModel.Tokens.Jwt": "7.7.1",
-          "System.Security.Cryptography.Pkcs": "9.0.11"
+          "System.Security.Cryptography.Pkcs": "9.0.21"
         },
         "compile": {
           "ref/net9.0/Microsoft.Data.SqlClient.dll": {}
@@ -2310,6 +2311,11 @@
           "lib/net10.0/OpenTelemetry.Instrumentation.SqlClient.dll": {}
         }
       },
+      "Scalar.AspNetCore/2.17.14": {
+        "compile": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {}
+        }
+      },
       "Serilog/4.3.0": {
         "compile": {
           "lib/net9.0/Serilog.dll": {}
@@ -2448,7 +2454,7 @@
           "lib/net10.0/System.Memory.Data.dll": {}
         }
       },
-      "System.Security.Cryptography.Pkcs/9.0.11": {
+      "System.Security.Cryptography.Pkcs/9.0.21": {
         "compile": {
           "lib/net9.0/System.Security.Cryptography.Pkcs.dll": {}
         }
@@ -2485,7 +2491,8 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.12",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.12",
           "Stockpile.Application": "1.0.0",
-          "Stockpile.Domain": "1.0.0"
+          "Stockpile.Domain": "1.0.0",
+          "System.Security.Cryptography.Pkcs": "9.0.21"
         },
         "compile": {
           "Stockpile.Infrastructure.dll": {}
@@ -2508,6 +2515,7 @@
           "OpenTelemetry.Instrumentation.Http": "1.19.0",
           "OpenTelemetry.Instrumentation.Runtime": "1.19.0",
           "OpenTelemetry.Instrumentation.SqlClient": "1.19.0",
+          "Scalar.AspNetCore": "2.17.14",
           "Serilog.AspNetCore": "10.0.0",
           "Stockpile.Application": "1.0.0",
           "Stockpile.Contracts": "1.0.0",
@@ -3315,7 +3323,7 @@
           "Microsoft.SqlServer.Server": "1.0.0",
           "System.Configuration.ConfigurationManager": "9.0.11",
           "System.IdentityModel.Tokens.Jwt": "7.7.1",
-          "System.Security.Cryptography.Pkcs": "9.0.11"
+          "System.Security.Cryptography.Pkcs": "9.0.21"
         },
         "runtime": {
           "runtimes/win/lib/net9.0/Microsoft.Data.SqlClient.dll": {
@@ -3693,6 +3701,14 @@
           }
         }
       },
+      "Scalar.AspNetCore/2.17.14": {
+        "runtime": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "assemblyVersion": "2.17.14.0",
+            "fileVersion": "2.17.14.0"
+          }
+        }
+      },
       "Serilog/4.3.0": {
         "runtime": {
           "lib/net9.0/Serilog.dll": {
@@ -3959,7 +3975,8 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.12",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.12",
           "Stockpile.Application": "1.0.0",
-          "Stockpile.Domain": "1.0.0"
+          "Stockpile.Domain": "1.0.0",
+          "System.Security.Cryptography.Pkcs": "9.0.21"
         },
         "runtime": {
           "Stockpile.Infrastructure.dll": {
@@ -4367,6 +4384,13 @@
       "sha512": "sha512-JYdCD0Hkn0+hbSNTjDWENIlsR0CquiH2g6g2jme8Pv1GdDKjJ4/hQnOPJ3vX6XNV/RLf5T1551FeX4DncbdmXw==",
       "path": "opentelemetry.instrumentation.sqlclient/1.19.0",
       "hashPath": "opentelemetry.instrumentation.sqlclient.1.19.0.nupkg.sha512"
+    },
+    "Scalar.AspNetCore/2.17.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wkZQbMQPSgU1w9BciBCe2Gh7l8hI9mSe+B1FRGC6zbPE2cD7YH3BDxwKWGzlJwuXAxgbfzK4UzQTnTDIgP6XFw==",
+      "path": "scalar.aspnetcore/2.17.14",
+      "hashPath": "scalar.aspnetcore.2.17.14.nupkg.sha512"
     },
     "Serilog/4.3.0": {
       "type": "package",
@@ -6091,12 +6115,12 @@
       "path": "microsoft.entityframeworkcore.analyzers/10.0.12",
       "hashPath": "microsoft.entityframeworkcore.analyzers.10.0.12.nupkg.sha512"
     },
-    "System.Security.Cryptography.Pkcs/9.0.11": {
+    "System.Security.Cryptography.Pkcs/9.0.21": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YS2YqtN6fFjlTDIQI+ucjbbrEvwMn796r+VLTQRr/5Oy6g+i+m7nIou83KnJCnAcKna2I+5eVJRks6SoHSpetQ==",
-      "path": "system.security.cryptography.pkcs/9.0.11",
-      "hashPath": "system.security.cryptography.pkcs.9.0.11.nupkg.sha512"
+      "sha512": "sha512-KD+oHoYIxwNCajjVe58WVwq9cRpum+Pg3tRveDRtkcaw6w3oc7sNBoMRtb5P5OehI3bgv1ucMpgjf8lpj5J96A==",
+      "path": "system.security.cryptography.pkcs/9.0.21",
+      "hashPath": "system.security.cryptography.pkcs.9.0.21.nupkg.sha512"
     }
   }
 }

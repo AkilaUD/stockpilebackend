@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fsFOcSmcIWw=",
+  "dgSpecHash": "QRoXNuHFpNw=",
   "success": true,
   "projectFilePath": "D:\\Projects\\home dev\\open\\backend\\tests\\Stockpile.IntegrationTests\\Stockpile.IntegrationTests.csproj",
   "expectedPackageFiles": [
@@ -106,7 +106,7 @@
     "C:\\Users\\Akila_PC\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.7.1\\system.identitymodel.tokens.jwt.7.7.1.nupkg.sha512",
     "C:\\Users\\Akila_PC\\.nuget\\packages\\system.io.hashing\\10.0.9\\system.io.hashing.10.0.9.nupkg.sha512",
     "C:\\Users\\Akila_PC\\.nuget\\packages\\system.memory.data\\10.0.9\\system.memory.data.10.0.9.nupkg.sha512",
-    "C:\\Users\\Akila_PC\\.nuget\\packages\\system.security.cryptography.pkcs\\9.0.11\\system.security.cryptography.pkcs.9.0.11.nupkg.sha512",
+    "C:\\Users\\Akila_PC\\.nuget\\packages\\system.security.cryptography.pkcs\\9.0.21\\system.security.cryptography.pkcs.9.0.21.nupkg.sha512",
     "C:\\Users\\Akila_PC\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.11\\system.security.cryptography.protecteddata.9.0.11.nupkg.sha512",
     "C:\\Users\\Akila_PC\\.nuget\\packages\\xunit\\2.9.3\\xunit.2.9.3.nupkg.sha512",
     "C:\\Users\\Akila_PC\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",

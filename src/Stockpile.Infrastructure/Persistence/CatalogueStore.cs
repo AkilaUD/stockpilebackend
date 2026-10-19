@@ -255,10 +255,9 @@ public sealed class CatalogueStore(StockpileDbContext db) : ICatalogueStore
     /// <remarks>
     /// Every predicate runs against entity columns BEFORE any projection is
     /// composed: EF Core refuses member access over a record constructed in
-    /// the query (the failure mode that took every product surface down), so
-    /// supplier/category text matches arrive here as materialised id lists
-    /// instead of join-column predicates, and stock/verification filters
-    /// correlate through key lookups rather than joined row members.
+    /// the query (the failure mode that took every product surface down).
+    /// Filters stay as correlated <c>Any</c> subqueries so Guid lists are
+    /// never materialised on the request thread before the page query runs.
     /// </remarks>
     private IQueryable<Product> FilteredProducts(CatalogueProductQuery query, bool published)
     {
@@ -268,63 +267,48 @@ public sealed class CatalogueStore(StockpileDbContext db) : ICatalogueStore
         if (!string.IsNullOrWhiteSpace(query.CategorySlug))
         {
             var slug = query.CategorySlug.Trim();
-            var category = db.Categories.AsNoTracking().FirstOrDefault(c => c.Slug == slug);
-            if (category is not null)
-            {
-                var prefix = category.MaterializedPath + "/";
-                var ids = db.Categories.AsNoTracking()
-                    .Where(c => c.MaterializedPath == category.MaterializedPath || c.MaterializedPath.StartsWith(prefix))
-                    .Select(c => c.PublicId)
-                    .ToList();
-                products = products.Where(p => ids.Contains(p.CategoryId));
-            }
+            products = products.Where(p =>
+                db.Categories.Any(root =>
+                    root.Slug == slug
+                    && db.Categories.Any(c =>
+                        c.PublicId == p.CategoryId
+                        && (c.MaterializedPath == root.MaterializedPath
+                            || c.MaterializedPath.StartsWith(root.MaterializedPath + "/")))));
         }
 
         if (!string.IsNullOrWhiteSpace(query.Q))
         {
             var pattern = $"%{query.Q.Trim()}%";
-            var supplierIds = SupplierIdsMatchingDisplayName(pattern);
-            var categoryIds = db.Categories.AsNoTracking()
-                .Where(c => EF.Functions.Like(c.Name, pattern))
-                .Select(c => c.PublicId)
-                .ToList();
             products = products.Where(p =>
                 EF.Functions.Like(p.Name, pattern)
                 || EF.Functions.Like(p.Sku, pattern)
                 || (p.Description != null && EF.Functions.Like(p.Description, pattern))
-                || supplierIds.Contains(p.SupplierId)
-                || categoryIds.Contains(p.CategoryId));
+                || db.Suppliers.Any(s =>
+                    s.PublicId == p.SupplierId && EF.Functions.Like(s.DisplayName, pattern))
+                || db.Categories.Any(c =>
+                    c.PublicId == p.CategoryId && EF.Functions.Like(c.Name, pattern)));
         }
 
         if (query.BrandId is { } brandId) products = products.Where(p => p.BrandId == brandId);
         if (!string.IsNullOrWhiteSpace(query.CountryCode)) products = products.Where(p => p.CountryOfOriginCode == query.CountryCode);
         if (query.VerifiedOnly)
         {
-            var verifiedIds = db.Suppliers.AsNoTracking()
-                .Where(s => s.VerificationState == VerificationState.Verified)
-                .Select(s => s.PublicId)
-                .ToList();
-            products = products.Where(p => verifiedIds.Contains(p.SupplierId));
+            products = products.Where(p =>
+                db.Suppliers.Any(s =>
+                    s.PublicId == p.SupplierId
+                    && s.VerificationState == VerificationState.Verified));
         }
 
         if (query.InStockOnly == true)
         {
-            var inStockIds = db.ProductStocks.AsNoTracking()
-                .Where(st => st.StockState == StockState.InStock || st.StockState == StockState.LowStock)
-                .Select(st => st.ProductId)
-                .ToList();
-            products = products.Where(p => inStockIds.Contains(p.PublicId));
+            products = products.Where(p =>
+                db.ProductStocks.Any(st =>
+                    st.ProductId == p.PublicId
+                    && (st.StockState == StockState.InStock || st.StockState == StockState.LowStock)));
         }
 
         return products;
     }
-
-    /// <summary>Suppliers whose display name matches the LIKE pattern (server-side, then materialised).</summary>
-    private List<Guid> SupplierIdsMatchingDisplayName(string pattern) =>
-        db.Suppliers.AsNoTracking()
-            .Where(s => EF.Functions.Like(s.DisplayName, pattern))
-            .Select(s => s.PublicId)
-            .ToList();
 
     private IQueryable<Product> OrderProducts(IQueryable<Product> products, CatalogueProductQuery q)
     {
@@ -350,12 +334,14 @@ public sealed class CatalogueStore(StockpileDbContext db) : ICatalogueStore
     private IQueryable<Product> OrderByRelevance(IQueryable<Product> products, string text)
     {
         var pattern = $"%{text}%";
-        var supplierIds = SupplierIdsMatchingDisplayName(pattern);
         return products.OrderByDescending(p =>
             (p.Name.StartsWith(text) ? 10 : 0)
             + (p.Name.Contains(text) ? 8 : 0)
             + (p.Sku.Contains(text) ? 6 : 0)
-            + (supplierIds.Contains(p.SupplierId) ? 4 : 0));
+            + (db.Suppliers.Any(s =>
+                s.PublicId == p.SupplierId && EF.Functions.Like(s.DisplayName, pattern))
+                ? 4
+                : 0));
     }
 
     /// <summary>Detail head for one product with all joined headline rows.</summary>

@@ -1,9 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using Stockpile.Domain.Common;
 using Stockpile.Domain.Entities.Catalogue;
+using Stockpile.Domain.Entities.Content;
 using Stockpile.Domain.Entities.Identity;
 using Stockpile.Domain.Entities.Media;
 using Stockpile.Domain.Entities.Platform;
+using Stockpile.Domain.Entities.Procurement;
 using Stockpile.Domain.Entities.Reference;
 
 namespace Stockpile.Infrastructure.Persistence;
@@ -51,6 +53,12 @@ public sealed class StockpileDbContext : DbContext
     public DbSet<PasswordResetToken> PasswordResetTokens => Set<PasswordResetToken>();
 
     public DbSet<EmailVerificationToken> EmailVerificationTokens => Set<EmailVerificationToken>();
+
+    // business-flows §2/§3 — the resumable registration draft: hashed-at-rest token,
+    // non-secret prefill, retired on completion (api.md §2.1).
+    public DbSet<RegistrationDraft> RegistrationDrafts => Set<RegistrationDraft>();
+
+    public DbSet<RegistrationDraftCategory> RegistrationDraftCategories => Set<RegistrationDraftCategory>();
 
     // ---- Platform / security / operations (domain-model §10) ----
     public DbSet<AuditLog> AuditLogs => Set<AuditLog>();
@@ -120,6 +128,33 @@ public sealed class StockpileDbContext : DbContext
     public DbSet<SupplierBadge> SupplierBadges => Set<SupplierBadge>();
 
     public DbSet<SupplierPublicPageConfig> SupplierPublicPageConfigs => Set<SupplierPublicPageConfig>();
+
+    // ---- Content (domain-model §9) ----
+    public DbSet<ContentItem> ContentItems => Set<ContentItem>();
+
+    public DbSet<ContentCategory> ContentCategories => Set<ContentCategory>();
+
+    public DbSet<ContentItemCategory> ContentItemCategories => Set<ContentItemCategory>();
+
+    public DbSet<ContentTag> ContentTags => Set<ContentTag>();
+
+    public DbSet<ContentItemTag> ContentItemTags => Set<ContentItemTag>();
+
+    // ---- Procurement (domain-model §5) ----
+    public DbSet<Rfq> Rfqs => Set<Rfq>();
+
+    public DbSet<RfqItem> RfqItems => Set<RfqItem>();
+
+    public DbSet<RfqMatch> RfqMatches => Set<RfqMatch>();
+
+    public DbSet<RfqStatusHistory> RfqStatusHistories => Set<RfqStatusHistory>();
+
+    // ---- Quotations (domain-model §6) ----
+    public DbSet<Quote> Quotes => Set<Quote>();
+
+    public DbSet<QuoteRevision> QuoteRevisions => Set<QuoteRevision>();
+
+    public DbSet<QuoteRevisionItem> QuoteRevisionItems => Set<QuoteRevisionItem>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

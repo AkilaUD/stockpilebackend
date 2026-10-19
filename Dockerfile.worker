@@ -1,0 +1,19 @@
+# Build context must be the repository root (see docs/railway-deployment.md).
+# Worker shares Infrastructure with the API; it does not serve HTTP and does
+# not need catalogue/content seed datasets (migrations/seed remain API-only).
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+WORKDIR /src
+
+COPY backend/ ./backend/
+WORKDIR /src/backend
+RUN dotnet restore src/Stockpile.Worker/Stockpile.Worker.csproj
+RUN dotnet publish src/Stockpile.Worker/Stockpile.Worker.csproj \
+    --configuration Release \
+    --no-restore \
+    --output /app/publish
+
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
+WORKDIR /app
+
+COPY --from=build /app/publish ./
+ENTRYPOINT ["dotnet", "Stockpile.Worker.dll"]

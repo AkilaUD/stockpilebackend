@@ -913,7 +913,7 @@
           "Microsoft.SqlServer.Server": "1.0.0",
           "System.Configuration.ConfigurationManager": "9.0.11",
           "System.IdentityModel.Tokens.Jwt": "7.7.1",
-          "System.Security.Cryptography.Pkcs": "9.0.11"
+          "System.Security.Cryptography.Pkcs": "9.0.21"
         },
         "runtime": {
           "lib/net9.0/Microsoft.Data.SqlClient.dll": {
@@ -1753,7 +1753,8 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.12",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.12",
           "Stockpile.Application": "1.0.0",
-          "Stockpile.Domain": "1.0.0"
+          "Stockpile.Domain": "1.0.0",
+          "System.Security.Cryptography.Pkcs": "9.0.21"
         },
         "runtime": {
           "Stockpile.Infrastructure.dll": {
@@ -3613,7 +3614,7 @@
       "Microsoft.EntityFrameworkCore.Analyzers/10.0.12": {
         "compileOnly": true
       },
-      "System.Security.Cryptography.Pkcs/9.0.11": {
+      "System.Security.Cryptography.Pkcs/9.0.21": {
         "compile": {
           "lib/net9.0/System.Security.Cryptography.Pkcs.dll": {}
         },
@@ -5749,12 +5750,12 @@
       "path": "microsoft.entityframeworkcore.analyzers/10.0.12",
       "hashPath": "microsoft.entityframeworkcore.analyzers.10.0.12.nupkg.sha512"
     },
-    "System.Security.Cryptography.Pkcs/9.0.11": {
+    "System.Security.Cryptography.Pkcs/9.0.21": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YS2YqtN6fFjlTDIQI+ucjbbrEvwMn796r+VLTQRr/5Oy6g+i+m7nIou83KnJCnAcKna2I+5eVJRks6SoHSpetQ==",
-      "path": "system.security.cryptography.pkcs/9.0.11",
-      "hashPath": "system.security.cryptography.pkcs.9.0.11.nupkg.sha512"
+      "sha512": "sha512-KD+oHoYIxwNCajjVe58WVwq9cRpum+Pg3tRveDRtkcaw6w3oc7sNBoMRtb5P5OehI3bgv1ucMpgjf8lpj5J96A==",
+      "path": "system.security.cryptography.pkcs/9.0.21",
+      "hashPath": "system.security.cryptography.pkcs.9.0.21.nupkg.sha512"
     }
   }
 }

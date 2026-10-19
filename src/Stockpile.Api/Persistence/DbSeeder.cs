@@ -41,6 +41,12 @@ internal static class DbSeeder
         // or stale catalogue (see CatalogueSeeder).
         await CatalogueSeeder.SeedAsync(services, cancellationToken);
 
+        // Task 3E — the reference news tree (58 articles across its four
+        // buckets) from the auditable dataset built out of the news harvest.
+        // Idempotent on the dataset hash, with the same refusal to boot over a
+        // partial or stale migration (see ContentSeeder).
+        await ContentSeeder.SeedAsync(services, cancellationToken);
+
         // One SaveChanges = one transaction: the seed either fully applies or
         // leaves the database untouched.
         await db.SaveChangesAsync(cancellationToken);

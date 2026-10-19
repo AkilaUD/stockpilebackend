@@ -14,21 +14,10 @@ public sealed class RegisterRequestValidator : AbstractValidator<RegisterRequest
 {
     public RegisterRequestValidator()
     {
-        RuleFor(request => request.FirstName)
-            .NotEmpty().WithMessage("First name is required.")
-            .MaximumLength(100);
-        RuleFor(request => request.LastName)
-            .NotEmpty().WithMessage("Last name is required.")
-            .MaximumLength(100);
         RuleFor(request => request.Email)
             .NotEmpty().WithMessage("Email is required.")
             .EmailAddress().WithMessage("Enter a valid email address.")
             .MaximumLength(256);
-        RuleFor(request => request.Phone)
-            .Matches("^\\+[1-9]\\d{1,14}$")
-            .When(request => !string.IsNullOrWhiteSpace(request.Phone))
-            .WithMessage("Phone must be an E.164 number, e.g. +94771234567.")
-            .MaximumLength(30);
         RuleFor(request => request.Password)
             .NotEmpty().WithMessage("Choose a password.");
     }

@@ -1,0 +1,8 @@
+﻿  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Stockpile.Contracts -> D:\Projects\home dev\open\backend\src\Stockpile.Contracts\bin\Release\net10.0\Stockpile.Contracts.dll
+  Stockpile.Domain -> D:\Projects\home dev\open\backend\src\Stockpile.Domain\bin\Release\net10.0\Stockpile.Domain.dll
+  Stockpile.Application -> D:\Projects\home dev\open\backend\src\Stockpile.Application\bin\Release\net10.0\Stockpile.Application.dll
+  Stockpile.Infrastructure -> D:\Projects\home dev\open\backend\src\Stockpile.Infrastructure\bin\Release\net10.0\Stockpile.Infrastructure.dll
+  Stockpile.Api -> D:\Projects\home dev\open\backend\src\Stockpile.Api\bin\Release\net10.0\Stockpile.Api.dll
+  Stockpile.Api -> C:\Users\Akila_PC\AppData\Local\Temp\opencode\stockpile-publish\

@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Stockpile.Api.Idempotency;
@@ -16,10 +17,24 @@ namespace Stockpile.ArchitectureTests;
 /// </summary>
 public sealed class IdempotencyDeclarationsTests
 {
+    /// <summary>
+    /// Asp.Versioning templates look like <c>api/v{version:apiVersion}/rfqs/...</c>.
+    /// Critical-route matching must see the resource segment, not the version prefix.
+    /// </summary>
+    private static readonly Regex VersionedApiPrefix = new(
+        @"^api/v\{[^}]+\}/",
+        RegexOptions.IgnoreCase | RegexOptions.CultureInvariant | RegexOptions.Compiled);
+
     [Fact]
     public void Every_critical_write_action_declares_idempotency()
     {
-        var offenders = CriticalWriteActions()
+        var critical = CriticalWriteActions().ToList();
+        Assert.True(
+            critical.Count > 0,
+            "Expected at least one critical-write action (e.g. RFQ submit / quote submit); "
+            + "route matching may still be ignoring versioned templates.");
+
+        var offenders = critical
             .Where(action => !DeclaresIdempotency(action))
             .Select(action => action.DeclaringType!.FullName + "." + action.Name)
             .Order(StringComparer.Ordinal)
@@ -47,10 +62,7 @@ public sealed class IdempotencyDeclarationsTests
 
         foreach (var attribute in method.GetCustomAttributes<HttpMethodAttribute>(inherit: true))
         {
-            var template = (controllerPrefix + "/" + attribute.Template)
-                .Trim('/')
-                .ToLowerInvariant();
-
+            var template = NormalizeRoute(controllerPrefix, attribute.Template);
             var verb = attribute.HttpMethods.FirstOrDefault() ?? string.Empty;
             if (IsCriticalRoute(verb, template))
             {
@@ -61,8 +73,16 @@ public sealed class IdempotencyDeclarationsTests
         return false;
     }
 
+    private static string NormalizeRoute(string controllerPrefix, string? actionTemplate)
+    {
+        var combined = (controllerPrefix + "/" + (actionTemplate ?? string.Empty))
+            .Trim('/')
+            .ToLowerInvariant();
+        return VersionedApiPrefix.Replace(combined, string.Empty);
+    }
+
     private static bool IsCriticalRoute(string verb, string template) =>
-        verb == "post" && (
+        verb == "POST" && (
             template.Contains("webhooks", StringComparison.Ordinal)
             || template.StartsWith("quotes", StringComparison.Ordinal)
             || template.StartsWith("orders", StringComparison.Ordinal)

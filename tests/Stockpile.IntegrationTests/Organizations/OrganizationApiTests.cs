@@ -285,10 +285,14 @@ public sealed class OrganizationApiTests
 
         // The rejection left no invitation behind (T6.3: even a validated
         // request cannot sneak a platform role in — the use case re-checks).
+        // Scoped to THIS organisation: the shared test database legitimately
+        // holds supplier-scope memberships created by other suites.
         using IServiceScope scope = _factory.Services.CreateScope();
         var db = scope.ServiceProvider.GetRequiredService<StockpileDbContext>();
+        Guid organization = Guid.Parse(organizationId);
         Assert.False(await db.OrganizationMembers.AnyAsync(
-            row => row.RoleCode == "platformAdministrator" || row.RoleCode == "supplierOwner"));
+            row => row.OrganizationId == organization
+                && (row.RoleCode == "platformAdministrator" || row.RoleCode == "supplierOwner")));
     }
 
     [Fact]

@@ -117,6 +117,10 @@
               "target": "Package",
               "version": "[1.19.0, )"
             },
+            "Scalar.AspNetCore": {
+              "target": "Package",
+              "version": "[2.17.14, )"
+            },
             "Serilog.AspNetCore": {
               "target": "Package",
               "version": "[10.0.0, )"
@@ -1679,6 +1683,10 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[10.0.12, )"
+            },
+            "System.Security.Cryptography.Pkcs": {
+              "target": "Package",
+              "version": "[9.0.21, )"
             }
           },
           "imports": [
@@ -2023,6 +2031,7 @@
           }
         },
         "warningProperties": {
+          "allWarningsAsErrors": true,
           "warnAsError": [
             "NU1605"
           ]

@@ -45,12 +45,7 @@ public sealed class AuthenticationApiTests
 
     private static string NewEmail() => $"buyer.{Guid.NewGuid():N}@test.local";
 
-    private static RegisterRequestPayload RegisterPayload(string email) => new(
-        FirstName: "Test",
-        LastName: "Buyer",
-        Email: email,
-        Phone: "+94771234567",
-        Password);
+    private static RegisterRequestPayload RegisterPayload(string email) => new(email, Password);
 
     private static async Task<HttpResponseMessage> PostAsJsonAsync(
         HttpClient client, string route, object payload, string requestToken)
@@ -139,7 +134,7 @@ public sealed class AuthenticationApiTests
 
         var body = await response.Content.ReadFromJsonAsync<RegisterResponsePayload>();
         Assert.NotNull(body);
-        Assert.Equal("verification_pending", body!.Status);
+        Assert.Equal("registered", body!.Status);
 
         // Registration does NOT sign the user in: no session ticket yet (api.md
         // §2.1), so the session endpoint still answers UNAUTHENTICATED.
@@ -148,13 +143,14 @@ public sealed class AuthenticationApiTests
             Assert.Equal(HttpStatusCode.Unauthorized, session.StatusCode);
         }
 
-        // The account exists and can sign in — unverified, carrying the buyer
+        // The account exists and can sign in — email ownership is not verified,
+        // but the address is treated as usable and only the buyer
         // role. The register-minted token pairs with the double-submit cookie
         // the client handler stored, which is what makes this login valid (§1.10).
         using var login = await LoginAsync(client, body.RequestToken!, email);
         Assert.Equal(HttpStatusCode.OK, login.StatusCode);
         LoginPayload loginBody = await ReadLoginAsync(login);
-        Assert.False(loginBody.User!.EmailConfirmed);
+        Assert.True(loginBody.User!.EmailConfirmed);
         Assert.Contains("buyer", loginBody.User.Roles);
     }
 
@@ -281,7 +277,7 @@ public sealed class AuthenticationApiTests
         Assert.Equal(email, body.User!.Email);
         Assert.Equal("buyer", Assert.Single(body.User.Roles));
         Assert.Contains("rfq.create", body.User.Permissions);
-        Assert.False(body.User.EmailConfirmed);
+        Assert.True(body.User.EmailConfirmed);
     }
 
     [Fact]
@@ -558,7 +554,7 @@ public sealed class AuthenticationApiTests
 
         Assert.NotNull(identity);
         Assert.Equal(email, identity!.Email);
-        Assert.Equal("Test", identity.FirstName);
+        Assert.Equal(email[..email.IndexOf('@')], identity.FirstName);
         Assert.Equal("buyer", Assert.Single(identity.Roles));
         Assert.Contains("rfq.create", identity.Permissions);
         Assert.Contains("rfq.submit", identity.Permissions);
@@ -596,8 +592,7 @@ public sealed class AuthenticationApiTests
 
     // ---- Wire shapes -----------------------------------------------------------
 
-    private sealed record RegisterRequestPayload(
-        string FirstName, string LastName, string Email, string? Phone, string Password);
+    private sealed record RegisterRequestPayload(string Email, string Password);
 
     private sealed record LoginRequestPayload(string Email, string Password);
 

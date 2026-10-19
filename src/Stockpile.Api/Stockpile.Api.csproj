@@ -34,6 +34,21 @@
     <ProjectReference Include="..\Stockpile.Infrastructure\Stockpile.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="..\..\..\tools\catalogue-migrate\out\**\*">
+      <Link>tools\catalogue-migrate\out\%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <!-- Both migration datasets must travel with the app: the seeders resolve
+         them beside the content root, so a publish without them fails at boot. -->
+    <Content Include="..\..\..\tools\content-migrate\out\**\*">
+      <Link>tools\content-migrate\out\%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
   <!--
     Tests exercise rate-limit policy internals (partition keys, policy specs)
     directly; only the two test assemblies are ever granted that view.

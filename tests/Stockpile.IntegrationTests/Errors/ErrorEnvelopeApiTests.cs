@@ -129,6 +129,27 @@ public sealed class ErrorEnvelopeApiTests
         Assert.NotNull(envelope.CorrelationId);
     }
 
+    /// <summary>
+    /// Defect B18. A connection that closes mid-request is not a server fault:
+    /// the handler reads the abort from the request state, so the provider
+    /// exception the data layer raises for a cancelled command (SqlClient's
+    /// "Operation cancelled by user" — not an OperationCanceledException) must
+    /// answer 499 with no envelope, never 500. Before the fix, one e2e run
+    /// logged 8 of these as unhandled 500s with stack traces.
+    /// </summary>
+    [Fact]
+    public async Task A_client_hang_up_answers_499_instead_of_an_internal_error()
+    {
+        using var client = _factory.CreateClient();
+
+        using var response = await client.GetAsync("_test/abandoned");
+
+        Assert.Equal(499, (int)response.StatusCode);
+        var body = await response.Content.ReadAsStringAsync();
+        Assert.DoesNotContain(ErrorCodes.InternalError, body, StringComparison.Ordinal);
+        Assert.DoesNotContain("Operation cancelled by user", body, StringComparison.Ordinal);
+    }
+
     [Fact]
     public async Task Valid_request_passes_through_untouched()
     {

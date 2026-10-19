@@ -1,16 +1,16 @@
 namespace Stockpile.Application.Authentication;
 
 /// <summary>
-/// Registration request — step 1 of the staged buyer flow only (business-flows
-/// §2, api.md §2.1): identity fields. Profile, organisation and preferences
-/// arrive in later calls, so an abandoned step never creates half an account.
+/// Public registration request. Email is the login identifier; email ownership
+/// is not verified during signup.
 /// </summary>
-public sealed record RegisterRequest(
-    string FirstName,
-    string LastName,
-    string Email,
-    string? Phone,
-    string Password);
+/// <param name="DraftToken">
+/// The resumable registration draft this submit came from, when the visitor used
+/// one (business-flows §2/§3, api.md §2.1). Completing the registration retires
+/// the draft; a dead or unknown token simply expires on its own and never blocks
+/// the signup.
+/// </param>
+public sealed record RegisterRequest(string Email, string Password, string? DraftToken = null);
 
 /// <summary>Login request — email is the single login identifier (domain-model §2.1).</summary>
 public sealed record LoginRequest(string Email, string Password);

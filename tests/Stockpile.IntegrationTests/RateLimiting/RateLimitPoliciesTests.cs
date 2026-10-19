@@ -28,6 +28,7 @@ public sealed class RateLimitPoliciesTests
             RateLimitPolicies.AuthVerify,
             RateLimitPolicies.AuthMfa,
             RateLimitPolicies.AuthRefresh,
+            RateLimitPolicies.AuthDraft,
             RateLimitPolicies.AdminUnlock,
             RateLimitPolicies.SearchPublic,
             RateLimitPolicies.RfqCreate,
@@ -42,6 +43,11 @@ public sealed class RateLimitPoliciesTests
             RateLimitPolicies.OrganizationCreate,
             RateLimitPolicies.OrganizationMemberInvite,
             RateLimitPolicies.AddressWrite,
+            RateLimitPolicies.MeProfileWrite,
+            RateLimitPolicies.MePreferencesWrite,
+            RateLimitPolicies.MeNotificationPreferencesWrite,
+            RateLimitPolicies.SupplierProfileWrite,
+            RateLimitPolicies.SupplierLeadWrite,
             RateLimitPolicies.TestTight,
         };
 

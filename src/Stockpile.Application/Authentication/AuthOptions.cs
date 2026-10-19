@@ -18,6 +18,15 @@ public sealed class AuthOptions
     public string RegisteredUserRole { get; set; } = "buyer";
 
     /// <summary>
+    /// Role assigned when a supplier self-registers (task 2F; "supplierOwner" by
+    /// default — a Supplier-scope role seeded in Seed:Roles). Checked against the
+    /// live seeded roles before the account is created, exactly like
+    /// <see cref="RegisteredUserRole"/>: a misconfigured code must fail fast
+    /// rather than produce a role-less supplier.
+    /// </summary>
+    public string RegisteredSupplierRole { get; set; } = "supplierOwner";
+
+    /// <summary>
     /// Role the organisation creator joins with at <c>POST /organisations</c>
     /// step 3 (task 1.43): the buyer administrator who can then invite team
     /// members. Seeded from configuration like every role; the use case fails
@@ -73,6 +82,15 @@ public sealed class AuthOptions
     /// value.
     /// </summary>
     public double RefreshTokenMinutes { get; set; } = 720;
+
+    /// <summary>
+    /// Registration-draft TTL in hours (business-flows §2/§3 "staged, resumable",
+    /// api.md §2.1): the persisted draft row's <c>ExpiresAtUtc</c> is now + this
+    /// window; resuming after it answers the same 404 as any dead token. Default 72
+    /// (3 days — long enough to come back to a half-filled signup, short enough
+    /// that abandoned prefill does not sit around). Validated range [1, 720] at boot.
+    /// </summary>
+    public double RegistrationDraftExpiryHours { get; set; } = 72;
 }
 
 /// <summary>

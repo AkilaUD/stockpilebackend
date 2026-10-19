@@ -28,23 +28,28 @@ public sealed class MediaController(
     private const string KeyChars =
         "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._-";
 
-    /// <summary>Serve one immutable asset. 404 when the key is unknown to the database.</summary>
+    /// <summary>
+    /// Serve one immutable asset. 404 when the key is unknown to the database or
+    /// its bytes are absent, and that 404 is explicitly uncacheable: the previous
+    /// <c>[ResponseCache]</c> policy stamped <c>max-age=31536000</c> onto the
+    /// miss too, so a transient gap — a storage root that was empty or replaced —
+    /// stuck at every shared cache for a year and outlived its own repair.
+    /// </summary>
     [HttpGet("{key}")]
-    [ResponseCache(Duration = 31536000, Location = ResponseCacheLocation.Any, NoStore = false)]
     public async Task<IActionResult> Get(string key, CancellationToken cancellationToken)
     {
         if (string.IsNullOrEmpty(key) || key.Length > 160 || key.Any(c => !KeyChars.Contains(c)))
-            return NotFound();
+            return MediaNotFound();
 
         var asset = await db.MediaAssets
             .AsNoTracking()
             .FirstOrDefaultAsync(a => a.StorageKey == key, cancellationToken);
         if (asset is null)
-            return NotFound();
+            return MediaNotFound();
 
         string fullPath = OriginalsPath(key);
         if (!System.IO.File.Exists(fullPath))
-            return NotFound();
+            return MediaNotFound();
 
         // Content-addressed storage: the etag IS the integrity hash, and the
         // asset is immutable by construction, so it may be cached forever.
@@ -68,5 +73,17 @@ public sealed class MediaController(
             environment.ContentRootPath,
             root.Replace('/', Path.DirectorySeparatorChar).Replace('\\', Path.DirectorySeparatorChar));
         return Path.Combine(storageRoot, "originals", "catalogue", storageKey);
+    }
+
+    /// <summary>
+    /// A 404 no shared cache may store. A miss is transient by construction: the
+    /// storage root is re-checked against the harvest manifest on every boot
+    /// (<c>CatalogueSeeder.EnsureMediaBytesAsync</c>), so the same key can answer
+    /// 200 moments later.
+    /// </summary>
+    private NotFoundResult MediaNotFound()
+    {
+        Response.Headers.CacheControl = "no-store";
+        return NotFound();
     }
 }

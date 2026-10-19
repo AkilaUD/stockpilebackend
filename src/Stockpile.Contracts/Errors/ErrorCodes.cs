@@ -43,6 +43,8 @@ public static class ErrorCodes
     public const string QuoteCoverageEmpty = "QUOTE_COVERAGE_EMPTY";
     public const string QuoteValidityRequired = "QUOTE_VALIDITY_REQUIRED";
     public const string QuoteRevisionLimit = "QUOTE_REVISION_LIMIT";
+    public const string QuoteExistsForRfq = "QUOTE_EXISTS_FOR_RFQ";
+    public const string SubstitutionNotPermitted = "SUBSTITUTION_NOT_PERMITTED";
 
     // ---- Orders ----
     public const string OrderCreateFailed = "ORDER_CREATE_FAILED";
@@ -121,6 +123,8 @@ public static class ErrorCodes
         new(QuoteCoverageEmpty, "The quote must cover every line item on the RFQ.", 422),
         new(QuoteValidityRequired, "Set how long the quote stays valid before submitting it.", 422),
         new(QuoteRevisionLimit, "This quote has reached its revision limit. Issue a new quote instead.", 409),
+        new(QuoteExistsForRfq, "Your company has already quoted this RFQ. Submit a revision instead.", 409),
+        new(SubstitutionNotPermitted, "This buyer did not allow substitutions on this RFQ.", 422),
 
         new(OrderCreateFailed, "The order could not be created. Refresh and check stock before retrying.", 409),
         new(StockChanged, "Stock changed while you were ordering. Review the new quantities and try again.", 409),

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PqY1oFwtyxQ=",
+  "dgSpecHash": "u9IxUn5ZXKU=",
   "success": true,
   "projectFilePath": "D:\\Projects\\home dev\\open\\backend\\src\\Stockpile.Worker\\Stockpile.Worker.csproj",
   "expectedPackageFiles": [
@@ -80,7 +80,7 @@
     "C:\\Users\\Akila_PC\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.7.1\\system.identitymodel.tokens.jwt.7.7.1.nupkg.sha512",
     "C:\\Users\\Akila_PC\\.nuget\\packages\\system.io.hashing\\10.0.9\\system.io.hashing.10.0.9.nupkg.sha512",
     "C:\\Users\\Akila_PC\\.nuget\\packages\\system.memory.data\\10.0.9\\system.memory.data.10.0.9.nupkg.sha512",
-    "C:\\Users\\Akila_PC\\.nuget\\packages\\system.security.cryptography.pkcs\\9.0.11\\system.security.cryptography.pkcs.9.0.11.nupkg.sha512",
+    "C:\\Users\\Akila_PC\\.nuget\\packages\\system.security.cryptography.pkcs\\9.0.21\\system.security.cryptography.pkcs.9.0.21.nupkg.sha512",
     "C:\\Users\\Akila_PC\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.11\\system.security.cryptography.protecteddata.9.0.11.nupkg.sha512"
   ],
   "logs": []

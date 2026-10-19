@@ -28,13 +28,18 @@ using Stockpile.Api.RateLimiting;
 using Stockpile.Application.Audit;
 using Stockpile.Application.Authentication;
 using Stockpile.Application.Catalogue;
+using Stockpile.Application.Content;
 using Stockpile.Application.Common.Errors;
 using Stockpile.Application.Organizations;
+using Stockpile.Application.Procurement;
+using Stockpile.Application.Registration;
+using Stockpile.Application.Suppliers;
 using Stockpile.Contracts.Errors;
 using Stockpile.Infrastructure.Audit;
 using Stockpile.Infrastructure.Configuration;
 using Stockpile.Infrastructure.Outbox;
 using Stockpile.Infrastructure.Persistence;
+using Stockpile.Infrastructure.Persistence.Stores;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -365,6 +370,10 @@ try
         builder.Configuration.GetSection(PasswordPolicyOptions.SectionName));
     builder.Services.AddScoped<AuthenticationService>();
 
+    // business-flows §2/§3 — the resumable registration draft (api.md §2.1): mint,
+    // resume and retire the token a half-filled signup is addressed by.
+    builder.Services.AddScoped<RegistrationDraftService>();
+
     // Task 1.44 — MFA-ready use cases: enrol mints the pending TOTP secret,
     // verify is the only writer of TwoFactorEnabled (enforcement stays off).
     builder.Services.AddScoped<MfaService>();
@@ -373,11 +382,43 @@ try
     // invitations (P9), the user's own address book (api.md §2.2).
     builder.Services.AddScoped<OrganizationService>();
 
+    // Task 1.43 continued — user profile/preferences use cases (wizard steps 2, 4a, 4b; api.md §2.2).
+    builder.Services.AddScoped<IUserProfileStore, UserProfileStore>();
+    builder.Services.AddScoped<UserProfileService>();
+
+    // Supplier self-service onboarding (business-flows §3.3 stages 2–5, api.md §2.9):
+    // the resumable profile / service-area / category surface for a signed-in supplier.
+    builder.Services.AddScoped<ISupplierSelfStore, SupplierSelfStore>();
+    builder.Services.AddScoped<SupplierSelfService>();
+
+    // Supplier buying-lead inbox (business-flows §6, api.md §2.9): the matched
+    // RFQs this supplier was dispatched, its open/decline actions, and the
+    // cursor-paginated feed over them.
+    builder.Services.AddScoped<SupplierLeadsService>();
+
+    // Procurement — RFQ use cases (domain-model §5, api.md §2.6): create a
+    // draft, submit it (which runs category-based matching), and the buyer's
+    // own reads. Ownership is organisational (business-flows §3.8); a first-time
+    // buyer's company is provisioned through the wizard's own use case.
+    builder.Services.AddScoped<RfqService>();
+
+    // Procurement — quotations (domain-model §6, api.md §2.7): the supplier
+    // answers a lead with a quote the server computes; the store composes the
+    // RFQ lines and their catalogue snapshots, and commits the quote with the
+    // lead's own transition.
+    builder.Services.AddScoped<QuotesService>();
+
     // Task 2E — public catalogue use cases (api.md §2.3–§2.5, §3.1): the
     // relational store pushes filters into SQL; the service owns audience
     // policy and DTO shaping. Read-only for the public surface.
     builder.Services.AddScoped<ICatalogueStore, CatalogueStore>();
     builder.Services.AddScoped<CatalogueService>();
+
+    // Task 3E — public content use cases (api.md §2.12, domain-model §9): the
+    // editorial tree (news, project write-ups, guides) is read-only from the
+    // public surface; authoring arrives with the admin content endpoints.
+    builder.Services.AddScoped<IContentStore, ContentStore>();
+    builder.Services.AddScoped<ContentService>();
 
     // ---- Data protection (task 1.33, security-test-matrix H8) -------------
     // Keys never live in the machine-local store: ResolveKeyStore pins them to
@@ -412,6 +453,15 @@ try
     // registered inside the helper.
     AntiforgeryConfiguration.AddStockpileAntiforgery(
         builder.Services, builder.Configuration, builder.Environment.EnvironmentName);
+
+    // ---- Reverse proxy (threat-model §18, security-test-matrix H9) --------
+    // The public scheme, the visitor host and the visitor address belong to the
+    // TLS-terminating proxy, and reach the API as forwarded headers. Adopting
+    // them is what lets an HTTP-only origin hop be correct about itself; the
+    // trust boundary is ReverseProxy:KnownProxies/KnownNetworks, and an
+    // undeclared peer's headers are ignored. The middleware goes in below, at
+    // the head of the pipeline.
+    ReverseProxyConfiguration.AddStockpileReverseProxy(builder.Services, builder.Configuration);
 
     // ---- Task 1.28 outbox pipeline (architecture §10.1) --------------------
     // The API host registers the pipeline so the whole platform shares one
@@ -464,8 +514,19 @@ try
         app.MapScalarApiReference().AllowAnonymous();
     }
 
+    // ---- Reverse proxy ------------------------------------------------
+    // Absolutely first (threat-model §18): forwarded-header processing must run
+    // before the correlation id, the request log, rate limiting, antiforgery
+    // and authentication, so each of them describes the visitor — not the
+    // proxy. When the deployment declares HTTPS and a peer still arrives over
+    // plain HTTP, the middleware names that peer once, with the headers it
+    // sent, because that condition is exactly what made antiforgery minting
+    // answer 500 (a bare support reference is not a diagnosis).
+    app.UseStockpileReverseProxy(builder.Configuration);
+
     // ----1.18 Correlation id ---------------------------------------------
-    // Outermost: every log line below and every error envelope share one id.
+    // Outermost after the proxy hop: every log line below and every error
+    // envelope share one id.
     app.UseMiddleware<CorrelationIdMiddleware>();
 
     // Request completion logging — deliberately ABOVE the exception handler so

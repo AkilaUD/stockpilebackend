@@ -11,6 +11,8 @@ using Stockpile.Api.Configuration;
 using Stockpile.Api.RateLimiting;
 using Stockpile.Application.Authentication;
 using Stockpile.Application.Common.Errors;
+using Stockpile.Application.Registration;
+using Stockpile.Application.Suppliers;
 using Stockpile.Contracts.Authentication;
 using Stockpile.Contracts.Errors;
 // The framework also owns a static Microsoft.AspNetCore.Authentication.AuthenticationService;
@@ -31,28 +33,36 @@ namespace Stockpile.Api.Controllers;
 [ApiController]
 [ApiVersion(1.0)]
 [Route("api/v{version:apiVersion}/auth")]
-public sealed class AuthController : ControllerBase
+public sealed partial class AuthController : ControllerBase
 {
     private readonly AuthenticationService _auth;
     private readonly MfaService _mfa;
+    private readonly RegistrationDraftService _drafts;
     private readonly IAntiforgery _antiforgery;
     private readonly IConfiguration _configuration;
+    private readonly ILogger<AuthController> _logger;
 
-    public AuthController(AuthenticationService auth, MfaService mfa, IAntiforgery antiforgery, IConfiguration configuration)
+    public AuthController(
+        AuthenticationService auth,
+        MfaService mfa,
+        RegistrationDraftService drafts,
+        IAntiforgery antiforgery,
+        IConfiguration configuration,
+        ILogger<AuthController> logger)
     {
         _auth = auth;
         _mfa = mfa;
+        _drafts = drafts;
         _antiforgery = antiforgery;
         _configuration = configuration;
+        _logger = logger;
     }
 
     /// <summary>
-    /// Step 1 of the staged buyer registration (business-flows §2): identity
-    /// fields only. 201 + <c>verification_pending</c>; the verification email is
-    /// queued now — a one-time token is minted and the <c>identity.user.registered</c>
-    /// outbox event carries it for the renderer (1.38). The response stores the
-    /// antiforgery double-submit cookie and returns the request token so the SPA
-    /// can make its next unsafe verb without a minting round-trip (§1.10).
+    /// Creates an active buyer account from its email login and password. Email
+    /// ownership is not verified; the configured public-registration role is
+    /// still the only role assigned. The response returns a request token so
+    /// the SPA can make its next unsafe verb without a minting round-trip.
     /// </summary>
     [HttpPost("register")]
     // Explicit anonymous decision (threat-model T6.1 — deny by default, so
@@ -61,17 +71,78 @@ public sealed class AuthController : ControllerBase
     [EnableRateLimiting(RateLimitPolicies.AuthRegister)] // §13.7: 5 / hour in Production
     public async Task<IActionResult> Register([FromBody] RegisterRequest request, CancellationToken cancellationToken)
     {
-        await _auth.RegisterAsync(request, cancellationToken);
+        Guid userId = await _auth.RegisterAsync(request, cancellationToken);
+        await RetireDraftAsync(request.DraftToken, userId, cancellationToken);
 
         AntiforgeryTokenSet tokens = _antiforgery.GetAndStoreTokens(HttpContext);
         string requestToken = tokens.RequestToken
             ?? throw new InvalidOperationException("Antiforgery minting on a fresh unsafe verb must produce a request token.");
-        // The account has no canonical resource URL until verification; the
-        // session endpoint is the address the client will hit once signed in.
         StampTokenResponse();
         return Created("/api/v1/auth/session",
-            new RegisterResponse(Status: "verification_pending", RequestToken: tokens.RequestToken));
+            new RegisterResponse(Status: "registered", RequestToken: tokens.RequestToken));
     }
+
+    /// <summary>
+    /// Task 2F — supplier self-registration (business-flows §3.3, api.md §2.1
+    /// <c>POST /auth/register/supplier</c>): anonymous and rate-limited exactly
+    /// like buyer registration. One submit creates the account holding the
+    /// supplier role and, in one transaction, the supplier company, the
+    /// caller's accepted membership and the supplier's category coverage. Email
+    /// ownership is not verified during signup (the A11 gate is on RFQ submit).
+    /// </summary>
+    [HttpPost("register/supplier")]
+    [AllowAnonymous] // public registration — explicit, never implicit (T6.1)
+    [EnableRateLimiting(RateLimitPolicies.AuthRegister)] // §13.7: 5 / hour
+    public async Task<IActionResult> RegisterSupplier(
+        [FromBody] RegisterSupplierRequest request, CancellationToken cancellationToken)
+    {
+        Guid userId = await _auth.RegisterSupplierAsync(request, cancellationToken);
+        await RetireDraftAsync(request.DraftToken, userId, cancellationToken);
+
+        AntiforgeryTokenSet tokens = _antiforgery.GetAndStoreTokens(HttpContext);
+        string requestToken = tokens.RequestToken
+            ?? throw new InvalidOperationException("Antiforgery minting on a fresh unsafe verb must produce a request token.");
+        StampTokenResponse();
+        return Created("/api/v1/auth/session",
+            new RegisterResponse(Status: "registered", RequestToken: requestToken));
+    }
+
+    /// <summary>
+    /// Retires the draft a successful signup came from (business-flows §2/§3:
+    /// completing the registration consumes its resumable draft).
+    /// <para>
+    /// Best-effort by design. The account exists by the time this runs, so failing
+    /// the response over a draft row would turn a successful signup into an error;
+    /// the draft instead stays live (and still resumable) until it expires. A store
+    /// fault is logged, never raised.
+    /// </para>
+    /// </summary>
+    private async Task RetireDraftAsync(string? draftToken, Guid userId, CancellationToken cancellationToken)
+    {
+        if (draftToken is null)
+        {
+            return;
+        }
+
+        try
+        {
+            await _drafts.RetireAsync(draftToken, userId, cancellationToken);
+        }
+#pragma warning disable CA1031 // Deliberate: the account exists — a draft row must never fail a successful signup.
+        catch (Exception exception)
+#pragma warning restore CA1031
+        {
+            LogDraftRetireFailed(_logger, exception);
+        }
+    }
+
+    // Event ids 2300: registration-draft family (1900–1903 = error envelope, 2100–2102 = health,
+    // 2200–2202 = rate limiting + antiforgery).
+    [LoggerMessage(
+        EventId = 2300,
+        Level = LogLevel.Warning,
+        Message = "Registration draft could not be retired after a successful signup.")]
+    private static partial void LogDraftRetireFailed(ILogger logger, Exception exception);
 
     /// <summary>
     /// Signs in and issues all three cookies (session + refresh +

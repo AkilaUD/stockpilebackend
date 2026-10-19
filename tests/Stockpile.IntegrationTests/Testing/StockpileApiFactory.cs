@@ -1,8 +1,11 @@
 using FluentValidation;
+using System.Net;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Stockpile.Application.Outbox;
 using Stockpile.IntegrationTests.Outbox;
 
@@ -23,6 +26,13 @@ namespace Stockpile.IntegrationTests.Testing;
 /// </summary>
 public sealed class StockpileApiFactory : WebApplicationFactory<Program>
 {
+    /// <summary>
+    /// The peer every request arrives from (TEST-NET-2, RFC 5737). TestServer
+    /// reports no peer of its own, and a real transport always does — see
+    /// <see cref="PeerReportingHttpContextFactory"/>.
+    /// </summary>
+    private static readonly IPAddress EdgePeer = IPAddress.Parse("198.51.100.7");
+
     static StockpileApiFactory()
     {
         Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Testing");
@@ -38,6 +48,16 @@ public sealed class StockpileApiFactory : WebApplicationFactory<Program>
         // Cookie auth (task 1.34): force Secure on the session cookie so the
         // A14 flag assertion can be made over the test host's plain HTTP.
         Environment.SetEnvironmentVariable("Authentication__RequireHttps", "true");
+
+        // Threat-model §18 / security-test-matrix H9: the deployed topology runs
+        // the API behind a TLS-terminating edge whose addresses cannot be
+        // enumerated (the Vercel proxy in front of MonsterASP), so the suite
+        // mirrors it — the edge is declared as "any address", which is what such
+        // a deployment must do. The mechanism itself (a declared peer's headers
+        // accepted, an undeclared peer's ignored) is asserted directly against
+        // the middleware in ReverseProxy/ForwardedHeaderTrustTests.
+        Environment.SetEnvironmentVariable("ReverseProxy__KnownNetworks__0", "0.0.0.0/0");
+        Environment.SetEnvironmentVariable("ReverseProxy__KnownNetworks__1", "::/0");
 
         // Testing is a Development-shaped surface for the integration suite:
         // the versioned OpenAPI document (1.31) is served so its tests can
@@ -93,6 +113,14 @@ public sealed class StockpileApiFactory : WebApplicationFactory<Program>
             // throws on test.fail.* rows to drive the backoff/dead-letter path.
             services.AddScoped<IOutboxConsumer, RecordingTestEventHandler>();
             services.AddScoped<IOutboxConsumer, FailingTestEventHandler>();
+
+            // TestServer's requests arrive with no peer address, which is the
+            // one case ForwardedHeadersMiddleware applies the forwarded headers
+            // without checking the declared proxies. A transport always reports
+            // one, so report one here and let the trust check run.
+            services.RemoveAll<IHttpContextFactory>();
+            services.AddSingleton<IHttpContextFactory>(
+                provider => new PeerReportingHttpContextFactory(provider, EdgePeer));
         });
     }
 }

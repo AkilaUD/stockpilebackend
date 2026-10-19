@@ -995,6 +995,190 @@ namespace Stockpile.Infrastructure.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Stockpile.Domain.Entities.Content.ContentCategory", b =>
+                {
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(160)
+                        .HasColumnType("nvarchar(160)");
+
+                    b.Property<string>("NameSi")
+                        .HasMaxLength(160)
+                        .HasColumnType("nvarchar(160)");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasMaxLength(160)
+                        .HasColumnType("nvarchar(160)");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("int");
+
+                    b.HasKey("PublicId");
+
+                    b.HasIndex("Slug")
+                        .IsUnique();
+
+                    b.ToTable("ContentCategories", (string)null);
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Content.ContentItem", b =>
+                {
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("AuthorUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Body")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CanonicalUrl")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("EditorUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Excerpt")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<Guid?>("HeroImageMediaId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Kind")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<string>("Locale")
+                        .IsRequired()
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)");
+
+                    b.Property<string>("MetaDescription")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
+                    b.Property<string>("MetaTitle")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime?>("PublishedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ScheduledAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("PublicId");
+
+                    b.HasIndex("HeroImageMediaId");
+
+                    b.HasIndex("Locale", "Slug")
+                        .IsUnique();
+
+                    b.HasIndex("Status", "Kind", "PublishedAt");
+
+                    b.ToTable("ContentItems", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_ContentItems_Kind", "[Kind] IN ('NewsArticle', 'ProjectCaseStudy', 'SupplierStory', 'CategoryGuide', 'MaterialGuide', 'ProcurementEducation', 'SupplierSpotlight', 'TechnicalArticle')");
+
+                            t.HasCheckConstraint("CK_ContentItems_Status", "[Status] IN ('Draft', 'Scheduled', 'Published', 'Archived')");
+                        });
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Content.ContentItemCategory", b =>
+                {
+                    b.Property<Guid>("ContentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ContentId", "CategoryId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("ContentItemCategories", (string)null);
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Content.ContentItemTag", b =>
+                {
+                    b.Property<Guid>("ContentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("TagId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ContentId", "TagId");
+
+                    b.HasIndex("TagId");
+
+                    b.ToTable("ContentItemTags", (string)null);
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Content.ContentTag", b =>
+                {
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(160)
+                        .HasColumnType("nvarchar(160)");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasMaxLength(160)
+                        .HasColumnType("nvarchar(160)");
+
+                    b.HasKey("PublicId");
+
+                    b.HasIndex("Slug")
+                        .IsUnique();
+
+                    b.ToTable("ContentTags", (string)null);
+                });
+
             modelBuilder.Entity("Stockpile.Domain.Entities.Identity.Address", b =>
                 {
                     b.Property<Guid>("Id")
@@ -1348,6 +1532,97 @@ namespace Stockpile.Infrastructure.Migrations
                         .HasDatabaseName("UX_RefreshSessions_TokenHash");
 
                     b.ToTable("RefreshSessions", (string)null);
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Identity.RegistrationDraft", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CompanyName")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime?>("CompletedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(320)
+                        .HasColumnType("nvarchar(320)");
+
+                    b.Property<DateTime>("ExpiresAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FirstName")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Kind")
+                        .IsRequired()
+                        .HasMaxLength(16)
+                        .HasColumnType("nvarchar(16)");
+
+                    b.Property<string>("LastName")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Phone")
+                        .HasMaxLength(32)
+                        .HasColumnType("nvarchar(32)");
+
+                    b.Property<string>("RegistrationNumber")
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
+
+                    b.Property<string>("TokenHash")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Website")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ExpiresAtUtc");
+
+                    b.HasIndex("TokenHash")
+                        .IsUnique();
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("RegistrationDrafts", (string)null);
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Identity.RegistrationDraftCategory", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("DraftId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DraftId", "Slug")
+                        .IsUnique();
+
+                    b.ToTable("RegistrationDraftCategories", (string)null);
                 });
 
             modelBuilder.Entity("Stockpile.Domain.Entities.Identity.Role", b =>
@@ -1924,6 +2199,531 @@ namespace Stockpile.Infrastructure.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Stockpile.Domain.Entities.Procurement.Quote", b =>
+                {
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("AcceptedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("CurrentRevisionNumber")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DeclineReason")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
+                    b.Property<DateTime?>("DeclinedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("QuoteNumber")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<DateTime?>("RejectedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("RfqId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("RfqMatchId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<Guid>("SupplierId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("ValidUntil")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("PublicId");
+
+                    b.HasIndex("QuoteNumber")
+                        .IsUnique();
+
+                    b.HasIndex("RfqMatchId");
+
+                    b.HasIndex("SupplierId");
+
+                    b.HasIndex("RfqId", "SupplierId")
+                        .IsUnique();
+
+                    b.ToTable("Quotes", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_Quotes_Status", "[Status] IN ('Draft', 'Submitted', 'UnderReview', 'RevisionRequested', 'Revised', 'Accepted', 'Rejected', 'Withdrawn', 'Expired')");
+                        });
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Procurement.QuoteRevision", b =>
+                {
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CurrencyCode")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<decimal>("DeliveryCost")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("DeliveryTerms")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<decimal>("DiscountTotal")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("Exclusions")
+                        .HasMaxLength(600)
+                        .HasColumnType("nvarchar(600)");
+
+                    b.Property<decimal>("GrandTotal")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("Inclusions")
+                        .HasMaxLength(600)
+                        .HasColumnType("nvarchar(600)");
+
+                    b.Property<int?>("LeadTimeDays")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MoqNote")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("PackSizeNote")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("PaymentTerms")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<Guid?>("PreviousRevisionId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("QuoteId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("RequestedChangeRef")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("RevisionKind")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<int>("RevisionNumber")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<decimal>("Subtotal")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("SupplierNote")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<decimal>("TaxAmount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("TaxState")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<string>("TechnicalNotes")
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<DateTime?>("ValidUntil")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("PublicId");
+
+                    b.HasIndex("PreviousRevisionId");
+
+                    b.HasIndex("QuoteId", "RevisionNumber")
+                        .IsUnique();
+
+                    b.ToTable("QuoteRevisions", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_QuoteRevisions_Kind", "[RevisionKind] IN ('Initial', 'PriceRevision', 'LeadTimeRevision', 'ScopeRevision', 'ResponseToRequest')");
+
+                            t.HasCheckConstraint("CK_QuoteRevisions_Status", "[Status] IN ('Active', 'Superseded', 'Withdrawn')");
+
+                            t.HasCheckConstraint("CK_QuoteRevisions_TaxState", "[TaxState] IN ('TaxIncluded', 'TaxExcluded', 'TaxExempt')");
+                        });
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Procurement.QuoteRevisionItem", b =>
+                {
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<decimal?>("LineDiscountPct")
+                        .HasPrecision(9, 4)
+                        .HasColumnType("decimal(9,4)");
+
+                    b.Property<decimal>("LineTotal")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<Guid?>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ProductNameSnapshot")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<decimal>("Quantity")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<Guid>("RevisionId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("RfqItemId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("SkuSnapshot")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("SubstitutionNote")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<Guid>("UnitOfMeasureId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.HasKey("PublicId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("RevisionId");
+
+                    b.HasIndex("RfqItemId");
+
+                    b.HasIndex("UnitOfMeasureId");
+
+                    b.ToTable("QuoteRevisionItems", (string)null);
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Procurement.Rfq", b =>
+                {
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal?>("BudgetAmount")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("CancelReason")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
+                    b.Property<DateTime?>("CancelledAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CurrencyCode")
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<Guid?>("DeliveryAddressId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("DeliveryLocationText")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<DateTime?>("ExpiryAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("OrganizationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ProjectId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ReferenceCode")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<DateTime?>("RequestedDeliveryAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
+                    b.Property<string>("SiteConditions")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Source")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<string>("SpecialInstructions")
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<DateTime?>("SubmittedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("SubstitutionsAllowed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("UpdatedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Visibility")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.HasKey("PublicId");
+
+                    b.HasIndex("ReferenceCode")
+                        .IsUnique();
+
+                    b.HasIndex("OrganizationId", "Status");
+
+                    b.ToTable("RFQs", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_RFQs_Source", "[Source] IN ('Manual', 'ProductSelection', 'DocumentImport', 'ProcurementList')");
+
+                            t.HasCheckConstraint("CK_RFQs_Status", "[Status] IN ('Draft', 'Submitted', 'Matching', 'Dispatched', 'ReceivingQuotes', 'Negotiating', 'Awarded', 'PartiallyAwarded', 'Ordered', 'Cancelled', 'Closed', 'Expired')");
+
+                            t.HasCheckConstraint("CK_RFQs_Visibility", "[Visibility] IN ('Public', 'MatchedOnly')");
+                        });
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Procurement.RfqItem", b =>
+                {
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("CategoryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime?>("ExpectedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("LineNumber")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Notes")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<Guid?>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Quantity")
+                        .HasPrecision(18, 4)
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<Guid>("RfqId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Specification")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<Guid?>("UnitOfMeasureId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("PublicId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UnitOfMeasureId");
+
+                    b.HasIndex("RfqId", "LineNumber");
+
+                    b.ToTable("RFQItems", (string)null);
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Procurement.RfqMatch", b =>
+                {
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("DeclineReason")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
+                    b.Property<DateTime?>("ExpiryAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("MatchReasons")
+                        .IsRequired()
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
+                    b.Property<decimal>("MatchScore")
+                        .HasPrecision(9, 4)
+                        .HasColumnType("decimal(9,4)");
+
+                    b.Property<DateTime?>("NotifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("RespondedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("RfqId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<Guid>("SupplierId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("ViewedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("PublicId");
+
+                    b.HasIndex("SupplierId");
+
+                    b.HasIndex("RfqId", "SupplierId")
+                        .IsUnique();
+
+                    b.ToTable("RFQMatches", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_RFQMatches_Status", "[Status] IN ('Matched', 'Notified', 'Viewed', 'Quoting', 'Declined', 'Expired', 'Blocked')");
+                        });
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Procurement.RfqStatusHistory", b =>
+                {
+                    b.Property<Guid>("PublicId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ActorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CorrelationId")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("FromState")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<DateTime>("OccurredAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Reason")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
+                    b.Property<Guid>("RfqId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ToState")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.HasKey("PublicId");
+
+                    b.HasIndex("RfqId", "OccurredAt");
+
+                    b.ToTable("RFQStatusHistory", null, t =>
+                        {
+                            t.HasCheckConstraint("CK_RFQStatusHistory_FromState", "[FromState] IN ('Draft', 'Submitted', 'Matching', 'Dispatched', 'ReceivingQuotes', 'Negotiating', 'Awarded', 'PartiallyAwarded', 'Ordered', 'Cancelled', 'Closed', 'Expired')");
+
+                            t.HasCheckConstraint("CK_RFQStatusHistory_ToState", "[ToState] IN ('Draft', 'Submitted', 'Matching', 'Dispatched', 'ReceivingQuotes', 'Negotiating', 'Awarded', 'PartiallyAwarded', 'Ordered', 'Cancelled', 'Closed', 'Expired')");
+                        });
+                });
+
             modelBuilder.Entity("Stockpile.Domain.Entities.Reference.Country", b =>
                 {
                     b.Property<string>("Code")
@@ -2221,6 +3021,44 @@ namespace Stockpile.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Stockpile.Domain.Entities.Content.ContentItem", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Media.MediaAsset", null)
+                        .WithMany()
+                        .HasForeignKey("HeroImageMediaId")
+                        .OnDelete(DeleteBehavior.SetNull);
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Content.ContentItemCategory", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Content.ContentCategory", null)
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Stockpile.Domain.Entities.Content.ContentItem", null)
+                        .WithMany()
+                        .HasForeignKey("ContentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Content.ContentItemTag", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Content.ContentItem", null)
+                        .WithMany()
+                        .HasForeignKey("ContentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Stockpile.Domain.Entities.Content.ContentTag", null)
+                        .WithMany()
+                        .HasForeignKey("TagId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Stockpile.Domain.Entities.Identity.Address", b =>
                 {
                     b.HasOne("Stockpile.Domain.Entities.Reference.Country", null)
@@ -2331,6 +3169,23 @@ namespace Stockpile.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Stockpile.Domain.Entities.Identity.RegistrationDraft", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Identity.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Identity.RegistrationDraftCategory", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Identity.RegistrationDraft", null)
+                        .WithMany("Categories")
+                        .HasForeignKey("DraftId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Stockpile.Domain.Entities.Identity.RolePermission", b =>
                 {
                     b.HasOne("Stockpile.Domain.Entities.Identity.Permission", null)
@@ -2386,6 +3241,123 @@ namespace Stockpile.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
                 });
 
+            modelBuilder.Entity("Stockpile.Domain.Entities.Procurement.Quote", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Procurement.Rfq", null)
+                        .WithMany()
+                        .HasForeignKey("RfqId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Stockpile.Domain.Entities.Procurement.RfqMatch", null)
+                        .WithMany()
+                        .HasForeignKey("RfqMatchId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Stockpile.Domain.Entities.Catalogue.Supplier", null)
+                        .WithMany()
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Procurement.QuoteRevision", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Procurement.QuoteRevision", null)
+                        .WithMany()
+                        .HasForeignKey("PreviousRevisionId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Stockpile.Domain.Entities.Procurement.Quote", null)
+                        .WithMany()
+                        .HasForeignKey("QuoteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Procurement.QuoteRevisionItem", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Catalogue.Product", null)
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Stockpile.Domain.Entities.Procurement.QuoteRevision", null)
+                        .WithMany()
+                        .HasForeignKey("RevisionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Stockpile.Domain.Entities.Procurement.RfqItem", null)
+                        .WithMany()
+                        .HasForeignKey("RfqItemId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Stockpile.Domain.Entities.Catalogue.UnitOfMeasure", null)
+                        .WithMany()
+                        .HasForeignKey("UnitOfMeasureId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Procurement.Rfq", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Identity.Organization", null)
+                        .WithMany()
+                        .HasForeignKey("OrganizationId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Procurement.RfqItem", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Catalogue.Category", null)
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Stockpile.Domain.Entities.Catalogue.Product", null)
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Stockpile.Domain.Entities.Procurement.Rfq", null)
+                        .WithMany()
+                        .HasForeignKey("RfqId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Stockpile.Domain.Entities.Catalogue.UnitOfMeasure", null)
+                        .WithMany()
+                        .HasForeignKey("UnitOfMeasureId")
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Procurement.RfqMatch", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Procurement.Rfq", null)
+                        .WithMany()
+                        .HasForeignKey("RfqId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Stockpile.Domain.Entities.Catalogue.Supplier", null)
+                        .WithMany()
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Procurement.RfqStatusHistory", b =>
+                {
+                    b.HasOne("Stockpile.Domain.Entities.Procurement.Rfq", null)
+                        .WithMany()
+                        .HasForeignKey("RfqId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Stockpile.Domain.Entities.Reference.District", b =>
                 {
                     b.HasOne("Stockpile.Domain.Entities.Reference.Province", null)
@@ -2398,6 +3370,11 @@ namespace Stockpile.Infrastructure.Migrations
             modelBuilder.Entity("Stockpile.Domain.Entities.Catalogue.Supplier", b =>
                 {
                     b.Navigation("Profile");
+                });
+
+            modelBuilder.Entity("Stockpile.Domain.Entities.Identity.RegistrationDraft", b =>
+                {
+                    b.Navigation("Categories");
                 });
 #pragma warning restore 612, 618
         }

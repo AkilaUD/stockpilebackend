@@ -7,6 +7,7 @@ using Stockpile.Domain.Entities.Catalogue;
 using Stockpile.Domain.Entities.Media;
 using Stockpile.Domain.Entities.Platform;
 using Stockpile.Domain.Enums;
+using Stockpile.Domain.StateMachines;
 using Stockpile.Infrastructure.Persistence;
 
 namespace Stockpile.Api.Persistence;
@@ -51,13 +52,21 @@ internal static class CatalogueSeeder
         string datasetPath = ResolveDatasetPath(configuration, environment.ContentRootPath);
         (CatalogueDataset dataset, string datasetHash) = await LoadDatasetAsync(datasetPath, cancellationToken);
 
-        // Idempotency gate: matching marker → nothing to do. A stale marker with
-        // rows already present is an operator error: reset the Dev database and
-        // re-seed, never silently overwrite half of a live-looking catalogue.
+        // Idempotency gate: matching marker → the rows are converged, so only the
+        // media bytes are re-checked. The storage root is not part of the
+        // database: when it is replaced, wiped or repointed after the seed (the
+        // documented failure mode when it is not a persistent, external folder)
+        // the marker still matches, no seed runs, and every asset answers 404
+        // for the life of the deployment. A stale marker with rows already
+        // present is an operator error: reset the Dev database and re-seed,
+        // never silently overwrite half of a live-looking catalogue.
         SystemSetting? marker = await db.SystemSettings.FindAsync([MarkerKey], cancellationToken);
         bool hasCatalogueRows = await db.Categories.AnyAsync(cancellationToken);
         if (marker is not null && marker.Value == datasetHash)
+        {
+            await EnsureMediaBytesAsync(services, cancellationToken);
             return;
+        }
         if (marker is not null && hasCatalogueRows)
         {
             throw new InvalidOperationException(
@@ -73,6 +82,111 @@ internal static class CatalogueSeeder
         }
 
         await SeedCoreAsync(db, configuration, environment, dataset, datasetHash, cancellationToken);
+    }
+
+    /// <summary>
+    /// Re-ensures the storage root holds a byte for every <see cref="MediaAsset"/>
+    /// row, copying the missing ones back from the harvest media folder when it
+    /// is still deployed.
+    /// <para>
+    /// The seeding pass is marker-gated, so it runs at most once per dataset —
+    /// but the storage root is not part of the database. A root that is replaced,
+    /// wiped or repointed after the seed (the documented failure mode when it is
+    /// not a persistent, external folder) leaves the marker matching: no seed
+    /// runs, no byte is ever re-copied, and every asset answers 404 for the life
+    /// of the deployment. Re-checking on every boot makes the root self-healing,
+    /// at one stat per asset when it is already complete.
+    /// </para>
+    /// <para>
+    /// The database, not the harvest manifest, decides what must exist: the
+    /// manifest and the source media may both be pruned after the first seed
+    /// (deployment guide §2), and the repair must still detect a root that was
+    /// emptied later. Called from <see cref="SeedAsync"/> on the marker-matches
+    /// path; a fresh seed copies the bytes itself.
+    /// </para>
+    /// </summary>
+    /// <returns>How many bytes were restored and how many could not be.</returns>
+    internal static async Task<MediaRestoreReport> EnsureMediaBytesAsync(
+        IServiceProvider services,
+        CancellationToken cancellationToken = default)
+    {
+        using IServiceScope scope = services.CreateScope();
+        StockpileDbContext db = scope.ServiceProvider.GetRequiredService<StockpileDbContext>();
+        IConfiguration configuration = scope.ServiceProvider.GetRequiredService<IConfiguration>();
+        IWebHostEnvironment environment = scope.ServiceProvider.GetRequiredService<IWebHostEnvironment>();
+
+        List<string> storageKeys = await db.MediaAssets
+            .AsNoTracking()
+            .Select(asset => asset.StorageKey)
+            .ToListAsync(cancellationToken);
+
+        string catalogueDir = Path.Combine(OriginalsRoot(configuration, environment), "catalogue");
+        Directory.CreateDirectory(catalogueDir);
+
+        string mediaSourceDir = Path.Combine(
+            Path.GetDirectoryName(ResolveDatasetPath(configuration, environment.ContentRootPath))
+                ?? throw new InvalidOperationException("Cannot locate the harvest output directory."),
+            "media");
+
+        MediaRestoreReport report = RestoreMissingBytes(mediaSourceDir, catalogueDir, storageKeys);
+        if (report.Copied > 0 || report.MissingSources > 0)
+        {
+            ILogger logger = scope.ServiceProvider
+                .GetRequiredService<ILoggerFactory>()
+                .CreateLogger(typeof(CatalogueSeeder).FullName!);
+            if (report.Copied > 0)
+            {
+                CatalogueStorageLog.Restored(logger, report.Copied, catalogueDir);
+            }
+
+            if (report.MissingSources > 0)
+            {
+                CatalogueStorageLog.Unavailable(logger, report.MissingSources);
+            }
+        }
+
+        return report;
+    }
+
+    /// <summary>
+    /// Copies every storage key the root does not hold from the harvest media
+    /// folder. The exported name of a harvest file IS its storage key, so no
+    /// manifest is needed. Pure filesystem work, so the repair itself is
+    /// testable without a host.
+    /// </summary>
+    internal static MediaRestoreReport RestoreMissingBytes(
+        string mediaSourceDir,
+        string catalogueDir,
+        IReadOnlyList<string> storageKeys)
+    {
+        int copied = 0;
+        int missingSources = 0;
+
+        foreach (string storageKey in storageKeys)
+        {
+            if (string.IsNullOrEmpty(storageKey))
+                continue;
+
+            string destination = Path.Combine(catalogueDir, storageKey);
+            if (File.Exists(destination))
+                continue;
+
+            string source = Path.Combine(mediaSourceDir, storageKey);
+            if (!File.Exists(source))
+            {
+                // Pruning the dataset's media folder after the first seed is
+                // supported (deployment guide §2), so an unavailable source is
+                // reported — never thrown, or the API would not boot — and only
+                // the affected assets answer 404.
+                missingSources++;
+                continue;
+            }
+
+            File.Copy(source, destination);
+            copied++;
+        }
+
+        return new MediaRestoreReport(copied, missingSources);
     }
 
     private static async Task SeedCoreAsync(
@@ -231,7 +345,10 @@ internal static class CatalogueSeeder
             {
                 Slug = Truncate(supplier.Slug, 160),
                 DisplayName = Truncate(supplier.DisplayName, 200),
-                Status = SupplierStatus.Active,
+                // No Status here: the entity's declared default is
+                // SupplierStatus.Active (the domain's landing state for a
+                // vetted supplier), and X6/S10 forbids a direct workflow
+                // assignment in this file.
                 VerificationState = supplier.Verified ? VerificationState.Verified : VerificationState.Unverified,
                 Story = supplier.About is { Length: > 0 } ? Truncate(supplier.About, 6000) : null,
                 LogoMediaId = logoMediaId,
@@ -255,6 +372,24 @@ internal static class CatalogueSeeder
         // ---- 7. Products + price/stock/ledger/media children (chunked) -------
         // Children carry explicit ProductId (the domain has no navigation
         // properties; the store reads them through explicit joins).
+        //
+        // The migrated catalogue is LIVE data — every product arrived having
+        // been submitted and platform-moderated. Its landing state comes from
+        // the declared machine (X6/S10: no direct workflow assignment), walked
+        // exactly as the platform would: PendingReview → Published on
+        // product.moderate. Evaluated once; every record lands on the same
+        // machine-issued state.
+        var productMachine = new StateMachine<ProductStatus>(TransitionTables.Product.All);
+        TransitionResult<ProductStatus> moderated =
+            productMachine.Evaluate(ProductStatus.PendingReview, ProductStatus.Published, ActorContext.System, reason: null);
+        if (!moderated.IsAllowed)
+        {
+            throw new InvalidOperationException(
+                $"Seed products cannot reach {nameof(ProductStatus)}.{ProductStatus.Published} via the declared " +
+                $"machine (result: {moderated.Kind}).");
+        }
+
+        ProductStatus seededProductStatus = moderated.Edge!.To;
         var rowAttributeIds = attributesByLabel.ToDictionary(kv => kv.Key, kv => kv.Value.PublicId);
         foreach (ProductRow[] chunk in dataset.Products.OrderBy(p => p.Slug, StringComparer.Ordinal).Chunk(250))
         {
@@ -286,7 +421,7 @@ internal static class CatalogueSeeder
                     Name = Truncate(product.Name, 300),
                     Slug = Truncate(product.Slug, 300),
                     Sku = Truncate(product.Sku, 100),
-                    Status = ProductStatus.Published,
+                    Status = seededProductStatus,
                     BrandId = product.Brand is { Length: > 0 }
                         ? brandsByCode.GetValueOrDefault(Slugify(product.Brand, 80))?.PublicId
                         : null,
@@ -398,20 +533,26 @@ internal static class CatalogueSeeder
     {
         string? overridePath = configuration["CatalogueSeed:DatasetPath"];
         if (!string.IsNullOrWhiteSpace(overridePath))
-            return Path.GetFullPath(overridePath);
+            return Path.GetFullPath(overridePath, contentRootPath);
 
-        // Walk up from the host content root to the repository root; the dataset
-        // lives at tools/catalogue-migrate/out/catalogue.json.
-        for (DirectoryInfo? dir = new(contentRootPath); dir is not null; dir = dir.Parent)
+        // In development this finds the dataset at the repository root; in a
+        // published deployment the project includes it under the content root.
+        string[] searchRoots = [contentRootPath, AppContext.BaseDirectory];
+        foreach (string searchRoot in searchRoots.Distinct(StringComparer.OrdinalIgnoreCase))
         {
-            string candidate = Path.Combine(dir.FullName, "tools", "catalogue-migrate", "out", "catalogue.json");
-            if (File.Exists(candidate))
-                return candidate;
+            for (DirectoryInfo? dir = new(searchRoot); dir is not null; dir = dir.Parent)
+            {
+                string candidate = Path.Combine(dir.FullName, "tools", "catalogue-migrate", "out", "catalogue.json");
+                if (File.Exists(candidate))
+                    return candidate;
+            }
         }
 
         throw new InvalidOperationException(
-            "Catalogue seed dataset not found. Expected tools/catalogue-migrate/out/catalogue.json "
-            + "below the repository root (or set CatalogueSeed:DatasetPath). Run harvest.mjs first.");
+            "Catalogue seed dataset not found. Expected the published file "
+            + "'tools/catalogue-migrate/out/catalogue.json' beside the API (or set "
+            + "CatalogueSeed:DatasetPath to an absolute path). Ensure the catalogue seed data "
+            + "is included in the deployment package.");
     }
 
     private static async Task<(CatalogueDataset Dataset, string Hash)> LoadDatasetAsync(
@@ -574,4 +715,7 @@ internal static class CatalogueSeeder
     internal sealed record MediaManifestEntry(
         string SourceUrl, string FileRelative, string Sha256, string ContentType,
         long ByteSize, DateTime FetchedAt, string Licence, string ProvenanceAuthorisation);
+
+    /// <summary>Outcome of <see cref="EnsureMediaBytesAsync"/>: bytes restored, and manifest entries whose source bytes the dataset no longer holds.</summary>
+    internal readonly record struct MediaRestoreReport(int Copied, int MissingSources);
 }

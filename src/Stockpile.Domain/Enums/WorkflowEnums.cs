@@ -43,6 +43,47 @@ public enum QuoteStatus
     Expired = 8,
 }
 
+/// <summary>
+/// How much of an RFQ a quote covers (business-flows §7). The supplier declares
+/// it on submit; it is deliberately NOT a column — the stored truth is what the
+/// revision's lines actually cover, and the API reports that derivation back
+/// (<c>coverage{requestedLines, quotedLines, missingLineNumbers}</c>).
+/// </summary>
+public enum QuoteCoverage
+{
+    Full = 0,
+    Partial = 1,
+}
+
+/// <summary>How a revision's prices treat tax (domain-model §6.2).</summary>
+public enum TaxState
+{
+    TaxIncluded = 0,
+    TaxExcluded = 1,
+    TaxExempt = 2,
+}
+
+/// <summary>Why a revision was raised (domain-model §6.2).</summary>
+public enum QuoteRevisionKind
+{
+    Initial = 0,
+    PriceRevision = 1,
+    LeadTimeRevision = 2,
+    ScopeRevision = 3,
+    ResponseToRequest = 4,
+}
+
+/// <summary>
+/// Lifecycle of one immutable revision (domain-model §6.2): exactly one revision
+/// is <see cref="Active"/>; superseding or withdrawing a revision never edits it.
+/// </summary>
+public enum QuoteRevisionStatus
+{
+    Active = 0,
+    Superseded = 1,
+    Withdrawn = 2,
+}
+
 /// <summary>Purchase order lifecycle (domain-model §11.4).</summary>
 public enum PurchaseOrderStatus
 {

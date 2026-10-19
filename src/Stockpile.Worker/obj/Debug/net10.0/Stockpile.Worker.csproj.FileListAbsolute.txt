@@ -1,8 +1,3 @@
-D:\Projects\home dev\open\backend\src\Stockpile.Worker\obj\Debug\net10.0\Stockpile.Worker.csproj.AssemblyReference.cache
-D:\Projects\home dev\open\backend\src\Stockpile.Worker\obj\Debug\net10.0\Stockpile.Worker.GeneratedMSBuildEditorConfig.editorconfig
-D:\Projects\home dev\open\backend\src\Stockpile.Worker\obj\Debug\net10.0\Stockpile.Worker.AssemblyInfoInputs.cache
-D:\Projects\home dev\open\backend\src\Stockpile.Worker\obj\Debug\net10.0\Stockpile.Worker.AssemblyInfo.cs
-D:\Projects\home dev\open\backend\src\Stockpile.Worker\obj\Debug\net10.0\Stockpile.Worker.csproj.CoreCompileInputs.cache
 D:\Projects\home dev\open\backend\src\Stockpile.Worker\bin\Debug\net10.0\appsettings.Development.json
 D:\Projects\home dev\open\backend\src\Stockpile.Worker\bin\Debug\net10.0\appsettings.json
 D:\Projects\home dev\open\backend\src\Stockpile.Worker\bin\Debug\net10.0\Stockpile.Worker.exe
@@ -15,6 +10,8 @@ D:\Projects\home dev\open\backend\src\Stockpile.Worker\bin\Debug\net10.0\Azure.C
 D:\Projects\home dev\open\backend\src\Stockpile.Worker\bin\Debug\net10.0\Azure.Identity.dll
 D:\Projects\home dev\open\backend\src\Stockpile.Worker\bin\Debug\net10.0\Azure.Storage.Blobs.dll
 D:\Projects\home dev\open\backend\src\Stockpile.Worker\bin\Debug\net10.0\Azure.Storage.Common.dll
+D:\Projects\home dev\open\backend\src\Stockpile.Worker\bin\Debug\net10.0\FluentValidation.dll
+D:\Projects\home dev\open\backend\src\Stockpile.Worker\bin\Debug\net10.0\FluentValidation.DependencyInjectionExtensions.dll
 D:\Projects\home dev\open\backend\src\Stockpile.Worker\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\Projects\home dev\open\backend\src\Stockpile.Worker\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Projects\home dev\open\backend\src\Stockpile.Worker\bin\Debug\net10.0\Microsoft.Data.SqlClient.dll
@@ -81,11 +78,15 @@ D:\Projects\home dev\open\backend\src\Stockpile.Worker\bin\Debug\net10.0\Stockpi
 D:\Projects\home dev\open\backend\src\Stockpile.Worker\bin\Debug\net10.0\Stockpile.Contracts.pdb
 D:\Projects\home dev\open\backend\src\Stockpile.Worker\bin\Debug\net10.0\Stockpile.Infrastructure.pdb
 D:\Projects\home dev\open\backend\src\Stockpile.Worker\bin\Debug\net10.0\Stockpile.Domain.pdb
+D:\Projects\home dev\open\backend\src\Stockpile.Worker\obj\Debug\net10.0\Stockpile.Worker.csproj.AssemblyReference.cache
+D:\Projects\home dev\open\backend\src\Stockpile.Worker\obj\Debug\net10.0\Stockpile.Worker.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\home dev\open\backend\src\Stockpile.Worker\obj\Debug\net10.0\Stockpile.Worker.AssemblyInfoInputs.cache
+D:\Projects\home dev\open\backend\src\Stockpile.Worker\obj\Debug\net10.0\Stockpile.Worker.AssemblyInfo.cs
+D:\Projects\home dev\open\backend\src\Stockpile.Worker\obj\Debug\net10.0\Stockpile.Worker.csproj.CoreCompileInputs.cache
+D:\Projects\home dev\open\backend\src\Stockpile.Worker\obj\Debug\net10.0\Stockpile.Worker.sourcelink.json
 D:\Projects\home dev\open\backend\src\Stockpile.Worker\obj\Debug\net10.0\Stockpil.AF19661D.Up2Date
 D:\Projects\home dev\open\backend\src\Stockpile.Worker\obj\Debug\net10.0\Stockpile.Worker.dll
 D:\Projects\home dev\open\backend\src\Stockpile.Worker\obj\Debug\net10.0\refint\Stockpile.Worker.dll
 D:\Projects\home dev\open\backend\src\Stockpile.Worker\obj\Debug\net10.0\Stockpile.Worker.pdb
 D:\Projects\home dev\open\backend\src\Stockpile.Worker\obj\Debug\net10.0\Stockpile.Worker.genruntimeconfig.cache
 D:\Projects\home dev\open\backend\src\Stockpile.Worker\obj\Debug\net10.0\ref\Stockpile.Worker.dll
-D:\Projects\home dev\open\backend\src\Stockpile.Worker\bin\Debug\net10.0\FluentValidation.dll
-D:\Projects\home dev\open\backend\src\Stockpile.Worker\bin\Debug\net10.0\FluentValidation.DependencyInjectionExtensions.dll

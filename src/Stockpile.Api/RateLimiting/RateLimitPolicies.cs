@@ -22,6 +22,7 @@ public static class RateLimitPolicies
     public const string AuthVerify = "auth.verify"; // 10 / hour — email verify + resend share one budget
     public const string AuthMfa = "auth.mfa"; // 10 / hour — MFA enroll + verify share one budget (code guessing)
     public const string AuthRefresh = "auth.refresh"; // 60 / hour — refresh rotation (stolen-token probing)
+    public const string AuthDraft = "auth.draft"; // 240 / hour — anonymous registration-draft saves (autosave is chatty by design)
     public const string AdminUnlock = "admin.users.unlock"; // 30 / hour — admin account unlocks
     public const string SearchPublic = "search.public"; // 60 / min
     public const string RfqCreate = "rfq.create"; // 20 / hour
@@ -38,6 +39,17 @@ public static class RateLimitPolicies
     public const string OrganizationCreate = "organization.create"; // 10 / hour — wizard step 3 (spam: each call is a DB-visible org)
     public const string OrganizationMemberInvite = "organization.member.invite"; // 30 / hour — team invitations
     public const string AddressWrite = "address.write"; // 60 / hour — /me/addresses POST/PATCH/DELETE
+
+    // ---- Buyer wizard profile/preferences (task 1.43 continued) ----
+    public const string MeProfileWrite = "me.profile.write"; // 60 / hour — PATCH /me/profile
+    public const string MePreferencesWrite = "me.preferences.write"; // 60 / hour — PATCH /me/preferences
+    public const string MeNotificationPreferencesWrite = "me.notification-preferences.write"; // 60 / hour — PATCH /me/notification-preferences
+
+    // ---- Supplier self-service onboarding (business-flows §3.3 stages 2–5) ----
+    public const string SupplierProfileWrite = "supplier.profile.write"; // 60 / hour — /suppliers/me profile, categories, service-areas
+
+    // ---- Supplier buying-lead inbox (business-flows §6, api.md §2.9) ----
+    public const string SupplierLeadWrite = "supplier.lead.write"; // 60 / hour — /suppliers/me/leads/{id} view + decline
 
     /// <summary>Test-only policy (2/min) — registered only under Testing.</summary>
     public const string TestTight = "test.tight";
@@ -62,10 +74,14 @@ public static class RateLimitPolicies
     /// <summary>All named policies, including the test-only one.</summary>
     public static readonly string[] All =
     [
-        AuthLogin, AuthReset, AuthRegister, AuthVerify, AuthMfa, AuthRefresh, AdminUnlock, SearchPublic, RfqCreate,
+        AuthLogin, AuthReset, AuthRegister, AuthVerify, AuthMfa, AuthRefresh, AuthDraft, AdminUnlock, SearchPublic,
+        RfqCreate,
         RfqSubmit, QuoteSubmit, QuoteRevision, ContactIntent, PriceAlertCreate, ReviewCreate,
         UploadPublic, PublicApi,
         OrganizationCreate, OrganizationMemberInvite, AddressWrite,
+        MeProfileWrite, MePreferencesWrite, MeNotificationPreferencesWrite,
+        SupplierProfileWrite,
+        SupplierLeadWrite,
         TestTight,
     ];
 
@@ -84,6 +100,7 @@ public static class RateLimitPolicies
             [AuthVerify] = (10, TimeSpan.FromHours(1)),
             [AuthMfa] = (10, TimeSpan.FromHours(1)),
             [AuthRefresh] = (60, TimeSpan.FromHours(1)),
+            [AuthDraft] = (240, TimeSpan.FromHours(1)),
             [AdminUnlock] = (30, TimeSpan.FromHours(1)),
             [SearchPublic] = (60, TimeSpan.FromMinutes(1)),
             [RfqCreate] = (20, TimeSpan.FromHours(1)),
@@ -98,6 +115,11 @@ public static class RateLimitPolicies
             [OrganizationCreate] = (10, TimeSpan.FromHours(1)),
             [OrganizationMemberInvite] = (30, TimeSpan.FromHours(1)),
             [AddressWrite] = (60, TimeSpan.FromHours(1)),
+            [MeProfileWrite] = (60, TimeSpan.FromHours(1)),
+            [MePreferencesWrite] = (60, TimeSpan.FromHours(1)),
+            [MeNotificationPreferencesWrite] = (60, TimeSpan.FromHours(1)),
+            [SupplierProfileWrite] = (60, TimeSpan.FromHours(1)),
+            [SupplierLeadWrite] = (60, TimeSpan.FromHours(1)),
             [TestTight] = (2, TimeSpan.FromMinutes(1)),
         };
 
@@ -151,14 +173,21 @@ public static class RateLimitPolicies
 
     /// <summary>
     /// Integration-suite budgets (Testing only). The shared test host sees every
-    /// request from the same client identity, so the REAL §13.7 budgets — 5/hour
-    /// register, 10/5-min login, 3/hour password-reset, 10/hour verify/MFA —
-    /// would be exhausted by the suite's own assertions and produce flaky 429s.
-    /// Only these credential-class budgets are relaxed; the endpoints still
-    /// declare their policies (X13 asserts the declaration), the real 429
-    /// mechanics stay proven over HTTP by the test-only <c>test.tight</c>
-    /// policy, and the canonical limits in <see cref="Specs"/> — and api.md
-    /// §1.8 — remain authoritative for every other environment.
+    /// request from the same client identity — rate limiting runs deliberately
+    /// BEFORE authentication (so a flood is refused before any ticket is read),
+    /// which makes the <c>ip:</c> partition in <see cref="RateLimitPartitionKeys"/>
+    /// the only partition the suite ever reaches. So the REAL §13.7 budgets —
+    /// 5/hour register, 10/5-min login, 3/hour password-reset, 10/hour
+    /// verify/MFA — would be exhausted by the suite's own assertions and produce
+    /// flaky 429s; and so would the business writes a suite drives end-to-end
+    /// (<c>rfq.create</c> 20/h, <c>rfq.submit</c> 10/h, <c>quote.submit</c>
+    /// 60/h): one shared partition turns a per-subject budget into a suite-wide
+    /// one, which no single test can observe in isolation.
+    /// Only these budgets are relaxed; the endpoints still declare their
+    /// policies (X13 asserts the declaration), the real 429 mechanics stay proven
+    /// over HTTP by the test-only <c>test.tight</c> policy, and the canonical
+    /// limits in <see cref="Specs"/> — and api.md §1.8 — remain authoritative
+    /// for every other environment.
     /// </summary>
     private static readonly Dictionary<string, int> RelaxedUnderTesting = new(StringComparer.Ordinal)
     {
@@ -168,5 +197,8 @@ public static class RateLimitPolicies
         [AuthVerify] = 1000,
         [AuthMfa] = 1000,
         [AuthRefresh] = 1000,
+        [RfqCreate] = 1000,
+        [RfqSubmit] = 1000,
+        [QuoteSubmit] = 1000,
     };
 }
